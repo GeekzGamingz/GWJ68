@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3akunc3i7bgg"
-path.s3tc="res://.godot/imported/gwassrevamp.png-d8a0e0aaa4dbd00ff56b808b535ee665.s3tc.ctex"
+uid="uid://v4vxscc4drgt"
+path.s3tc="res://.godot/imported/sward_broken_0.png-7407631c9e0103562826f6f70f5b9f1e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Textures/WorldTextures/Grass/gwassrevamp.png"
-dest_files=["res://.godot/imported/gwassrevamp.png-d8a0e0aaa4dbd00ff56b808b535ee665.s3tc.ctex"]
+source_file="res://assets/Textures/Items/sward_broken_0.png"
+dest_files=["res://.godot/imported/sward_broken_0.png-7407631c9e0103562826f6f70f5b9f1e.s3tc.ctex"]
 
 [params]
 

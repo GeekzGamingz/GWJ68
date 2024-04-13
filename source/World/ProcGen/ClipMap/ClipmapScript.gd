@@ -2,8 +2,10 @@
 #Inherits Node3D Code
 extends Node3D
 #------------------------------------------------------------------------------#
+#Constants
+const PARTITION_CLIPMAP = preload("res://source/World/ProcGen/ClipMap/ClipMapPartition.tscn")
+#------------------------------------------------------------------------------#
 #Variables
-var PARTITION_CLIPMAP = preload("res://source/World/ProcGen/ClipMap/ClipMapPartition.tscn")
 var length = ProjectSettings.get_setting("shader_globals/clipmap_partition_length").value
 #Exported Variables
 @export var distance: int = 8

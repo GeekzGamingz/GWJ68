@@ -1,0 +1,142 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlp7re57xo4l"]
+
+[ext_resource type="PackedScene" uid="uid://c05xjqcrcaemf" path="res://assets/Textures/Items/sward_broken.gltf" id="1_1ne23"]
+
+[sub_resource type="Animation" id="Animation_4vh8w"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ce55x"]
+resource_name = "chop"
+length = 0.4
+step = 0.01
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.04, 1, 0.125475, 0.000474975, -0.349525, 0.08, 1, 0.250475, 0.000474975, -0.699525, 0.12, 1, 0.000474975, 0.000474975, -0.699525, 0.16, 1, -0.124525, 0.000474975, -0.349525, 0.2, 1, 0.000474975, 0.000474975, 0.000474989)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.04, 1, 6.94118e-09, -0.158796, 6.94118e-09, 0.987311, 0.08, 1, 2.59944e-08, -0.594682, 2.59944e-08, 0.803961, 0.12, 1, 8.41502e-09, -0.192513, 8.41503e-09, 0.981294, 0.16, 1, -3.367e-08, 0.77028, -3.367e-08, 0.637706, 0.2, 1, -3.61473e-08, 0.826953, -3.61473e-08, 0.562271, 0.22, 1, -3.97115e-08, 0.908494, -3.97115e-08, 0.417899)
+
+[sub_resource type="Animation" id="Animation_s86vn"]
+resource_name = "float_f"
+length = 1.2
+loop_mode = 1
+step = 0.6
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.6, 1, 0, 1.56932e-09, 0.035902)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.00474298, 0.109953, -0.0428345, 0.993002, 0.6, 1, -6.71399e-09, 0.153598, -6.71399e-09, 0.988133)
+
+[sub_resource type="Animation" id="Animation_r2q1e"]
+resource_name = "idle"
+length = 4.8
+loop_mode = 1
+step = 1.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 2.4, 1, 0, 1.56932e-09, 0.035902)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.4, 1, 4.51448e-17, -1.8838e-09, -0.0430963, 0.999071)
+
+[sub_resource type="Animation" id="Animation_lwi57"]
+resource_name = "slash"
+length = 0.4
+step = 0.01
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.02, 1, 0, 0, 0, 0.06, 1, 0, -1.91849e-09, -0.0438899, 0.18, 1, 0, -4.54831e-09, -0.104053)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.02, 1, 0, 0, 0, 1, 0.06, 1, 0.0837909, 3.66262e-09, 4.17803e-17, 0.996483, 0.12, 1, 0.182674, -0.0445716, -0.232813, 0.954171, 0.18, 1, 0.115063, -0.27472, -0.722392, 0.624051, 0.2, 1, 0.0619751, 0.536998, 0.766697, -0.346363, 0.22, 1, 0.504246, 0.514162, 0.57548, 0.387553, 0.24, 1, 0.70062, 0.166605, 0.280654, 0.634513)
+
+[sub_resource type="Animation" id="Animation_xx3lp"]
+resource_name = "thrust"
+length = 0.4
+step = 0.01
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.03, 1, 0.250475, 0.000474975, -0.349525, 0.06, 1, 0.500475, 0.000474975, -0.349525, 0.1, 1, 0.750475, 0.000474975, -0.349525, 0.19, 1, 0.750475, 0.000474975, -0.349525, 0.26, 1, -1.04853, 0.000474896, -0.349525, 0.28, 1, -0.969971, 0.0004749, -0.349525, 0.3, 1, -1.01551, 0.000474898, -0.349525)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -3.97115e-08, 0.908494, -3.97115e-08, 0.417899, 0.03, 1, -0.0969529, 0.847733, -0.166288, 0.494264, 0.06, 1, -0.299589, 0.760937, -0.280768, 0.502385, 0.1, 1, -0.525042, 0.572918, -0.429036, 0.460461, 0.14, 1, 0.63699, -0.299256, 0.643633, -0.300709, 0.19, 1, 0.693353, -0.121138, 0.699388, -0.124273, 0.26, 1, 0.704292, 0.0166672, 0.709606, 0.0124226)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dk2kc"]
+_data = {
+"RESET": SubResource("Animation_4vh8w"),
+"chop": SubResource("Animation_ce55x"),
+"float_f": SubResource("Animation_s86vn"),
+"idle": SubResource("Animation_r2q1e"),
+"slash": SubResource("Animation_lwi57"),
+"thrust": SubResource("Animation_xx3lp")
+}
+
+[node name="Sword" instance=ExtResource("1_1ne23")]
+transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, 0, 0.75, 0)
+
+[node name="Sward_Bone" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.079e-18, 0, 0.709582)
+
+[node name="AnimationPlayers" type="Node3D" parent="." index="1"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_dk2kc")
+}
+autoplay = "idle"
+playback_default_blend_time = 0.1

@@ -23,4 +23,5 @@ func follow():
 	if player != null:
 		look_at(player.position, Vector3.UP)
 		var distance = (player.global_position - global_position).normalized()
-		velocity = distance * max_speed
+		if !$Facing.is_colliding(): velocity = distance * max_speed
+		else: velocity = Vector3.ZERO

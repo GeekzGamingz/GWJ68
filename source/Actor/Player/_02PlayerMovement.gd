@@ -11,6 +11,9 @@ var move_direction = Vector3.ZERO
 @export var rotation_speed = 5
 #OnReady Variables
 @onready var state_output = $Outputs/StateOutput
+@onready var mesh = $Mesh
+@onready var sword = mesh.get_child(0)
+@onready var anim_player = sword.get_node("AnimationPlayers/AnimationPlayer")
 #------------------------------------------------------------------------------#
 #Process
 func _process(_delta):

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://source/Actor/Player/_02PlayerMovement.gd" id="1_toj2t"]
 [ext_resource type="Script" path="res://source/Actor/Player/PlayerFSM.gd" id="2_mwrjc"]
+[ext_resource type="Script" path="res://source/Actor/Player/PlayerMesh.gd" id="3_4gjac"]
 [ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="4_b3hed"]
-[ext_resource type="PackedScene" uid="uid://d2ukgoowateka" path="res://source/Items/Sword.tscn" id="4_dl0xy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w5fiy"]
 radius = 0.25
@@ -11,11 +11,14 @@ height = 1.5
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_toj2t")
 
 [node name="PlayerFSM" type="Node3D" parent="."]
 script = ExtResource("2_mwrjc")
+
+[node name="Mesh" type="Node3D" parent="."]
+script = ExtResource("3_4gjac")
+condition = "Broken"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
@@ -70,6 +73,3 @@ target_position = Vector3(-0.25, 0, 0)
 [node name="StateOutput" type="Label3D" parent="Outputs"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
 text = "State"
-
-[node name="Sword" parent="." instance=ExtResource("4_dl0xy")]
-transform = Transform3D(3.7749e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, 3.7749e-08, -1.65006e-15, -0.409672, 1.57184, 0.170855)

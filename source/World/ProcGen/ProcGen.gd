@@ -1,9 +1,10 @@
 #Inherits StaticBody3D Code
 extends StaticBody3D
 #------------------------------------------------------------------------------#
-#Variables
-#Preloaded Variables
+#Constants
 const COLLISION = preload("res://source/World/ProcGen/CollisionMap/CollisionMap.tscn")
+#------------------------------------------------------------------------------#
+#Variables
 #Exported Variables
 @export var player = CharacterBody3D
 #OnReady Variables

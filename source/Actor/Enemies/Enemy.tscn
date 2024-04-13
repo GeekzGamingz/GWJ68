@@ -84,6 +84,7 @@ text = "State"
 
 [node name="Facing" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+collision_mask = 2
 
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="WorldDetectors/Sight" to="." method="_on_sight_body_exited"]

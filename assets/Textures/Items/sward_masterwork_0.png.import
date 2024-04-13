@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gndkcjqtykki"
-path.s3tc="res://.godot/imported/gwass.png-eb290aac34e41cd79683a3779ddf3017.s3tc.ctex"
+uid="uid://c83hj1c2d4xw2"
+path.s3tc="res://.godot/imported/sward_masterwork_0.png-815d4594fc5814c357370b7eaf7b6caa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Textures/WorldTextures/Grass/gwass.png"
-dest_files=["res://.godot/imported/gwass.png-eb290aac34e41cd79683a3779ddf3017.s3tc.ctex"]
+source_file="res://assets/Textures/Items/sward_masterwork_0.png"
+dest_files=["res://.godot/imported/sward_masterwork_0.png-815d4594fc5814c357370b7eaf7b6caa.s3tc.ctex"]
 
 [params]
 
