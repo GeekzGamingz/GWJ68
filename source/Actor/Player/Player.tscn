@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2dl6n7fjyny8"]
+[gd_scene load_steps=6 format=3 uid="uid://c2dl6n7fjyny8"]
 
 [ext_resource type="Script" path="res://source/Actor/Player/_02PlayerMovement.gd" id="1_toj2t"]
 [ext_resource type="Script" path="res://source/Actor/Player/PlayerFSM.gd" id="2_mwrjc"]
 [ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="4_b3hed"]
+[ext_resource type="PackedScene" uid="uid://d2ukgoowateka" path="res://source/Items/Sword.tscn" id="4_dl0xy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w5fiy"]
 radius = 0.25
@@ -69,3 +70,6 @@ target_position = Vector3(-0.25, 0, 0)
 [node name="StateOutput" type="Label3D" parent="Outputs"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
 text = "State"
+
+[node name="Sword" parent="." instance=ExtResource("4_dl0xy")]
+transform = Transform3D(3.7749e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, 3.7749e-08, -1.65006e-15, -0.409672, 1.57184, 0.170855)
