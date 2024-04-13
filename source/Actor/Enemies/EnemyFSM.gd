@@ -27,7 +27,7 @@ func state_logic(delta):
 func transitions(_delta):
 	match(state):
 	#Basic Movement
-		states.idle: return basic_move()
+		states.idle, states.fall: return basic_move()
 	#Follow
 		states.follow: if !p.detected_player: return states.idle
 #Enter State
@@ -44,6 +44,8 @@ func state_exit(state_old, state_new):
 		states.swim:
 			p.swimming = !p.swimming
 			p.lower_gDetectors()
+		states.follow:
+			p.velocity = Vector3.ZERO
 #------------------------------------------------------------------------------#
 #Verbose Transitions
 #Basic Movement

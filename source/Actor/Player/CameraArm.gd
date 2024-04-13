@@ -24,7 +24,7 @@ func _input(_event):
 				camera.v_offset = 2
 			"Third": #Switch to First
 				PointOfView = "First"
-				spring_length = -1
+				spring_length = 0.5
 				camera.v_offset = 1.25
 #------------------------------------------------------------------------------#
 func _unhandled_input(event: InputEvent):
