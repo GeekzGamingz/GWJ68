@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3x6ajm4gwyl6"]
+
+[ext_resource type="Script" path="res://source/World/ProcGen/ProcGen.gd" id="1_spoxl"]
+[ext_resource type="Script" path="res://source/World/ProcGen/ClipMap/ClipmapScript.gd" id="2_y6v5t"]
+
+[node name="ProcGen" type="StaticBody3D"]
+script = ExtResource("1_spoxl")
+
+[node name="ClipMap" type="Node3D" parent="."]
+script = ExtResource("2_y6v5t")
