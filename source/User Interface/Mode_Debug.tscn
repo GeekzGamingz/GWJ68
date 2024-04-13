@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddm2fw1pp3ebs"]
+
+[ext_resource type="Script" path="res://source/User Interface/Mode_Debug.gd" id="1_m84xq"]
+
+[node name="Mode_Debug" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_m84xq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModeLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "DEBUG MODE (F3)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="PlayerPOSLabel" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Player Position:"
+horizontal_alignment = 2
+
+[node name="PlayerPOSOutput" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "POS"
+uppercase = true
+
+[node name="StateLabel" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "State Output:"
+horizontal_alignment = 2
+
+[node name="StateOutput" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "STATE"
+uppercase = true
+
+[node name="PoVLabel" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Point of View:"
+horizontal_alignment = 2
+
+[node name="PoVOutput" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "POV"

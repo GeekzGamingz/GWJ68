@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbkpaspk2squs"]
+
+[ext_resource type="Script" path="res://source/World/_World.gd" id="1_jfcig"]
+[ext_resource type="PackedScene" uid="uid://b3x6ajm4gwyl6" path="res://source/World/ProcGen/ProcGen.tscn" id="1_yp283"]
+[ext_resource type="PackedScene" uid="uid://c2dl6n7fjyny8" path="res://source/Actor/Player/Player.tscn" id="4_77dap"]
+[ext_resource type="PackedScene" uid="uid://ddm2fw1pp3ebs" path="res://source/User Interface/Mode_Debug.tscn" id="5_lojl0"]
+[ext_resource type="PackedScene" uid="uid://lhnw4upw53s4" path="res://source/Actor/Enemies/Enemy.tscn" id="5_scjtd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tt3sx"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_7wshn"]
+sky_material = SubResource("ProceduralSkyMaterial_tt3sx")
+
+[sub_resource type="Environment" id="Environment_viht0"]
+background_mode = 2
+sky = SubResource("Sky_7wshn")
+tonemap_mode = 2
+glow_enabled = true
+fog_light_color = Color(0.74902, 0.478431, 0.270588, 1)
+
+[node name="WorldRoot" type="Node3D"]
+script = ExtResource("1_jfcig")
+
+[node name="UIRoot" type="CanvasLayer" parent="."]
+
+[node name="Mode_Debug" parent="UIRoot" instance=ExtResource("5_lojl0")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_viht0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.25, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 5, -5)
+shadow_enabled = true
+
+[node name="World_Chunk" type="Node3D" parent="."]
+
+[node name="ProcGen" parent="World_Chunk" node_paths=PackedStringArray("player") instance=ExtResource("1_yp283")]
+player = NodePath("../../Kinematics/Player")
+
+[node name="Kinematics" type="Node3D" parent="."]
+
+[node name="Player" parent="Kinematics" instance=ExtResource("4_77dap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 10, -50)
+
+[node name="Enemy" parent="Kinematics" instance=ExtResource("5_scjtd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 7.54532, -35.7004)
