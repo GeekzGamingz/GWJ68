@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://mpkt245hqfmb"]
+
+[ext_resource type="Script" path="res://source/Actor/Player/CameraArm.gd" id="1_b8p4w"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mirih"]
+custom_solver_bias = 0.5
+margin = 0.2
+
+[node name="CameraArm" type="SpringArm3D"]
+shape = SubResource("ConcavePolygonShape3D_mirih")
+spring_length = 3.0
+margin = 0.2
+script = ExtResource("1_b8p4w")
+pitch = Vector2(-45, 20)
+PointOfView = "Third"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+v_offset = 2.0
+doppler_tracking = 2
