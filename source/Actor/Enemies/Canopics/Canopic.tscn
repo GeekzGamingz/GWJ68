@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://lhnw4upw53s4"]
+[gd_scene load_steps=7 format=3 uid="uid://08tmi5ahc1x2"]
 
-[ext_resource type="Script" path="res://source/Actor/Enemies/_02EnemyMovement.gd" id="1_c80e0"]
-[ext_resource type="Script" path="res://source/Actor/Enemies/EnemyFSM.gd" id="2_fesej"]
-[ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="3_syy71"]
+[ext_resource type="Script" path="res://source/Actor/Enemies/Canopics/Canopic.gd" id="1_6076l"]
+[ext_resource type="Script" path="res://source/Actor/Enemies/Canopics/CanopicFSM.gd" id="2_bl6jv"]
+[ext_resource type="PackedScene" uid="uid://dpfb4eu5qcn2x" path="res://source/Actor/Enemies/Canopics/Mesh_Canopic.tscn" id="3_34kx5"]
+[ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="3_78vhg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3fkt8"]
 radius = 0.25
@@ -12,19 +13,21 @@ height = 1.5
 margin = 0.05
 radius = 10.0
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Canopic" type="CharacterBody3D"]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_c80e0")
+script = ExtResource("1_6076l")
 
-[node name="EnemyFSM" type="Node3D" parent="."]
-script = ExtResource("2_fesej")
+[node name="CanopicFSM" type="Node3D" parent="."]
+script = ExtResource("2_bl6jv")
+
+[node name="Mesh_Canopic" parent="." instance=ExtResource("3_34kx5")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_3fkt8")
 
-[node name="CameraArm" parent="." instance=ExtResource("3_syy71")]
+[node name="CameraArm" parent="." instance=ExtResource("3_78vhg")]
 margin = 1.0
 
 [node name="WorldDetectors" type="Node3D" parent="."]
@@ -84,6 +87,7 @@ text = "State"
 
 [node name="Facing" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+target_position = Vector3(0, -2, 0)
 collision_mask = 2
 
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]

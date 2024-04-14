@@ -14,8 +14,8 @@ uniform sampler2D sand_texture: source_color;
 // Uniform Floats
 uniform float min_rock_slope: hint_range(0.0, 1.0, 0.01) = 0.5;
 uniform float max_grass_slope: hint_range(0.0, 1.0, 0.01) = 0.9;
-uniform float min_rockgrass_height: hint_range(2, 25, 0.1) = 3;
-uniform float max_sand_height: hint_range(2, 25, 0.1) = 10;
+uniform float min_rockgrass_height: hint_range(2, 25, 0.1) = 2;
+uniform float max_sand_height: hint_range(2, 25, 0.1) = 6;
 // Varying Floats
 varying float vertex_y;
 varying vec2 normalmap_position;

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2ukgoowateka"]
-
-[ext_resource type="PackedScene" uid="uid://dym02r5gkosct" path="res://assets/sward.gltf" id="1_qkkwf"]
-
-[node name="Sword" instance=ExtResource("1_qkkwf")]

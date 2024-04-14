@@ -20,6 +20,9 @@ func _ready():
 	state_add("fall")
 	state_add("swim")
 	state_add("fly")
+	state_add("slash")
+	state_add("chop")
+	state_add("thrust")
 	call_deferred("state_set", states.idle)
 #------------------------------------------------------------------------------#
 func _process(_delta: float):
@@ -47,16 +50,37 @@ func transitions(_delta):
 		states.jump: return basic_move()
 		states.swim: if p.check_grounded():
 			if p.position.y >= G.sea_level: return swim_move()
+		states.slash:
+			if !p.anim_player.is_playing():
+				if Input.get_action_strength("action_attack") > 0:
+					return states.chop
+				return states.idle
+		states.chop:
+			if !p.anim_player.is_playing():
+				if Input.get_action_strength("action_attack") > 0:
+					return states.thrust
+				return states.idle
+		states.thrust:
+			if !p.anim_player.is_playing():
+				if Input.get_action_strength("action_attack") > 0:
+					return states.slash
+				return states.idle
 #Enter State
 @warning_ignore("unused_parameter")
 func state_enter(state_new, state_old):
 	match(state_new):
+		states.idle: p.anim_player.play("idle")
+		states.walk_f, states.walk_b, states.walk_l, states.walk_r:
+			p.anim_player.play("float_f")
 		states.strafe_l: p.max_speed = p.strafe_speed
 		states.strafe_r: p.max_speed = p.strafe_speed
 		states.backstep: p.max_speed = p.strafe_speed
 		states.swim:
 			p.swimming = !p.swimming
 			p.raise_gDetectors()
+		states.slash: p.anim_player.play("slash")
+		states.chop: p.anim_player.play("chop")
+		states.thrust: p.anim_player.play("thrust")
 	#Exit State
 @warning_ignore("unused_parameter")
 func state_exit(state_old, state_new):
@@ -70,6 +94,8 @@ func state_exit(state_old, state_new):
 func basic_move():
 	#Swim
 	if p.position.y < G.sea_level: return states.swim #When Below Sea Level
+	#Attack
+	if Input.get_action_strength("action_attack") > 0: return states.slash
 	#Idle
 	if p.velocity.x == 0 && p.check_grounded(): return states.idle
 	#Verticle Movement

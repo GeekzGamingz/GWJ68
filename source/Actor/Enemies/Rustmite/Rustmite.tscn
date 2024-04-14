@@ -1,30 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://lhnw4upw53s4"]
+[gd_scene load_steps=7 format=3 uid="uid://dulvcattrgdeh"]
 
-[ext_resource type="Script" path="res://source/Actor/Enemies/_02EnemyMovement.gd" id="1_c80e0"]
-[ext_resource type="Script" path="res://source/Actor/Enemies/EnemyFSM.gd" id="2_fesej"]
-[ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="3_syy71"]
+[ext_resource type="Script" path="res://source/Actor/Enemies/Rustmite/Rustmite.gd" id="1_g73us"]
+[ext_resource type="Script" path="res://source/Actor/Enemies/Rustmite/RustmiteFSM.gd" id="2_u6ssa"]
+[ext_resource type="PackedScene" uid="uid://ddna2beqwp8ne" path="res://source/Actor/Enemies/Rustmite/Mesh_Rustmite.tscn" id="3_1cf73"]
+[ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="3_twx80"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3fkt8"]
 radius = 0.25
-height = 1.5
+height = 0.718229
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lt5u7"]
 margin = 0.05
 radius = 10.0
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Rustmite" type="CharacterBody3D"]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_c80e0")
+script = ExtResource("1_g73us")
 
-[node name="EnemyFSM" type="Node3D" parent="."]
-script = ExtResource("2_fesej")
+[node name="RustmiteFSM" type="Node3D" parent="."]
+script = ExtResource("2_u6ssa")
+
+[node name="Mesh_Rustmite" parent="." instance=ExtResource("3_1cf73")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.25, 0)
 shape = SubResource("CapsuleShape3D_3fkt8")
 
-[node name="CameraArm" parent="." instance=ExtResource("3_syy71")]
+[node name="CameraArm" parent="." instance=ExtResource("3_twx80")]
 margin = 1.0
 
 [node name="WorldDetectors" type="Node3D" parent="."]
@@ -61,19 +64,19 @@ target_position = Vector3(0, -0.4, 0)
 [node name="WallDetectors" type="Node3D" parent="WorldDetectors"]
 
 [node name="F_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.5)
 target_position = Vector3(0, 0, 0.25)
 
 [node name="B_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.5)
 target_position = Vector3(0, 0, -0.25)
 
 [node name="L_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.25, 0)
 target_position = Vector3(0.25, 0, 0)
 
 [node name="R_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.25, 0)
 target_position = Vector3(-0.25, 0, 0)
 
 [node name="Outputs" type="Node3D" parent="."]
@@ -83,7 +86,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.8
 text = "State"
 
 [node name="Facing" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+target_position = Vector3(0, -2.5, 0)
 collision_mask = 2
 
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]

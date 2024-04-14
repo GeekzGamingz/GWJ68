@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gndkcjqtykki"
-path.s3tc="res://.godot/imported/gwass.png-eb290aac34e41cd79683a3779ddf3017.s3tc.ctex"
+uid="uid://dh380tvmiv04f"
+path.s3tc="res://.godot/imported/pot_0.png-1a57a2644a6961cad32625e303d59c29.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Textures/WorldTextures/Grass/gwass.png"
-dest_files=["res://.godot/imported/gwass.png-eb290aac34e41cd79683a3779ddf3017.s3tc.ctex"]
+source_file="res://assets/Textures/Enemies/Pot/pot_0.png"
+dest_files=["res://.godot/imported/pot_0.png-1a57a2644a6961cad32625e303d59c29.s3tc.ctex"]
 
 [params]
 
