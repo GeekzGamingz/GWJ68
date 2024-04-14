@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c05xjqcrcaemf"
-path="res://.godot/imported/sward_broken.gltf-992a04951f0c40932990c74d2a1bd639.scn"
+uid="uid://b7fgayj0487jb"
+path="res://.godot/imported/sward.gltf-4dd207747e17abe1a219f8c39cb7ae03.scn"
 
 [deps]
 
-source_file="res://assets/Textures/Items/sward_broken.gltf"
-dest_files=["res://.godot/imported/sward_broken.gltf-992a04951f0c40932990c74d2a1bd639.scn"]
+source_file="res://assets/Textures/Items/Swards/sward.gltf"
+dest_files=["res://.godot/imported/sward.gltf-4dd207747e17abe1a219f8c39cb7ae03.scn"]
 
 [params]
 

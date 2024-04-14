@@ -98,7 +98,7 @@ ESC={
 
 amplitude={
 "type": "float",
-"value": 12.0
+"value": 6.0
 }
 clipmap_partition_length={
 "type": "float",

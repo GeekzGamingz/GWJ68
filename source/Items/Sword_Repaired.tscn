@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://h842gf5o2iuy"]
 
-[ext_resource type="PackedScene" uid="uid://b7fgayj0487jb" path="res://assets/Textures/Items/sward.gltf" id="1_pa70n"]
+[ext_resource type="PackedScene" uid="uid://b7fgayj0487jb" path="res://assets/Textures/Items/Swards/sward.gltf" id="1_pa70n"]
 
 [sub_resource type="Animation" id="Animation_4vh8w"]
 length = 0.001

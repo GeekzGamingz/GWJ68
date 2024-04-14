@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://rpsdoafihqqf"
-path="res://.godot/imported/sward_soulforged.gltf-d3049c8b7f3a7a2a23d0230af6d4183c.scn"
+uid="uid://c05xjqcrcaemf"
+path="res://.godot/imported/sward_broken.gltf-faf505874bde0734432e70459a239dd7.scn"
 
 [deps]
 
-source_file="res://assets/Textures/Items/sward_soulforged.gltf"
-dest_files=["res://.godot/imported/sward_soulforged.gltf-d3049c8b7f3a7a2a23d0230af6d4183c.scn"]
+source_file="res://assets/Textures/Items/Swards/sward_broken.gltf"
+dest_files=["res://.godot/imported/sward_broken.gltf-faf505874bde0734432e70459a239dd7.scn"]
 
 [params]
 
@@ -31,4 +31,4 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=3

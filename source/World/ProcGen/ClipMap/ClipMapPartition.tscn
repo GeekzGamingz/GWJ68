@@ -12,13 +12,13 @@ render_priority = 0
 shader = ExtResource("1_pquoh")
 shader_parameter/min_rock_slope = 0.5
 shader_parameter/max_grass_slope = 0.9
-shader_parameter/min_rockgrass_height = 4.0
-shader_parameter/max_sand_height = 6.0
+shader_parameter/min_rockgrass_height = 2.0
+shader_parameter/max_sand_height = 3.0
 shader_parameter/grass_texture = ExtResource("2_wdw4r")
 shader_parameter/rock_texture = ExtResource("3_vbhqw")
 shader_parameter/sand_texture = ExtResource("4_874wk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lovg1"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_xwlwq"]
 size = Vector2(128, 128)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qh08y"]
@@ -54,8 +54,8 @@ noise = SubResource("FastNoiseLite_k2tgh")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2ih2"]
 render_priority = 0
 shader = ExtResource("6_4d2w2")
-shader_parameter/albedo = Color(0, 0.3, 0.4, 1)
-shader_parameter/albedo2 = Color(0, 0.4, 0.7, 1)
+shader_parameter/albedo = Color(0.0156863, 0.00784314, 0.121569, 1)
+shader_parameter/albedo2 = Color(0.517647, 0.0980392, 0.835294, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.02
 shader_parameter/wave_direction = Vector2(2, 0)
@@ -63,14 +63,14 @@ shader_parameter/wave_direction2 = Vector2(0, 1)
 shader_parameter/time_scale = 0.025
 shader_parameter/noise_scale = 10.0
 shader_parameter/height_scale = 0.15
-shader_parameter/color_deep = Color(0.1, 0.2, 0.3, 1)
-shader_parameter/color_shallow = Color(0, 0.5, 0.6, 1)
+shader_parameter/color_deep = Color(0.254902, 0.0784314, 0.384314, 1)
+shader_parameter/color_shallow = Color(0.478431, 0.384314, 0.67451, 1)
 shader_parameter/beers_law = 2.0
 shader_parameter/depth_offset = -0.75
 shader_parameter/edge_scale = 0.1
 shader_parameter/near = 1.0
 shader_parameter/far = 100.0
-shader_parameter/edge_color = Color(1, 1, 1, 1)
+shader_parameter/edge_color = Color(0.996078, 0, 0.890196, 1)
 shader_parameter/wave = SubResource("NoiseTexture2D_d4hjp")
 shader_parameter/texture_normal = SubResource("NoiseTexture2D_bb1l5")
 shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_kywme")
@@ -78,10 +78,10 @@ shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_kywme")
 [node name="Partition_Clipmap" type="MeshInstance3D"]
 material_override = SubResource("ShaderMaterial_ixasp")
 extra_cull_margin = 512.0
-mesh = SubResource("PlaneMesh_lovg1")
+mesh = SubResource("PlaneMesh_xwlwq")
 script = ExtResource("2_i8w3a")
 
 [node name="SeaLevel" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 5, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 2, 0)
 mesh = SubResource("PlaneMesh_qh08y")
 surface_material_override/0 = SubResource("ShaderMaterial_h2ih2")
