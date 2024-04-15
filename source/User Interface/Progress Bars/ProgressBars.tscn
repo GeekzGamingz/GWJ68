@@ -1,0 +1,130 @@
+[gd_scene load_steps=18 format=3 uid="uid://bffwmjigb57rl"]
+
+[ext_resource type="Script" path="res://source/User Interface/Progress Bars/ProgressBars.gd" id="1_58sly"]
+[ext_resource type="Texture2D" uid="uid://cry8t8nptki5n" path="res://assets/Textures/UserInterface/UI_HPBackground.png" id="1_w54vc"]
+[ext_resource type="Texture2D" uid="uid://cyii18bocbimh" path="res://assets/Textures/UserInterface/UI_HPOutline.png" id="2_stblf"]
+[ext_resource type="Texture2D" uid="uid://blf1bwefb8jfn" path="res://assets/Textures/UserInterface/UI_HP_Progress.png" id="3_g10de"]
+[ext_resource type="Texture2D" uid="uid://c7h2le0vjjmrs" path="res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_EnemyBezel.png" id="5_ap5rw"]
+[ext_resource type="Texture2D" uid="uid://ct2e88c6grywq" path="res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_EnemyBezel_Pot.png" id="5_jreqt"]
+[ext_resource type="Texture2D" uid="uid://cq37br6s5xkdf" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_GaugeBackground.png" id="5_ovk44"]
+[ext_resource type="Texture2D" uid="uid://v8xy25p7oom7" path="res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_EnemyBezel_RustMite.png" id="6_lux32"]
+[ext_resource type="Texture2D" uid="uid://mi58t4u1or4b" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_GaugeOutline.png" id="6_tjpps"]
+[ext_resource type="Texture2D" uid="uid://c7kh6wj1dgvrf" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_Gauge_Progress.png" id="7_kqyba"]
+[ext_resource type="Texture2D" uid="uid://cjsfeh1onvkq7" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_bezel.png" id="8_gcvwe"]
+[ext_resource type="Texture2D" uid="uid://cs8p5tfs1hygd" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_01_Broken.png" id="9_ismua"]
+[ext_resource type="Texture2D" uid="uid://dd6qfio7axe32" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_02_Broken.png" id="10_dv5ny"]
+[ext_resource type="Texture2D" uid="uid://ciw1658mrsyp" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_03_Broken.png" id="11_q3n1g"]
+[ext_resource type="Texture2D" uid="uid://d38vdciudujnv" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_01_Charged.png" id="15_j3ibl"]
+[ext_resource type="Texture2D" uid="uid://42g4quclmtrj" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_02_Charged.png" id="16_jnhri"]
+[ext_resource type="Texture2D" uid="uid://ftgs3vc4fd1" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_03_Charged.png" id="17_vih7r"]
+
+[node name="ProgressBars" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+script = ExtResource("1_58sly")
+metadata/_edit_vertical_guides_ = [25.0]
+metadata/_edit_horizontal_guides_ = [25.0]
+
+[node name="Health" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 38.0
+offset_right = 128.0
+offset_bottom = 38.0
+
+[node name="HealthUnder" type="TextureProgressBar" parent="Health"]
+layout_mode = 1
+offset_right = 478.0
+offset_bottom = 168.0
+step = 0.5
+value = 100.0
+texture_under = ExtResource("1_w54vc")
+texture_over = ExtResource("2_stblf")
+texture_progress = ExtResource("3_g10de")
+tint_progress = Color(1, 1, 0, 1)
+
+[node name="HealthOver" type="TextureProgressBar" parent="Health"]
+layout_mode = 1
+offset_right = 478.0
+offset_bottom = 168.0
+step = 0.5
+value = 100.0
+texture_over = ExtResource("2_stblf")
+texture_progress = ExtResource("3_g10de")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="Soul" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 38.0
+offset_right = 168.0
+offset_bottom = 78.0
+
+[node name="SoulUnder" type="TextureProgressBar" parent="Soul"]
+z_index = 1
+layout_mode = 0
+offset_left = -39.0
+offset_top = 27.0
+offset_right = 439.0
+offset_bottom = 195.0
+fill_mode = 3
+texture_under = ExtResource("5_ovk44")
+texture_over = ExtResource("6_tjpps")
+texture_progress = ExtResource("7_kqyba")
+
+[node name="SoulOver" type="TextureProgressBar" parent="Soul"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Portrait" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 38.0
+offset_right = 168.0
+offset_bottom = 78.0
+
+[node name="Blank" type="Sprite2D" parent="Portrait"]
+position = Vector2(133.5, 52.5)
+texture = ExtResource("5_ap5rw")
+
+[node name="Pot" type="Sprite2D" parent="Portrait"]
+position = Vector2(133.5, 52.5)
+texture = ExtResource("5_jreqt")
+
+[node name="Bug" type="Sprite2D" parent="Portrait"]
+position = Vector2(133.5, 52.5)
+texture = ExtResource("6_lux32")
+
+[node name="Bezel" type="Node2D" parent="Portrait"]
+
+[node name="Bezel" type="Sprite2D" parent="Portrait/Bezel"]
+position = Vector2(135, 70)
+texture = ExtResource("8_gcvwe")
+
+[node name="Gem1_Broken" type="Sprite2D" parent="Portrait/Bezel"]
+position = Vector2(135, 70)
+texture = ExtResource("9_ismua")
+
+[node name="Gem2_Broken" type="Sprite2D" parent="Portrait/Bezel"]
+position = Vector2(135, 70)
+texture = ExtResource("10_dv5ny")
+
+[node name="Gem3_Broken" type="Sprite2D" parent="Portrait/Bezel"]
+position = Vector2(135, 70)
+texture = ExtResource("11_q3n1g")
+
+[node name="Gem1_Charged" type="Sprite2D" parent="Portrait/Bezel"]
+position = Vector2(135, 70)
+texture = ExtResource("15_j3ibl")
+
+[node name="Gem2_Charged" type="Sprite2D" parent="Portrait/Bezel"]
+position = Vector2(135, 70)
+texture = ExtResource("16_jnhri")
+
+[node name="Gem3_Charged" type="Sprite2D" parent="Portrait/Bezel"]
+position = Vector2(135, 70)
+texture = ExtResource("17_vih7r")

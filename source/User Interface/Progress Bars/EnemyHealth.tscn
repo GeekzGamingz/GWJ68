@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddicsusrcq65a"]
+
+[ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="1_key0r"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_sn7f7"]
+viewport_path = NodePath("SubViewport")
+
+[node name="ProgressBar" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_sn7f7")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="ProgressBars" parent="SubViewport" instance=ExtResource("1_key0r")]
+visible = false
+
+[node name="Blank" parent="SubViewport/ProgressBars/Portrait" index="0"]
+visible = false
+
+[node name="Bug" parent="SubViewport/ProgressBars/Portrait" index="2"]
+visible = false
+
+[editable path="SubViewport/ProgressBars"]

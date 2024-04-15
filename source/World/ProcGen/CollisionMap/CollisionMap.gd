@@ -16,7 +16,8 @@ func _ready():
 #------------------------------------------------------------------------------#
 #Physics Process
 func _physics_process(_delta):
-	entity_collisions()
+	if entity != null: entity_collisions()
+	else: queue_free()
 #------------------------------------------------------------------------------#
 #Update Player Collisions
 func entity_collisions():

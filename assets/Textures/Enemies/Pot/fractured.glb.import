@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dym02r5gkosct"
-path="res://.godot/imported/sward.gltf-e65806a2f928500440c8fdeb7355e94d.scn"
+uid="uid://creyagg1lnrwu"
+path="res://.godot/imported/fractured.glb-80c36bd3bcda596e70e4a7e481a5d76f.scn"
 
 [deps]
 
-source_file="res://assets/sward.gltf"
-dest_files=["res://.godot/imported/sward.gltf-e65806a2f928500440c8fdeb7355e94d.scn"]
+source_file="res://assets/Textures/Enemies/Pot/fractured.glb"
+dest_files=["res://.godot/imported/fractured.glb-80c36bd3bcda596e70e4a7e481a5d76f.scn"]
 
 [params]
 
@@ -31,4 +31,4 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=3

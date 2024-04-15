@@ -5,8 +5,9 @@ class_name EnemyMovement
 #Variables
 var player
 var detected_player : bool = false
+var swimming: bool = false
 #OnReady Variables
-@onready var facing = $Facing
+@onready var facing = $WorldDetectors/Facing
 #------------------------------------------------------------------------------#
 func _physics_process(delta):
 	#Add Gravity
@@ -32,6 +33,6 @@ func follow():
 func backaway():
 	if player != null:
 		look_at(player.position, Vector3.UP)
-		var distance = (player.global_position - (global_position) * Vector3.UP).normalized()
+		var distance = (player.global_position - (global_position * Vector3.UP)).normalized()
 		if !facing.is_colliding(): velocity = distance * max_speed
 		else: velocity = Vector3.ZERO

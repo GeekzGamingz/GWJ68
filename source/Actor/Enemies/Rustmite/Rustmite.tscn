@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dulvcattrgdeh"]
+[gd_scene load_steps=10 format=3 uid="uid://dulvcattrgdeh"]
 
 [ext_resource type="Script" path="res://source/Actor/Enemies/Rustmite/Rustmite.gd" id="1_g73us"]
 [ext_resource type="Script" path="res://source/Actor/Enemies/Rustmite/RustmiteFSM.gd" id="2_u6ssa"]
 [ext_resource type="PackedScene" uid="uid://ddna2beqwp8ne" path="res://source/Actor/Enemies/Rustmite/Mesh_Rustmite.tscn" id="3_1cf73"]
 [ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="3_twx80"]
+[ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="5_vx3t3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3fkt8"]
 radius = 0.25
@@ -12,6 +13,11 @@ height = 0.718229
 [sub_resource type="SphereShape3D" id="SphereShape3D_lt5u7"]
 margin = 0.05
 radius = 10.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_quapd"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6pxnn"]
+viewport_path = NodePath("ProgressBar/SubViewport")
 
 [node name="Rustmite" type="CharacterBody3D"]
 collision_layer = 4
@@ -32,6 +38,11 @@ margin = 1.0
 
 [node name="WorldDetectors" type="Node3D" parent="."]
 
+[node name="Facing" type="RayCast3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+target_position = Vector3(0, -2.5, 0)
+collision_mask = 2
+
 [node name="Sight" type="Area3D" parent="WorldDetectors"]
 collision_layer = 4
 collision_mask = 3
@@ -39,6 +50,14 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Sight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_lt5u7")
+
+[node name="Hitbox" type="Area3D" parent="WorldDetectors"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Hitbox"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_quapd")
 
 [node name="GroundDetectors" type="Node3D" parent="WorldDetectors"]
 
@@ -83,12 +102,37 @@ target_position = Vector3(-0.25, 0, 0)
 
 [node name="StateOutput" type="Label3D" parent="Outputs"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
+visible = false
 text = "State"
 
-[node name="Facing" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
-target_position = Vector3(0, -2.5, 0)
-collision_mask = 2
+[node name="ProgressBar" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_6pxnn")
+
+[node name="SubViewport" type="SubViewport" parent="ProgressBar"]
+transparent_bg = true
+
+[node name="ProgressBars" parent="ProgressBar/SubViewport" instance=ExtResource("5_vx3t3")]
+visible = false
+
+[node name="Soul" parent="ProgressBar/SubViewport/ProgressBars" index="1"]
+visible = false
+
+[node name="Blank" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="0"]
+visible = false
+
+[node name="Pot" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="1"]
+visible = false
+
+[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="3"]
+visible = false
+
+[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait/Bezel" index="0"]
+visible = false
 
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="WorldDetectors/Sight" to="." method="_on_sight_body_exited"]
+[connection signal="area_entered" from="WorldDetectors/Hitbox" to="." method="_on_hitbox_area_entered"]
+
+[editable path="ProgressBar/SubViewport/ProgressBars"]
