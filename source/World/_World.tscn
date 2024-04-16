@@ -67,11 +67,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.904, 8.42572, -43.0717)
 [node name="Canopic" parent="Kinematics" instance=ExtResource("6_m2c8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.869, 6.66326, -33.1068)
 
+[node name="Items" type="Node3D" parent="."]
+
+[connection signal="child_entered_tree" from="Kinematics" to="World_Chunk/ProcGen" method="_on_kinematics_child_entered_tree"]
+[connection signal="child_order_changed" from="Kinematics" to="World_Chunk/ProcGen" method="_on_kinematics_child_order_changed"]
 [connection signal="health_damage" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="health_damage"]
 [connection signal="health_heal" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="health_heal"]
 [connection signal="soul_damage" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="soul_damage"]
 [connection signal="soul_heal" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="soul_heal"]
-[connection signal="health_damage" from="Kinematics/Rustmite" to="Kinematics/Rustmite/ProgressBar/SubViewport/ProgressBars" method="health_damage"]
-[connection signal="health_heal" from="Kinematics/Rustmite" to="Kinematics/Rustmite/ProgressBar/SubViewport/ProgressBars" method="health_heal"]
-[connection signal="health_damage" from="Kinematics/Canopic" to="Kinematics/Canopic/ProgressBar/SubViewport/ProgressBars" method="health_damage"]
-[connection signal="health_heal" from="Kinematics/Canopic" to="Kinematics/Canopic/ProgressBar/SubViewport/ProgressBars" method="health_heal"]

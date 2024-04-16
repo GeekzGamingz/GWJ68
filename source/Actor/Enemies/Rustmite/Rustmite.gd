@@ -10,6 +10,7 @@ extends EnemyMovement
 #Kill Switch
 func kill():
 	ragdoll()
+	loot()
 	await get_tree().create_timer(3).timeout
 	queue_free()
 #Shatter

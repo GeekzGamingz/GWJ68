@@ -20,11 +20,11 @@ height = 0.952362
 [sub_resource type="ViewportTexture" id="ViewportTexture_2ch3x"]
 viewport_path = NodePath("ProgressBar/SubViewport")
 
-[node name="Canopic" type="CharacterBody3D"]
+[node name="Canopic" type="CharacterBody3D" groups=["Kinematics"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_6076l")
-fragment_collision_layer = 8
+fragment_collision_layer = 0
 fragment_collision_mask = 15
 max_frag_lifetime = 3.0
 
@@ -145,6 +145,8 @@ visible = false
 [node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait/Bezel" index="0"]
 visible = false
 
+[connection signal="health_damage" from="." to="ProgressBar/SubViewport/ProgressBars" method="health_damage"]
+[connection signal="health_heal" from="." to="ProgressBar/SubViewport/ProgressBars" method="health_heal"]
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="WorldDetectors/Sight" to="." method="_on_sight_body_exited"]
 [connection signal="area_entered" from="WorldDetectors/Hitbox" to="." method="_on_hitbox_area_entered"]

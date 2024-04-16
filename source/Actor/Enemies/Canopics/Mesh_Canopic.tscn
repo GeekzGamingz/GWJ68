@@ -5,79 +5,6 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_e5a6l"]
 radius = 0.307567
 
-[sub_resource type="Animation" id="Animation_qlc0s"]
-resource_name = "idle"
-length = 9.6
-loop_mode = 1
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Mesh/Skeleton3D:Mesh")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array()
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Mesh/Skeleton3D:Mesh")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array()
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Mesh/Skeleton3D:Pot")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array()
-tracks/3/type = "rotation_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Mesh/Skeleton3D:Pot")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array()
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Mesh/Skeleton3D:Lid")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 1.05089e-17, 0.700655, -1.1062e-18, 3, 1, 1.05089e-17, 0.700655, -1.1062e-18, 3.9, 1, 1.05089e-17, 0.73342, -1.1062e-18, 4.2, 1, 1.05089e-17, 0.729484, -1.1062e-18, 4.5, 1, 1.05089e-17, 0.704725, -1.1062e-18, 5, 1, 1.05089e-17, 0.700655, -1.1062e-18)
-tracks/5/type = "rotation_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Mesh/Skeleton3D:Lid")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 3, 1, 0, 0, 0, 1, 3.9, 1, 0.0855474, 0, 0, 0.996334, 4.2, 1, -0.0893115, 0, 0, 0.996004, 4.5, 1, 2.63874e-06, 1, 2.63874e-06, 2.63874e-06, 5, 1, 0, 0, 0, 1)
-tracks/6/type = "position_3d"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Mesh/Skeleton3D:LidTip")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array()
-tracks/7/type = "rotation_3d"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Mesh/Skeleton3D:LidTip")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array()
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Mesh/Skeleton3D/BoneAttachment3D/Atkbox_Light/CollisionShape3D:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="Animation" id="Animation_ky88q"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -223,6 +150,79 @@ tracks/8/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_qlc0s"]
+resource_name = "idle"
+length = 9.6
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh/Skeleton3D:Mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh/Skeleton3D:Mesh")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array()
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh/Skeleton3D:Pot")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array()
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh/Skeleton3D:Pot")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array()
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh/Skeleton3D:Lid")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 1.05089e-17, 0.700655, -1.1062e-18, 3, 1, 1.05089e-17, 0.700655, -1.1062e-18, 3.9, 1, 1.05089e-17, 0.73342, -1.1062e-18, 4.2, 1, 1.05089e-17, 0.729484, -1.1062e-18, 4.5, 1, 1.05089e-17, 0.704725, -1.1062e-18, 5, 1, 1.05089e-17, 0.700655, -1.1062e-18)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh/Skeleton3D:Lid")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 3, 1, 0, 0, 0, 1, 3.9, 1, 0.0855474, 0, 0, 0.996334, 4.2, 1, -0.0893115, 0, 0, 0.996004, 4.5, 1, 2.63874e-06, 1, 2.63874e-06, 2.63874e-06, 5, 1, 0, 0, 0, 1)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh/Skeleton3D:LidTip")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array()
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh/Skeleton3D:LidTip")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array()
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Mesh/Skeleton3D/BoneAttachment3D/Atkbox_Light/CollisionShape3D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_kaim7"]
 resource_name = "shoot"
 length = 2.5
@@ -308,13 +308,13 @@ _data = {
 [node name="Mesh_Canopic" instance=ExtResource("1_rhg5b")]
 
 [node name="Skeleton3D" parent="Mesh" index="0"]
-bones/0/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(1.05089e-17, 0.722552, -1.1062e-18)
 bones/2/rotation = Quaternion(0.0855474, 0, 0, 0.996334)
 bones/2/scale = Vector3(0.999998, 0.999995, 0.999995)
+bones/3/position = Vector3(-1.05089e-17, 0.111845, 1.1062e-18)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh/Skeleton3D" index="1"]
-transform = Transform3D(0.999998, 0, 0, 0, 0.999995, 0, 0, 0, 0.999995, 1.05089e-17, 0.700655, -1.1062e-18)
+transform = Transform3D(0.999998, 0, 0, 0, 0.985358, -0.170467, 0, 0.170467, 0.985358, 1.05089e-17, 0.722552, -1.1062e-18)
 bone_name = "Lid"
 bone_idx = 2
 

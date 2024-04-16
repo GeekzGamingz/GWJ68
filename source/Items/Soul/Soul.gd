@@ -1,5 +1,6 @@
 #Inherits RigidBody3D Code
 extends RigidBody3D
+class_name Soul
 #------------------------------------------------------------------------------#
 #Variables
 #OnReady Variables

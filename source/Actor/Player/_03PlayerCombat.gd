@@ -17,7 +17,7 @@ func _on_hitbox_area_entered(area):
 		"Atkbox_Medium": damage(10)
 		"Atkbox_Heavy": damage(15)
 		#Souls
-		"Hitbox_Soul": fill(25)
+		"Hitbox_Soul": fill(10)
 #------------------------------------------------------------------------------#
 #Soul
 #Fill

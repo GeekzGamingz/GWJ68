@@ -14,13 +14,25 @@ var elapsed_time: float = 0
 @onready var anim_player = mesh.get_node("AnimationPlayers/AnimationPlayer")
 @onready var shatter_origin = $WorldDetectors/ShatterOrigin
 #------------------------------------------------------------------------------#
-#Kill Switch
-func kill():
-	$CollisionShape3D.set_deferred("disabled", true) #Disable Old Collision
-	$WorldDetectors/Sight/CollisionShape3D.set_deferred("disabled", true) #Remove Sight
-	shatter()
-	await get_tree().create_timer(3).timeout
-	queue_free()
+#Hitbox
+func _on_hitbox_area_entered(area):
+	match(area.name):
+		#Broken Sword
+		"Broken_Slash": damage(25)
+		"Broken_Chop": damage(50)
+		"Broken_Thrust": damage(75)
+		#Repaired Sword
+		"Repaired_Slash": damage(35)
+		"Repaired_Chop": damage(60)
+		"Repaired_Thrust": damage(85)
+		#Masterwork Sword
+		"Masterwork_Slash": damage(45)
+		"Masterwork_Chop": damage(70)
+		"Masterwork_Thrust": damage(95)
+		#Soulforged Sword
+		"Soulforged_Slash": damage(55)
+		"Soulforged_Chop": damage(80)
+		"Soulforged_Thrust": damage(100)
 #Shatter
 func shatter(): 
 	var p = get_parent()
@@ -41,22 +53,12 @@ func shatter():
 			frag.linear_velocity = vel
 			#Calculate Lifetime
 			frag.lifetime = randf_range(min_frag_lifetime, max_frag_lifetime)
-#Hitbox
-func _on_hitbox_area_entered(area):
-	match(area.name):
-		#Broken Sword
-		"Broken_Slash": damage(25)
-		"Broken_Chop": damage(50)
-		"Broken_Thrust": damage(75)
-		#Repaired Sword
-		"Repaired_Slash": damage(35)
-		"Repaired_Chop": damage(60)
-		"Repaired_Thrust": damage(85)
-		#Masterwork Sword
-		"Masterwork_Slash": damage(45)
-		"Masterwork_Chop": damage(70)
-		"Masterwork_Thrust": damage(95)
-		#Soulforged Sword
-		"Soulforged_Slash": damage(55)
-		"Soulforged_Chop": damage(80)
-		"Soulforged_Thrust": damage(100)
+#Kill Switch
+func kill():
+	loot()
+	$CollisionShape3D.set_deferred("disabled", true) #Disable Old Collision
+	$WorldDetectors/Sight/CollisionShape3D.set_deferred("disabled", true) #Remove Sight
+	shatter()
+	await get_tree().create_timer(3).timeout
+	queue_free()
+
