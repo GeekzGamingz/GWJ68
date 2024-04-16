@@ -15,8 +15,8 @@ func health_heal(health):
 	health_under.value = health
 	var tween = create_tween()
 	tween.set_parallel()
-	tween.tween_property(health_over, "value", health, 1)
-	tween.tween_property(health_under, "value", health, 2)
+	tween.tween_property(health_over, "value", health, 2)
+	tween.tween_property(health_under, "value", health, 1)
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.play()
 #Damage
@@ -33,17 +33,17 @@ func max_health_update(max_health):
 	health_over.max_value = max_health
 	health_under.max_value = max_health
 #------------------------------------------------------------------------------#
-#Health Updater
-#Heal
+#Soul Updater
+#Fill
 func soul_heal(soul):
 	soul_under.value = soul
 	var tween = create_tween()
 	tween.set_parallel()
-	tween.tween_property(soul_over, "value", soul, 1)
-	tween.tween_property(soul_under, "value", soul, 2)
+	tween.tween_property(soul_over, "value", soul, 2)
+	tween.tween_property(soul_under, "value", soul, 1)
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.play()
-#Damage
+#Deplete
 func soul_damage(soul):
 	soul_over.value = soul
 	var tween = create_tween()
