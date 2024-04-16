@@ -1,58 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://hrx5m3p11vau"]
-
-[ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="1_8hblr"]
+[gd_scene format=3 uid="uid://hrx5m3p11vau"]
 
 [node name="Mode_UI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 metadata/_edit_horizontal_guides_ = [25.0]
 metadata/_edit_vertical_guides_ = [25.0]
-
-[node name="ProgressBars" parent="." instance=ExtResource("1_8hblr")]
-
-[node name="Health" parent="ProgressBars" index="0"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 120.0
-offset_bottom = 25.0
-
-[node name="Soul" parent="ProgressBars" index="1"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 160.0
-offset_bottom = 65.0
-
-[node name="Portrait" parent="ProgressBars" index="2"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 160.0
-offset_bottom = 65.0
-
-[node name="Blank" parent="ProgressBars/Portrait" index="0"]
-visible = false
-
-[node name="Pot" parent="ProgressBars/Portrait" index="1"]
-visible = false
-
-[node name="Bug" parent="ProgressBars/Portrait" index="2"]
-visible = false
-
-[node name="Gem1_Broken" parent="ProgressBars/Portrait/Bezel" index="1"]
-visible = false
-
-[node name="Gem2_Broken" parent="ProgressBars/Portrait/Bezel" index="2"]
-visible = false
-
-[node name="Gem3_Broken" parent="ProgressBars/Portrait/Bezel" index="3"]
-visible = false
-
-[node name="Gem1_Charged" parent="ProgressBars/Portrait/Bezel" index="4"]
-visible = false
-
-[node name="Gem2_Charged" parent="ProgressBars/Portrait/Bezel" index="5"]
-visible = false
-
-[node name="Gem3_Charged" parent="ProgressBars/Portrait/Bezel" index="6"]
-visible = false
-
-[editable path="ProgressBars"]

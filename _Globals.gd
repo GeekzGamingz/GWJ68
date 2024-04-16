@@ -1,8 +1,6 @@
 #Inherits Node3D Code
 extends Node
 #------------------------------------------------------------------------------#
-#Constants
-#------------------------------------------------------------------------------#
 #Variables
 var hmap_img: Image = load(ProjectSettings.get_setting("shader_globals/heightmap").value).get_image()
 var hmImage_size = hmap_img.get_width()

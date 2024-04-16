@@ -1,18 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2dl6n7fjyny8"]
+[gd_scene load_steps=7 format=3 uid="uid://c2dl6n7fjyny8"]
 
 [ext_resource type="Script" path="res://source/Actor/Player/_03PlayerCombat.gd" id="1_bnnsb"]
 [ext_resource type="Script" path="res://source/Actor/Player/PlayerFSM.gd" id="2_mwrjc"]
 [ext_resource type="Script" path="res://source/Actor/Player/PlayerMesh.gd" id="3_4gjac"]
 [ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="4_b3hed"]
-[ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="5_pmhks"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w5fiy"]
 radius = 0.25
 height = 1.5
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_owjdu"]
-radius = 0.185325
-height = 0.771032
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_baoop"]
+height = 0.5
+radius = 0.15
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -40,7 +39,7 @@ collision_mask = 12
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Hitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.604003, 0)
-shape = SubResource("CapsuleShape3D_owjdu")
+shape = SubResource("CylinderShape3D_baoop")
 
 [node name="GroundDetectors" type="Node3D" parent="WorldDetectors"]
 
@@ -87,55 +86,4 @@ target_position = Vector3(-0.25, 0, 0)
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
 text = "State"
 
-[node name="ProgressBars" type="CanvasLayer" parent="."]
-
-[node name="ProgressBars" parent="ProgressBars" instance=ExtResource("5_pmhks")]
-
-[node name="Health" parent="ProgressBars/ProgressBars" index="0"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 120.0
-offset_bottom = 25.0
-
-[node name="Soul" parent="ProgressBars/ProgressBars" index="1"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 160.0
-offset_bottom = 65.0
-
-[node name="Portrait" parent="ProgressBars/ProgressBars" index="2"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 160.0
-offset_bottom = 65.0
-
-[node name="Blank" parent="ProgressBars/ProgressBars/Portrait" index="0"]
-visible = false
-
-[node name="Pot" parent="ProgressBars/ProgressBars/Portrait" index="1"]
-visible = false
-
-[node name="Bug" parent="ProgressBars/ProgressBars/Portrait" index="2"]
-visible = false
-
-[node name="Gem1_Broken" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="1"]
-visible = false
-
-[node name="Gem2_Broken" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="2"]
-visible = false
-
-[node name="Gem3_Broken" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="3"]
-visible = false
-
-[node name="Gem1_Charged" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="4"]
-visible = false
-
-[node name="Gem2_Charged" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="5"]
-visible = false
-
-[node name="Gem3_Charged" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="6"]
-visible = false
-
 [connection signal="area_entered" from="WorldDetectors/Hitbox" to="." method="_on_hitbox_area_entered"]
-
-[editable path="ProgressBars/ProgressBars"]

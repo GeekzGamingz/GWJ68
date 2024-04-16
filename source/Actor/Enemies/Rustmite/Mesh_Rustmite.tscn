@@ -1337,12 +1337,12 @@ shape = SubResource("CapsuleShape3D_i1tfp")
 disabled = true
 
 [node name="Physical Bone Leggie_RL" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="7"]
-transform = Transform3D(-0.67647, -0.532794, 0.493496, -0.0459549, 0.71252, 0.700666, -0.725198, 0.451698, -0.504598, -0.216739, 0.191758, 0.26742)
+transform = Transform3D(-0.67647, -0.532794, 0.489226, -0.0459549, 0.71252, 0.700666, -0.725198, 0.447428, -0.49803, -0.216739, 0.191758, 0.26742)
 collision_layer = 8
 collision_mask = 15
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000984348, -0.000731744, 0.280174)
-body_offset = Transform3D(-0.676471, -0.532795, 0.493496, -0.0459549, 0.71252, 0.700666, -0.725199, 0.451698, -0.504599, -0.137989, -0.195742, 0.14242)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00152768, -0.00223271, 0.281736)
+body_offset = Transform3D(-0.676471, -0.532795, 0.489227, -0.0459549, 0.71252, 0.700666, -0.725199, 0.447429, -0.49803, -0.137989, -0.195742, 0.14242)
 bone_name = "Leggie_RL"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1381,6 +1381,8 @@ playback_default_blend_time = 0.1
 
 [node name="Atkbox_Medium" type="Area3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.748)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Atkbox_Medium" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)

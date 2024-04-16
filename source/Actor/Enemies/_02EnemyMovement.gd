@@ -9,6 +9,11 @@ var swimming: bool = false
 #OnReady Variables
 @onready var facing = $WorldDetectors/Facing
 #------------------------------------------------------------------------------#
+#Ready Function
+func _ready():
+	enemy_bars = $ProgressBar/SubViewport/ProgressBars
+#------------------------------------------------------------------------------#
+#Physics Process
 func _physics_process(delta):
 	#Add Gravity
 	apply_gravity(delta)

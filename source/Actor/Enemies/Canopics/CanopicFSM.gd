@@ -13,6 +13,7 @@ func _ready():
 	state_add("fall")
 	state_add("swim")
 	state_add("flee")
+	state_add("shoot")
 	call_deferred("state_set", states.idle)
 #------------------------------------------------------------------------------#
 func _process(_delta: float):
@@ -32,12 +33,17 @@ func transitions(_delta):
 	#Flee
 		states.flee:
 			if !p.detected_player: return states.idle
+			elif p.facing.is_colliding(): return states.shoot
+	#Shoot
+		states.shoot:
+				if !p.anim_player.is_playing(): return states.idle
 #Enter State
 @warning_ignore("unused_parameter")
 func state_enter(state_new, state_old):
 	match(state_new):
-		#states.idle: p.anim_player.play("idle")
-		#states.flee: p.anim_player.play("walk")
+		states.idle: p.anim_player.play("idle")
+		states.flee: p.anim_player.play("bounce")
+		states.shoot: p.anim_player.play("shoot")
 		states.swim:
 			p.swimming = !p.swimming
 			p.raise_gDetectors()

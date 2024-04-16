@@ -16,7 +16,6 @@ var elapsed_time: float = 0
 #------------------------------------------------------------------------------#
 #Kill Switch
 func kill():
-	$Mesh_Canopic.queue_free() #Remove Old Mesh
 	$CollisionShape3D.set_deferred("disabled", true) #Disable Old Collision
 	$WorldDetectors/Sight/CollisionShape3D.set_deferred("disabled", true) #Remove Sight
 	shatter()
@@ -49,3 +48,15 @@ func _on_hitbox_area_entered(area):
 		"Broken_Slash": damage(25)
 		"Broken_Chop": damage(50)
 		"Broken_Thrust": damage(75)
+		#Repaired Sword
+		"Repaired_Slash": damage(35)
+		"Repaired_Chop": damage(60)
+		"Repaired_Thrust": damage(85)
+		#Masterwork Sword
+		"Masterwork_Slash": damage(45)
+		"Masterwork_Chop": damage(70)
+		"Masterwork_Thrust": damage(95)
+		#Soulforged Sword
+		"Soulforged_Slash": damage(55)
+		"Soulforged_Chop": damage(80)
+		"Soulforged_Thrust": damage(100)

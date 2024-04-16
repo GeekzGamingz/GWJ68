@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbkpaspk2squs"]
+[gd_scene load_steps=12 format=3 uid="uid://dbkpaspk2squs"]
 
 [ext_resource type="Script" path="res://source/World/_World.gd" id="1_jfcig"]
 [ext_resource type="PackedScene" uid="uid://b3x6ajm4gwyl6" path="res://source/World/ProcGen/ProcGen.tscn" id="1_yp283"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2dl6n7fjyny8" path="res://source/Actor/Player/Player.tscn" id="4_77dap"]
 [ext_resource type="PackedScene" uid="uid://ddm2fw1pp3ebs" path="res://source/User Interface/Mode_Debug.tscn" id="5_lojl0"]
 [ext_resource type="PackedScene" uid="uid://dulvcattrgdeh" path="res://source/Actor/Enemies/Rustmite/Rustmite.tscn" id="5_ras0x"]
+[ext_resource type="PackedScene" uid="uid://g2mhklln1a3j" path="res://source/Items/Soul/Soul.tscn" id="5_ywtsx"]
 [ext_resource type="PackedScene" uid="uid://08tmi5ahc1x2" path="res://source/Actor/Enemies/Canopics/Canopic.tscn" id="6_m2c8b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tt3sx"]
@@ -54,6 +55,9 @@ player = NodePath("../../Kinematics/Player")
 
 [node name="Kinematics" type="Node3D" parent="."]
 
+[node name="Soul" parent="Kinematics" instance=ExtResource("5_ywtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3798, 6.22735, -50.9313)
+
 [node name="Player" parent="Kinematics" instance=ExtResource("4_77dap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5227, 10.6248, -50)
 
@@ -63,6 +67,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.904, 8.42572, -43.0717)
 [node name="Canopic" parent="Kinematics" instance=ExtResource("6_m2c8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.869, 6.66326, -33.1068)
 
+[connection signal="health_damage" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="health_damage"]
+[connection signal="health_heal" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="health_heal"]
 [connection signal="health_damage" from="Kinematics/Rustmite" to="Kinematics/Rustmite/ProgressBar/SubViewport/ProgressBars" method="health_damage"]
 [connection signal="health_heal" from="Kinematics/Rustmite" to="Kinematics/Rustmite/ProgressBar/SubViewport/ProgressBars" method="health_heal"]
 [connection signal="health_damage" from="Kinematics/Canopic" to="Kinematics/Canopic/ProgressBar/SubViewport/ProgressBars" method="health_damage"]

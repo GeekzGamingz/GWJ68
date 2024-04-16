@@ -145,8 +145,6 @@ visible = false
 [node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait/Bezel" index="0"]
 visible = false
 
-[connection signal="health_damage" from="." to="ProgressBar/SubViewport/ProgressBars" method="health_damage"]
-[connection signal="health_heal" from="." to="ProgressBar/SubViewport/ProgressBars" method="health_heal"]
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="WorldDetectors/Sight" to="." method="_on_sight_body_exited"]
 [connection signal="area_entered" from="WorldDetectors/Hitbox" to="." method="_on_hitbox_area_entered"]

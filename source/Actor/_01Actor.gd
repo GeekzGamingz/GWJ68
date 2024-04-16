@@ -15,6 +15,7 @@ var found_ledge: bool = false
 #OnReady Variables
 @onready var health = max_health: set = set_health
 @onready var camera_arm = $CameraArm
+@onready var enemy_bars = null
 #Detectors
 @onready var ground_detectors = $WorldDetectors/GroundDetectors
 @onready var wall_detectors = $WorldDetectors/WallDetectors
@@ -59,6 +60,6 @@ func set_health(value):
 	if health < health_prev:
 		emit_signal("health_damage", health)
 		if health == 0: kill()
-		else: $ProgressBar/SubViewport/ProgressBars.visible = true
+		else: if enemy_bars != null: enemy_bars.visible = true
 #Kill Switch
 func kill(): pass
