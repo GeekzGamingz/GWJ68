@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddna2beqwp8ne"]
+[gd_scene load_steps=21 format=3 uid="uid://ddna2beqwp8ne"]
 
 [ext_resource type="PackedScene" uid="uid://cmhd5yret3d02" path="res://assets/Textures/Enemies/Rustmite/rustmite.gltf" id="1_rkmjs"]
 [ext_resource type="ArrayMesh" uid="uid://k6ji34itsab2" path="res://assets/Textures/Items/Goop/goop.res" id="2_kpm8j"]
@@ -34,6 +34,34 @@ collision_mode = 1
 collision_friction = 0.1
 collision_bounce = 0.1
 collision_use_scale = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_neyu8"]
+radius = 0.018536
+height = 0.18536
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ukray"]
+radius = 0.0306409
+height = 0.306409
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ulsek"]
+radius = 0.0445541
+height = 0.445541
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qllvx"]
+radius = 0.055303
+height = 0.55303
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i1tfp"]
+radius = 0.055864
+height = 0.55864
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_52rs3"]
+radius = 0.0558141
+height = 0.558141
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jm4xr"]
+radius = 0.0553868
+height = 0.553868
 
 [sub_resource type="Animation" id="Animation_pc5x0"]
 length = 0.001
@@ -303,6 +331,18 @@ tracks/37/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("../Atkbox_Medium/CollisionShape3D:disabled")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_b7osl"]
 resource_name = "idle"
@@ -575,6 +615,18 @@ tracks/37/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("../Atkbox_Medium/CollisionShape3D:disabled")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_tm7tf"]
 resource_name = "shoot"
@@ -858,6 +910,18 @@ tracks/38/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("../Atkbox_Medium/CollisionShape3D:disabled")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(1.75, 2.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_kkfec"]
 resource_name = "walk"
@@ -1128,6 +1192,18 @@ tracks/37/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("../Atkbox_Medium/CollisionShape3D:disabled")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4vvs5"]
 _data = {
@@ -1136,6 +1212,10 @@ _data = {
 "shoot": SubResource("Animation_tm7tf"),
 "walk": SubResource("Animation_kkfec")
 }
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryvgf"]
+radius = 0.375
+height = 1.5
 
 [node name="Rustmite" instance=ExtResource("1_rkmjs")]
 
@@ -1171,6 +1251,125 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_6bp6g")
 draw_pass_1 = ExtResource("2_kpm8j")
 
+[node name="Physical Bone Torso" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="2"]
+transform = Transform3D(1, 1.14475e-17, -4.02966e-17, 1.1789e-17, 0.846389, 0.532991, 4.02122e-17, -0.532991, 0.846389, -3.06913e-18, 0.254367, -0.0985582)
+collision_layer = 8
+collision_mask = 15
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73415e-18, 2.0314e-05, 0.0926723)
+body_offset = Transform3D(1, 1.14475e-17, -4.02966e-17, 1.1789e-17, 0.846389, 0.532991, 4.02122e-17, -0.532991, 0.846389, 0, -0.0494107, -0.078426)
+bone_name = "Torso"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Torso" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_neyu8")
+disabled = true
+
+[node name="Physical Bone Skull" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="3"]
+transform = Transform3D(0.958476, -0.104519, 0.265335, 0.0789715, 0.991613, 0.105291, -0.27408, -0.079969, 0.958643, -0.0406502, 0.188869, -0.323835)
+collision_layer = 8
+collision_mask = 15
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00968039, 0.049408, 0.137697)
+body_offset = Transform3D(0.958476, -0.104519, 0.265335, 0.0789715, 0.991613, 0.105291, -0.27408, -0.079969, 0.958643, -0.0406502, -0.0642563, -0.125398)
+bone_name = "Skull"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Skull" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ukray")
+disabled = true
+
+[node name="Physical Bone Booty" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="4"]
+transform = Transform3D(-1.00009, -3.17395e-06, 1.32434e-06, -2.03494e-07, -0.10595, -0.994608, 1.20699e-06, -0.994609, 0.10595, -9.31323e-09, 0.587425, 0.162252)
+collision_layer = 8
+collision_mask = 15
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75091e-07, -0.0026896, 0.28384)
+body_offset = Transform3D(-1.00009, -3.17395e-06, 1.32434e-06, -2.03494e-07, -0.10595, -0.994608, 1.20699e-06, -0.994609, 0.10595, -9.31323e-09, 0.282025, -0.032748)
+bone_name = "Booty"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Booty" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ulsek")
+disabled = true
+
+[node name="Physical Bone Leggie_FL" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="5"]
+transform = Transform3D(0.319372, -0.553442, 0.769453, 0.0320548, 0.81781, 0.574925, -0.947178, -0.15893, 0.278891, -0.291503, 0.228551, -0.182592)
+collision_layer = 8
+collision_mask = 15
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14664e-05, -1.20746e-05, 0.276486)
+body_offset = Transform3D(0.319372, -0.553442, 0.769453, 0.0320548, 0.81781, 0.574925, -0.947178, -0.15893, 0.278891, -0.212753, -0.158949, -0.0771004)
+bone_name = "Leggie_FL"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_FL" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_qllvx")
+disabled = true
+
+[node name="Physical Bone Leggie_FR" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="6"]
+transform = Transform3D(0.252373, 0.55186, -0.795174, -0.0796672, 0.830765, 0.551376, 0.964732, -0.0757804, 0.253628, 0.300827, 0.233491, -0.176301)
+collision_layer = 8
+collision_mask = 15
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54884e-05, 1.86097e-05, 0.279286)
+body_offset = Transform3D(0.252373, 0.55186, -0.795174, -0.0796672, 0.830765, 0.551376, 0.964732, -0.0757804, 0.253628, 0.222077, -0.154009, -0.0708087)
+bone_name = "Leggie_FR"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_FR" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_i1tfp")
+disabled = true
+
+[node name="Physical Bone Leggie_RL" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="7"]
+transform = Transform3D(-0.67647, -0.532794, 0.489226, -0.0459549, 0.71252, 0.700666, -0.725198, 0.447428, -0.49803, -0.216739, 0.191758, 0.26742)
+collision_layer = 8
+collision_mask = 15
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00152768, -0.00223271, 0.281736)
+body_offset = Transform3D(-0.676471, -0.532795, 0.489227, -0.0459549, 0.71252, 0.700666, -0.725199, 0.447429, -0.49803, -0.137989, -0.195742, 0.14242)
+bone_name = "Leggie_RL"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_RL" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_52rs3")
+disabled = true
+
+[node name="Physical Bone Leggie_RR" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="8"]
+transform = Transform3D(-0.632235, 0.524864, -0.570454, 0.0679515, 0.77087, 0.633866, 0.772329, 0.361932, -0.522847, 0.236748, 0.205623, 0.269773)
+collision_layer = 8
+collision_mask = 15
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4824e-05, 6.49355e-05, 0.27699)
+body_offset = Transform3D(-0.632235, 0.524864, -0.570454, 0.0679515, 0.77087, 0.633866, 0.772329, 0.361932, -0.522847, 0.157998, -0.175627, 0.144773)
+bone_name = "Leggie_RR"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_RR" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_jm4xr")
+disabled = true
+
 [node name="AnimationPlayers" type="Node3D" parent="." index="1"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="0"]
@@ -1179,3 +1378,12 @@ libraries = {
 }
 autoplay = "idle"
 playback_default_blend_time = 0.1
+
+[node name="Atkbox_Medium" type="Area3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.748)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Atkbox_Medium" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)
+shape = SubResource("CapsuleShape3D_ryvgf")

@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://08tmi5ahc1x2"]
+
+[ext_resource type="Script" path="res://source/Actor/Enemies/Canopics/Canopic.gd" id="1_6076l"]
+[ext_resource type="Script" path="res://source/Actor/Enemies/Canopics/CanopicFSM.gd" id="2_bl6jv"]
+[ext_resource type="PackedScene" uid="uid://dpfb4eu5qcn2x" path="res://source/Actor/Enemies/Canopics/Mesh_Canopic.tscn" id="3_34kx5"]
+[ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="3_78vhg"]
+[ext_resource type="PackedScene" uid="uid://btbojqofs2c21" path="res://source/Actor/Enemies/Canopics/Mesh_Fractured.tscn" id="4_bks3b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3fkt8"]
+radius = 0.25
+height = 0.952362
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lt5u7"]
+margin = 0.05
+radius = 10.0
+
+[node name="Canopic" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_6076l")
+fragment_collision_layer = 8
+fragment_collision_mask = 15
+max_frag_lifetime = 3.0
+
+[node name="CanopicFSM" type="Node3D" parent="."]
+script = ExtResource("2_bl6jv")
+
+[node name="Mesh_Canopic" parent="." instance=ExtResource("3_34kx5")]
+
+[node name="Mesh_Fractured" parent="." instance=ExtResource("4_bks3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4859, 0)
+shape = SubResource("CapsuleShape3D_3fkt8")
+
+[node name="CameraArm" parent="." instance=ExtResource("3_78vhg")]
+margin = 1.0
+
+[node name="WorldDetectors" type="Node3D" parent="."]
+
+[node name="Sight" type="Area3D" parent="WorldDetectors"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Sight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_lt5u7")
+
+[node name="GroundDetectors" type="Node3D" parent="WorldDetectors"]
+
+[node name="F_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150019, 0.5)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="B_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.5)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="C_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+target_position = Vector3(0, -0.25, 0)
+
+[node name="L_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.15, 0)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="R_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.15, 0)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="WallDetectors" type="Node3D" parent="WorldDetectors"]
+
+[node name="F_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.5)
+target_position = Vector3(0, 0, 0.25)
+
+[node name="B_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.5)
+target_position = Vector3(0, 0, -0.25)
+
+[node name="L_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.75, 0)
+target_position = Vector3(0.25, 0, 0)
+
+[node name="R_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.75, 0)
+target_position = Vector3(-0.25, 0, 0)
+
+[node name="Outputs" type="Node3D" parent="."]
+
+[node name="StateOutput" type="Label3D" parent="Outputs"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
+text = "State"
+
+[node name="Facing" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+target_position = Vector3(0, -2, 0)
+collision_mask = 2
+
+[node name="ShatterOrigin" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250164, 0)
+
+[connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="WorldDetectors/Sight" to="." method="_on_sight_body_exited"]

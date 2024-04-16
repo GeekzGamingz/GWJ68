@@ -18,3 +18,10 @@ func _ready():
 		collision.position = kinematic.position
 		collision.entity = kinematic
 		add_child(collision)
+#Add Collisions
+func _on_kinematics_child_entered_tree(node):
+	if node.is_in_group("Kinematics") == true:
+		var collision = COLLISION.instantiate()
+		collision.position = node.position
+		collision.entity = node
+		add_child(collision)

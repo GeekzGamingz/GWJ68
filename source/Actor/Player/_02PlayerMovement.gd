@@ -1,5 +1,6 @@
 #Inherits Actor Code
 extends Actor
+class_name PlayerMovement
 #------------------------------------------------------------------------------#
 #Variables
 var move_direction = Vector3.ZERO

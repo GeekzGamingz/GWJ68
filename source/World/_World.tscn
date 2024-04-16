@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbkpaspk2squs"]
+[gd_scene load_steps=12 format=3 uid="uid://dbkpaspk2squs"]
 
 [ext_resource type="Script" path="res://source/World/_World.gd" id="1_jfcig"]
 [ext_resource type="PackedScene" uid="uid://b3x6ajm4gwyl6" path="res://source/World/ProcGen/ProcGen.tscn" id="1_yp283"]
+[ext_resource type="PackedScene" uid="uid://hrx5m3p11vau" path="res://source/User Interface/Mode_UserInterface.tscn" id="2_qx3g1"]
 [ext_resource type="PackedScene" uid="uid://c2dl6n7fjyny8" path="res://source/Actor/Player/Player.tscn" id="4_77dap"]
 [ext_resource type="PackedScene" uid="uid://ddm2fw1pp3ebs" path="res://source/User Interface/Mode_Debug.tscn" id="5_lojl0"]
 [ext_resource type="PackedScene" uid="uid://dulvcattrgdeh" path="res://source/Actor/Enemies/Rustmite/Rustmite.tscn" id="5_ras0x"]
+[ext_resource type="PackedScene" uid="uid://g2mhklln1a3j" path="res://source/Items/Soul/Soul.tscn" id="5_ywtsx"]
 [ext_resource type="PackedScene" uid="uid://08tmi5ahc1x2" path="res://source/Actor/Enemies/Canopics/Canopic.tscn" id="6_m2c8b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tt3sx"]
@@ -35,6 +37,8 @@ script = ExtResource("1_jfcig")
 
 [node name="UIRoot" type="CanvasLayer" parent="."]
 
+[node name="Mode_UI" parent="UIRoot" instance=ExtResource("2_qx3g1")]
+
 [node name="Mode_Debug" parent="UIRoot" instance=ExtResource("5_lojl0")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -51,11 +55,23 @@ player = NodePath("../../Kinematics/Player")
 
 [node name="Kinematics" type="Node3D" parent="."]
 
+[node name="Soul" parent="Kinematics" instance=ExtResource("5_ywtsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3798, 6.22735, -50.9313)
+
 [node name="Player" parent="Kinematics" instance=ExtResource("4_77dap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 10, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5227, 10.6248, -50)
 
 [node name="Rustmite" parent="Kinematics" instance=ExtResource("5_ras0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.4832, 13.538, -34.6388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.904, 8.42572, -43.0717)
 
 [node name="Canopic" parent="Kinematics" instance=ExtResource("6_m2c8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9318, 6.376, -38.1721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.869, 6.66326, -33.1068)
+
+[node name="Items" type="Node3D" parent="."]
+
+[connection signal="child_entered_tree" from="Kinematics" to="World_Chunk/ProcGen" method="_on_kinematics_child_entered_tree"]
+[connection signal="child_order_changed" from="Kinematics" to="World_Chunk/ProcGen" method="_on_kinematics_child_order_changed"]
+[connection signal="health_damage" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="health_damage"]
+[connection signal="health_heal" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="health_heal"]
+[connection signal="soul_damage" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="soul_damage"]
+[connection signal="soul_heal" from="Kinematics/Player" to="Kinematics/Player/ProgressBars/ProgressBars" method="soul_heal"]

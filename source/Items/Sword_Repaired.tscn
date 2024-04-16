@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://h842gf5o2iuy"]
+[gd_scene load_steps=12 format=3 uid="uid://h842gf5o2iuy"]
 
 [ext_resource type="PackedScene" uid="uid://b7fgayj0487jb" path="res://assets/Textures/Items/Swards/sward.gltf" id="1_pa70n"]
 
@@ -126,6 +126,15 @@ _data = {
 "thrust": SubResource("Animation_xx3lp")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_hxx13"]
+radius = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u18gf"]
+size = Vector3(2.5, 0.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1k675"]
+size = Vector3(2.5, 1, 1)
+
 [node name="Sword" instance=ExtResource("1_pa70n")]
 transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, 0, 0.75, 0)
 
@@ -140,3 +149,31 @@ libraries = {
 }
 autoplay = "idle"
 playback_default_blend_time = 0.1
+
+[node name="Hitboxes" type="Node3D" parent="." index="2"]
+
+[node name="Repaired_Slash" type="Area3D" parent="Hitboxes" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Repaired_Slash" index="0"]
+shape = SubResource("SphereShape3D_hxx13")
+
+[node name="Repaired_Chop" type="Area3D" parent="Hitboxes" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Repaired_Chop" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_u18gf")
+
+[node name="Repaired_Thrust" type="Area3D" parent="Hitboxes" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Repaired_Thrust" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, -1, 0, 0)
+shape = SubResource("BoxShape3D_1k675")

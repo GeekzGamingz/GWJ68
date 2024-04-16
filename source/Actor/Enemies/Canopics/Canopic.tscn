@@ -1,36 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://08tmi5ahc1x2"]
+[gd_scene load_steps=11 format=3 uid="uid://08tmi5ahc1x2"]
 
 [ext_resource type="Script" path="res://source/Actor/Enemies/Canopics/Canopic.gd" id="1_6076l"]
 [ext_resource type="Script" path="res://source/Actor/Enemies/Canopics/CanopicFSM.gd" id="2_bl6jv"]
 [ext_resource type="PackedScene" uid="uid://dpfb4eu5qcn2x" path="res://source/Actor/Enemies/Canopics/Mesh_Canopic.tscn" id="3_34kx5"]
 [ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="3_78vhg"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3fkt8"]
-radius = 0.25
-height = 1.5
+[ext_resource type="PackedScene" uid="uid://btbojqofs2c21" path="res://source/Actor/Enemies/Canopics/Mesh_Fractured.tscn" id="4_bks3b"]
+[ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="6_rf731"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lt5u7"]
 margin = 0.05
 radius = 10.0
 
-[node name="Canopic" type="CharacterBody3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_atit2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3fkt8"]
+radius = 0.25
+height = 0.952362
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2ch3x"]
+viewport_path = NodePath("ProgressBar/SubViewport")
+
+[node name="Canopic" type="CharacterBody3D" groups=["Kinematics"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_6076l")
+fragment_collision_layer = 0
+fragment_collision_mask = 15
+max_frag_lifetime = 3.0
 
 [node name="CanopicFSM" type="Node3D" parent="."]
 script = ExtResource("2_bl6jv")
 
 [node name="Mesh_Canopic" parent="." instance=ExtResource("3_34kx5")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
-shape = SubResource("CapsuleShape3D_3fkt8")
-
-[node name="CameraArm" parent="." instance=ExtResource("3_78vhg")]
-margin = 1.0
+[node name="Mesh_Fractured" parent="." instance=ExtResource("4_bks3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+visible = false
 
 [node name="WorldDetectors" type="Node3D" parent="."]
+
+[node name="Facing" type="RayCast3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+target_position = Vector3(0, -2, 0)
+collision_mask = 2
 
 [node name="Sight" type="Area3D" parent="WorldDetectors"]
 collision_layer = 4
@@ -39,6 +51,17 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Sight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_lt5u7")
+
+[node name="Hitbox" type="Area3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("SphereShape3D_atit2")
+
+[node name="Atkbox_Light" type="Area3D" parent="WorldDetectors"]
 
 [node name="GroundDetectors" type="Node3D" parent="WorldDetectors"]
 
@@ -79,16 +102,53 @@ target_position = Vector3(0.25, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.75, 0)
 target_position = Vector3(-0.25, 0, 0)
 
+[node name="ShatterOrigin" type="Marker3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250164, 0)
+
 [node name="Outputs" type="Node3D" parent="."]
 
 [node name="StateOutput" type="Label3D" parent="Outputs"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.28663, 0)
+visible = false
 text = "State"
 
-[node name="Facing" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
-target_position = Vector3(0, -2, 0)
-collision_mask = 2
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4859, 0)
+shape = SubResource("CapsuleShape3D_3fkt8")
 
+[node name="CameraArm" parent="." instance=ExtResource("3_78vhg")]
+margin = 1.0
+
+[node name="ProgressBar" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_2ch3x")
+
+[node name="SubViewport" type="SubViewport" parent="ProgressBar"]
+transparent_bg = true
+
+[node name="ProgressBars" parent="ProgressBar/SubViewport" instance=ExtResource("6_rf731")]
+visible = false
+
+[node name="Soul" parent="ProgressBar/SubViewport/ProgressBars" index="1"]
+visible = false
+
+[node name="Blank" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="0"]
+visible = false
+
+[node name="Bug" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="2"]
+visible = false
+
+[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="3"]
+visible = false
+
+[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait/Bezel" index="0"]
+visible = false
+
+[connection signal="health_damage" from="." to="ProgressBar/SubViewport/ProgressBars" method="health_damage"]
+[connection signal="health_heal" from="." to="ProgressBar/SubViewport/ProgressBars" method="health_heal"]
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="WorldDetectors/Sight" to="." method="_on_sight_body_exited"]
+[connection signal="area_entered" from="WorldDetectors/Hitbox" to="." method="_on_hitbox_area_entered"]
+
+[editable path="ProgressBar/SubViewport/ProgressBars"]

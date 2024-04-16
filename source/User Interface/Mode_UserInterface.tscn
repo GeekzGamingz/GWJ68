@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://hrx5m3p11vau"]
+
+[node name="Mode_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_horizontal_guides_ = [25.0]
+metadata/_edit_vertical_guides_ = [25.0]

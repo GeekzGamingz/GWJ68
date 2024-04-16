@@ -1,8 +1,6 @@
 #Inherits Node3D Code
 extends Node
 #------------------------------------------------------------------------------#
-#Constants
-#------------------------------------------------------------------------------#
 #Variables
 var hmap_img: Image = load(ProjectSettings.get_setting("shader_globals/heightmap").value).get_image()
 var hmImage_size = hmap_img.get_width()
@@ -12,6 +10,7 @@ var sea_level: float = 1.5
 @onready var UI = get_tree().get_root().get_node("WorldRoot/UIRoot")
 @onready var KINEMATICS = get_tree().get_root().get_node("WorldRoot/Kinematics")
 @onready var PLAYER = get_tree().get_root().get_node("WorldRoot/Kinematics/Player")
+@onready var ITEMS = get_tree().get_root().get_node("WorldRoot/Items")
 #------------------------------------------------------------------------------#
 #Globals Functions
 func get_height(x, z):

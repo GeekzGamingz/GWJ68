@@ -1,0 +1,473 @@
+[gd_scene load_steps=15 format=3 uid="uid://g2mhklln1a3j"]
+
+[ext_resource type="Script" path="res://source/Items/Soul/Soul.gd" id="1_cjc5p"]
+[ext_resource type="Shader" path="res://assets/Shaders/Highlight.gdshader" id="2_ltr68"]
+[ext_resource type="ArrayMesh" uid="uid://78g7smapkyhe" path="res://assets/Textures/Items/Soul/soul.res" id="3_lw7me"]
+[ext_resource type="ArrayMesh" uid="uid://kpdln3pgtnbl" path="res://assets/Textures/Items/Soul/soul_particle.res" id="3_n2nel"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_my4i5"]
+render_priority = 0
+shader = ExtResource("2_ltr68")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 3.0
+
+[sub_resource type="Skin" id="Skin_r7gix"]
+resource_name = "Skin"
+bind_count = 3
+bind/0/name = &"Mesh_Soul"
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/1/name = &"Core"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/2/name = &"Torus"
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1vwun"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+inherit_velocity_ratio = 1.0
+spread = 20.0
+gravity = Vector3(0, 1, 0)
+linear_accel_min = 0.5
+linear_accel_max = 1.0
+radial_accel_min = 50.0
+radial_accel_max = 100.0
+scale_min = 0.25
+scale_max = 0.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0xtax"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+gravity = Vector3(0, 5, 0)
+radial_accel_min = 50.0
+radial_accel_max = 100.0
+scale_min = 0.1
+scale_max = 0.25
+
+[sub_resource type="Animation" id="Animation_rmc8x"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Soul/Skeleton3D:Core")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Soul/Skeleton3D:Torus")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:process_material:radial_accel_min")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:process_material:radial_accel_max")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:process_material:radial_accel_min")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:process_material:radial_accel_max")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:one_shot")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:one_shot")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Mesh_Soul/Skeleton3D/Mesh_Soul:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vqc0k"]
+resource_name = "explode"
+length = 2.0
+step = 0.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Soul/Skeleton3D:Core")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Soul/Skeleton3D:Torus")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:process_material:radial_accel_min")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:process_material:radial_accel_max")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:process_material:radial_accel_min")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:process_material:radial_accel_max")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:one_shot")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:one_shot")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Mesh_Soul/Skeleton3D/Mesh_Soul:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vta3c"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Soul/Skeleton3D:Core")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0, 0.708408, 0, 0.705804, 1, 1, 0, 1, 0, 0.000384007, 1.5, 1, 0, -0.702625, 0, 0.71156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Soul/Skeleton3D:Torus")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0, -0.711051, 0, 0.70314, 1, 1, 0, 0.999983, 0, 0.00580316, 1.5, 1, 0, 0.707008, 0, 0.707205)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:process_material:radial_accel_min")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:process_material:radial_accel_max")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:process_material:radial_accel_min")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:process_material:radial_accel_max")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:one_shot")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:one_shot")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Mesh_Soul/Skeleton3D/TorusAttachment3D/GPUParticles3D:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Mesh_Soul/Skeleton3D/Mesh_Soul:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lps85"]
+_data = {
+"RESET": SubResource("Animation_rmc8x"),
+"explode": SubResource("Animation_vqc0k"),
+"idle": SubResource("Animation_vta3c")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_78u75"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hv5en"]
+radius = 0.266551
+
+[node name="Soul" type="RigidBody3D" groups=["Kinematics"]]
+collision_layer = 8
+script = ExtResource("1_cjc5p")
+
+[node name="Mesh_Soul" type="Node3D" parent="."]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="Mesh_Soul"]
+bones/0/name = "Mesh_Soul"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "Core"
+bones/1/parent = 0
+bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/1/enabled = true
+bones/1/position = Vector3(0, 0, 0)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/name = "Torus"
+bones/2/parent = 0
+bones/2/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/2/enabled = true
+bones/2/position = Vector3(0, 0, 0)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
+bones/2/scale = Vector3(1, 1, 1)
+
+[node name="Mesh_Soul" type="MeshInstance3D" parent="Mesh_Soul/Skeleton3D"]
+material_overlay = SubResource("ShaderMaterial_my4i5")
+mesh = ExtResource("3_lw7me")
+skin = SubResource("Skin_r7gix")
+
+[node name="CoreAttachment" type="BoneAttachment3D" parent="Mesh_Soul/Skeleton3D"]
+bone_name = "Core"
+bone_idx = 1
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Mesh_Soul/Skeleton3D/CoreAttachment"]
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_1vwun")
+draw_pass_1 = ExtResource("3_n2nel")
+
+[node name="TorusAttachment3D" type="BoneAttachment3D" parent="Mesh_Soul/Skeleton3D"]
+bone_name = "Torus"
+bone_idx = 2
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Mesh_Soul/Skeleton3D/TorusAttachment3D"]
+amount = 100
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_0xtax")
+draw_pass_1 = ExtResource("3_n2nel")
+
+[node name="AnimationPlayer" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_lps85")
+}
+autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_78u75")
+
+[node name="Hitbox_Soul" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox_Soul"]
+shape = SubResource("SphereShape3D_hv5en")
+
+[connection signal="area_entered" from="Hitbox_Soul" to="." method="_on_hitbox_soul_area_entered"]

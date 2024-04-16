@@ -29,6 +29,10 @@ margin = 1.0
 
 [node name="WorldDetectors" type="Node3D" parent="."]
 
+[node name="Facing" type="RayCast3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+collision_mask = 2
+
 [node name="Sight" type="Area3D" parent="WorldDetectors"]
 collision_layer = 4
 collision_mask = 3
@@ -81,10 +85,6 @@ target_position = Vector3(-0.25, 0, 0)
 [node name="StateOutput" type="Label3D" parent="Outputs"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
 text = "State"
-
-[node name="Facing" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
-collision_mask = 2
 
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="WorldDetectors/Sight" to="." method="_on_sight_body_exited"]
