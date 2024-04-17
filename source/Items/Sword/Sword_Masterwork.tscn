@@ -1,8 +1,39 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkfk26bc4ul0j"]
+[gd_scene load_steps=20 format=3 uid="uid://bkfk26bc4ul0j"]
 
 [ext_resource type="PackedScene" uid="uid://c2enul0yotc1y" path="res://assets/Textures/Items/Swards/sward_masterwork.gltf" id="1_0shso"]
+[ext_resource type="ArrayMesh" uid="uid://c6kapihs43kd6" path="res://assets/Textures/Items/MagicPew/MagicPew.res" id="2_p2oqr"]
 
-[sub_resource type="Animation" id="Animation_4vh8w"]
+[sub_resource type="Curve" id="Curve_fauog"]
+min_value = -2.0
+max_value = 2.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4a2mx"]
+curve = SubResource("Curve_fauog")
+
+[sub_resource type="Curve" id="Curve_3fqmh"]
+max_value = 3.0
+_data = [Vector2(0, 0.296703), 0.0, 0.0, 0, 0, Vector2(1, 0.659341), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_hroyy"]
+curve = SubResource("Curve_3fqmh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x2wks"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 3.5
+angle_max = 180.0
+orbit_velocity_min = 0.05
+orbit_velocity_max = 1.0
+orbit_velocity_curve = SubResource("CurveTexture_4a2mx")
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 1.0
+radial_accel_max = 2.0
+scale_over_velocity_curve = SubResource("CurveTexture_hroyy")
+
+[sub_resource type="Animation" id="Animation_cjlok"]
 length = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -18,8 +49,68 @@ tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sward_Bone/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes/Thrust/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hitboxes/Soulblast/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hitboxes/Slash/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes/Chop/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_ce55x"]
+[sub_resource type="Animation" id="Animation_2wmhs"]
 resource_name = "chop"
 length = 0.4
 step = 0.01
@@ -37,12 +128,71 @@ tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.04, 1, 6.94118e-09, -0.158796, 6.94118e-09, 0.987311, 0.08, 1, 2.59944e-08, -0.594682, 2.59944e-08, 0.803961, 0.12, 1, 8.41502e-09, -0.192513, 8.41503e-09, 0.981294, 0.16, 1, -3.367e-08, 0.77028, -3.367e-08, 0.637706, 0.2, 1, -3.61473e-08, 0.826953, -3.61473e-08, 0.562271, 0.22, 1, -3.97115e-08, 0.908494, -3.97115e-08, 0.417899)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sward_Bone/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes/Soulblast/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hitboxes/Slash/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hitboxes/Thrust/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes/Chop/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.22),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
-[sub_resource type="Animation" id="Animation_s86vn"]
+[sub_resource type="Animation" id="Animation_3i46g"]
 resource_name = "float_f"
 length = 1.2
 loop_mode = 1
-step = 0.6
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,12 +207,71 @@ tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, -0.00474298, 0.109953, -0.0428345, 0.993002, 0.6, 1, -6.71399e-09, 0.153598, -6.71399e-09, 0.988133)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sward_Bone/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes/Soulblast/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hitboxes/Slash/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hitboxes/Chop/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes/Thrust/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_r2q1e"]
+[sub_resource type="Animation" id="Animation_0bijf"]
 resource_name = "idle"
 length = 4.8
 loop_mode = 1
-step = 1.2
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -77,8 +286,68 @@ tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.4, 1, 4.51448e-17, -1.8838e-09, -0.0430963, 0.999071)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sward_Bone/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes/Soulblast/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hitboxes/Slash/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hitboxes/Chop/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes/Thrust/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_lwi57"]
+[sub_resource type="Animation" id="Animation_wbvls"]
 resource_name = "slash"
 length = 0.4
 step = 0.01
@@ -96,9 +365,70 @@ tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.02, 1, 0, 0, 0, 1, 0.06, 1, 0.0837909, 3.66262e-09, 4.17803e-17, 0.996483, 0.12, 1, 0.182674, -0.0445716, -0.232813, 0.954171, 0.18, 1, 0.115063, -0.27472, -0.722392, 0.624051, 0.2, 1, 0.0619751, 0.536998, 0.766697, -0.346363, 0.22, 1, 0.504246, 0.514162, 0.57548, 0.387553, 0.24, 1, 0.70062, 0.166605, 0.280654, 0.634513)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sward_Bone/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes/Soulblast/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hitboxes/Slash/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hitboxes/Chop/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes/Thrust/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_mkfky"]
+[sub_resource type="Animation" id="Animation_xs16o"]
 resource_name = "soulblast"
+length = 1.5
 step = 0.025
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -114,8 +444,68 @@ tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.175, 1, 0.0790318, -0.130796, -0.22355, 0.962638, 0.2, 1, 0.112926, -0.277507, -0.461702, 0.834907, 0.225, 1, 0.11292, -0.42032, -0.628046, 0.645089, 0.25, 1, -0.0850105, 0.551228, 0.714456, -0.422461, 0.275, 1, -0.0401787, 0.665233, 0.718565, -0.198785, 0.3, 1, 0.00511614, 0.761675, 0.64791, -0.00610865, 0.325, 1, 0.0260114, 0.844145, 0.520508, 0.125754, 0.425, 1, 0.981028, 0.189183, -9.01866e-09, 0.0423465, 0.45, 1, 0.956082, 0.290024, 0.00439701, 0.0421176, 0.475, 1, 0.996511, -0.0719203, -0.0109908, 0.0408954, 0.5, 1, 0.841711, -0.538265, -0.0291566, 0.0307102, 0.55, 1, -0.540746, 0.84012, 0.0393037, -0.0157622, 0.6, 1, -0.137334, 0.990503, -0.00411857, 0.00506143, 0.625, 1, 0.111973, 0.99369, -0.00524269, 0.00388523, 0.65, 1, 0.472982, 0.881048, -0.0063106, 0.00166049, 0.675, 1, 0.709558, 0.704617, -0.00652046, -0.000253849, 0.725, 1, 0.708798, 0.704098, -0.0334757, -0.0270259, 0.775, 1, 0.705279, 0.700995, -0.0780816, -0.0713484, 0.825, 1, 0.705115, 0.699451, 0.0795462, 0.0851676, 0.85, 1, 0.707838, 0.702416, 0.049801, 0.0556558)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sward_Bone/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.425),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes/Soulblast/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.425, 0.85),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hitboxes/Slash/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hitboxes/Chop/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes/Thrust/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_xx3lp"]
+[sub_resource type="Animation" id="Animation_1v3ad"]
 resource_name = "thrust"
 length = 0.4
 step = 0.01
@@ -133,16 +523,76 @@ tracks/1/path = NodePath("../Sward_Bone/Skeleton3D:Sward_Bone")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, -3.97115e-08, 0.908494, -3.97115e-08, 0.417899, 0.03, 1, -0.0969529, 0.847733, -0.166288, 0.494264, 0.06, 1, -0.299589, 0.760937, -0.280768, 0.502385, 0.1, 1, -0.525042, 0.572918, -0.429036, 0.460461, 0.14, 1, 0.63699, -0.299256, 0.643633, -0.300709, 0.19, 1, 0.693353, -0.121138, 0.699388, -0.124273, 0.26, 1, 0.704292, 0.0166672, 0.709606, 0.0124226)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sward_Bone/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes/Thrust/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hitboxes/Slash/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hitboxes/Chop/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes/Soulblast/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dk2kc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_25u18"]
 _data = {
-"RESET": SubResource("Animation_4vh8w"),
-"chop": SubResource("Animation_ce55x"),
-"float_f": SubResource("Animation_s86vn"),
-"idle": SubResource("Animation_r2q1e"),
-"slash": SubResource("Animation_lwi57"),
-"soulblast": SubResource("Animation_mkfky"),
-"thrust": SubResource("Animation_xx3lp")
+"RESET": SubResource("Animation_cjlok"),
+"chop": SubResource("Animation_2wmhs"),
+"float_f": SubResource("Animation_3i46g"),
+"idle": SubResource("Animation_0bijf"),
+"slash": SubResource("Animation_wbvls"),
+"soulblast": SubResource("Animation_xs16o"),
+"thrust": SubResource("Animation_1v3ad")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8cb0h"]
@@ -154,48 +604,74 @@ size = Vector3(2.5, 0.5, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_shsdo"]
 size = Vector3(2.5, 1, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ob4o8"]
+radius = 3.5
+
 [node name="Sword" instance=ExtResource("1_0shso")]
 transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, 0, 0.75, 0)
 
 [node name="Skeleton3D" parent="Sward_Bone" index="0"]
-transform = Transform3D(-0.980392, -0.197059, 8.61371e-09, 0.197059, -0.980392, 8.65657e-08, -8.61371e-09, 8.65657e-08, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/scale = Vector3(0.999998, 0.999998, 1)
+
+[node name="CoreAttachment" type="BoneAttachment3D" parent="Sward_Bone/Skeleton3D" index="1"]
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 1, -2.64338e-17, -1.35143e-16, -0.286368)
+bone_name = "gem"
+bone_idx = 1
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Sward_Bone/Skeleton3D/CoreAttachment" index="0"]
+transform = Transform3D(1, 2.98023e-08, 3.72529e-09, -2.98023e-08, 1, -4.19095e-08, 9.31323e-10, -7.45058e-08, 1, 0, 0, 0)
+emitting = false
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_x2wks")
+draw_pass_1 = ExtResource("2_p2oqr")
 
 [node name="AnimationPlayers" type="Node3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="0"]
 libraries = {
-"": SubResource("AnimationLibrary_dk2kc")
+"": SubResource("AnimationLibrary_25u18")
 }
 autoplay = "idle"
 playback_default_blend_time = 0.1
 
 [node name="Hitboxes" type="Node3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
 
-[node name="Masterwork_Slash" type="Area3D" parent="Hitboxes" index="0"]
+[node name="Slash" type="Area3D" parent="Hitboxes" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Masterwork_Slash" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Slash" index="0"]
 shape = SubResource("SphereShape3D_8cb0h")
+disabled = true
 
-[node name="Masterwork_Chop" type="Area3D" parent="Hitboxes" index="1"]
+[node name="Chop" type="Area3D" parent="Hitboxes" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Masterwork_Chop" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Chop" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_axhwe")
+disabled = true
 
-[node name="Masterwork_Thrust" type="Area3D" parent="Hitboxes" index="2"]
+[node name="Thrust" type="Area3D" parent="Hitboxes" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0)
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Masterwork_Thrust" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Thrust" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, -1, 0, 0)
 shape = SubResource("BoxShape3D_shsdo")
+disabled = true
+
+[node name="Soulblast" type="Area3D" parent="Hitboxes" index="3"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Soulblast" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 1.86718e-22, -5.89431e-08, -1.34846)
+shape = SubResource("SphereShape3D_ob4o8")
+disabled = true

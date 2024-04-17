@@ -51,21 +51,21 @@ func transitions(_delta):
 		states.jump: return basic_move()
 		states.swim: if p.check_grounded():
 			if p.position.y >= G.sea_level: return swim_move()
-		states.slash:
-			if !p.anim_player.is_playing():
-				if Input.get_action_strength("action_attack") > 0:
-					return states.chop
-				return states.idle
-		states.chop:
-			if !p.anim_player.is_playing():
-				if Input.get_action_strength("action_attack") > 0:
-					return states.thrust
-				return states.idle
-		states.thrust:
-			if !p.anim_player.is_playing():
-				if Input.get_action_strength("action_attack") > 0:
-					return states.slash
-				return states.idle
+		states.slash: if !p.anim_player.is_playing():
+			if Input.get_action_strength("action_attack") > 0:
+				return states.chop
+			return states.idle
+		states.chop: if !p.anim_player.is_playing():
+			if Input.get_action_strength("action_attack") > 0:
+				return states.thrust
+			return states.idle
+		states.thrust: if !p.anim_player.is_playing():
+			if Input.get_action_strength("action_attack") > 0:
+				return states.slash
+			return states.idle
+		states.blast: if !p.anim_player.is_playing():
+			p.deplete(10)
+			return states.idle
 #Enter State
 @warning_ignore("unused_parameter")
 func state_enter(state_new, state_old):
