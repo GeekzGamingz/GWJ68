@@ -99,7 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.25, 0)
 target_position = Vector3(-0.25, 0, 0)
 
 [node name="LootOrigin" type="Marker3D" parent="WorldDetectors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745588, 0.432133)
 
 [node name="Outputs" type="Node3D" parent="."]
 

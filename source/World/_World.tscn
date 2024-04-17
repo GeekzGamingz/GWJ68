@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbkpaspk2squs"]
+[gd_scene load_steps=13 format=3 uid="uid://dbkpaspk2squs"]
 
 [ext_resource type="Script" path="res://source/World/_World.gd" id="1_jfcig"]
 [ext_resource type="PackedScene" uid="uid://b3x6ajm4gwyl6" path="res://source/World/ProcGen/ProcGen.tscn" id="1_yp283"]
 [ext_resource type="PackedScene" uid="uid://c2dl6n7fjyny8" path="res://source/Actor/Player/Player.tscn" id="4_77dap"]
+[ext_resource type="MeshLibrary" uid="uid://b4pkr724r6ov5" path="res://assets/Textures/Items/Ruins/RuinsLibrary.tres" id="4_jpxwr"]
 [ext_resource type="PackedScene" uid="uid://ddm2fw1pp3ebs" path="res://source/User Interface/Debug/Mode_Debug.tscn" id="5_lojl0"]
 [ext_resource type="PackedScene" uid="uid://dulvcattrgdeh" path="res://source/Actor/Enemies/Rustmite/Rustmite.tscn" id="5_ras0x"]
 [ext_resource type="PackedScene" uid="uid://g2mhklln1a3j" path="res://source/Items/Soul/Soul.tscn" id="5_ywtsx"]
 [ext_resource type="PackedScene" uid="uid://08tmi5ahc1x2" path="res://source/Actor/Enemies/Canopics/Canopic.tscn" id="6_m2c8b"]
+[ext_resource type="PackedScene" uid="uid://sgrfgld2y6fq" path="res://source/Items/Soulforge/Soulforge.tscn" id="8_20v1p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tt3sx"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -52,13 +54,24 @@ shadow_enabled = true
 [node name="ProcGen" parent="World_Chunk" node_paths=PackedStringArray("player") instance=ExtResource("1_yp283")]
 player = NodePath("../../Kinematics/Player")
 
+[node name="GridMap" type="GridMap" parent="World_Chunk"]
+transform = Transform3D(0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, 0, 2.5, 0)
+mesh_library = ExtResource("4_jpxwr")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65528, 0, 0)
+}
+
 [node name="Kinematics" type="Node3D" parent="."]
 
 [node name="Soul" parent="Kinematics" instance=ExtResource("5_ywtsx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3798, 6.22735, -50.9313)
 
 [node name="Player" parent="Kinematics" instance=ExtResource("4_77dap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5227, 10.6248, -50)
+transform = Transform3D(-0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, -0.766044, -7.8, 4.2, 3.15)
 
 [node name="Rustmite" parent="Kinematics" instance=ExtResource("5_ras0x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.904, 8.42572, -43.0717)
@@ -67,6 +80,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.904, 8.42572, -43.0717)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.869, 6.66326, -33.1068)
 
 [node name="Items" type="Node3D" parent="."]
+
+[node name="Soulforge" parent="Items" instance=ExtResource("8_20v1p")]
+transform = Transform3D(-0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, -0.766044, -5.25, 2.85, 5.15)
 
 [connection signal="child_entered_tree" from="Kinematics" to="World_Chunk/ProcGen" method="_on_kinematics_child_entered_tree"]
 [connection signal="child_order_changed" from="Kinematics" to="World_Chunk/ProcGen" method="_on_kinematics_child_order_changed"]
