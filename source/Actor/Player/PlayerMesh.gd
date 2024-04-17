@@ -2,10 +2,10 @@
 extends Node3D
 #------------------------------------------------------------------------------#
 #Constants
-const SWORD_BROKEN = preload("res://source/Items/Sword_Broken.tscn")
-const SWORD_REPAIRED = preload("res://source/Items/Sword_Repaired.tscn")
-const SWORD_MASTERWORK = preload("res://source/Items/Sword_Masterwork.tscn")
-const SWORD_SOULFORGED = preload("res://source/Items/Sword_Soulforged.tscn")
+const SWORD_BROKEN = preload("res://source/Items/Sword/Sword_Broken.tscn")
+const SWORD_REPAIRED = preload("res://source/Items/Sword/Sword_Repaired.tscn")
+const SWORD_MASTERWORK = preload("res://source/Items/Sword/Sword_Masterwork.tscn")
+const SWORD_SOULFORGED = preload("res://source/Items/Sword/Sword_Soulforged.tscn")
 #------------------------------------------------------------------------------#
 #Variables
 var sword

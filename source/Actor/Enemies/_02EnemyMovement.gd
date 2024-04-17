@@ -12,6 +12,7 @@ var swimming: bool = false
 @export var max_souls: float = 3
 #OnReady Variables
 @onready var facing = $WorldDetectors/Facing
+@onready var loot_origin = $WorldDetectors/LootOrigin
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready():
@@ -48,9 +49,10 @@ func backaway():
 #------------------------------------------------------------------------------#
 #Loot
 func loot():
+	G.set_kill_score(1)
 	randomize()
 	var souls = randf_range(min_souls, max_souls)
 	for s in souls:
 		var soul_scene = SOUL_SCENE.instantiate()
-		soul_scene.global_transform = global_transform
+		soul_scene.global_transform = loot_origin.global_transform
 		G.KINEMATICS.add_child(soul_scene)

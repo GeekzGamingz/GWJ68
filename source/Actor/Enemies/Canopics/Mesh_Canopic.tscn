@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b0ysw305d87g4" path="res://assets/Textures/Enemies/Pot/pot.gltf" id="1_rhg5b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e5a6l"]
-radius = 0.307567
+radius = 0.3
 
 [sub_resource type="Animation" id="Animation_ky88q"]
 length = 0.001

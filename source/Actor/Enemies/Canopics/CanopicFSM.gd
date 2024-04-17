@@ -14,6 +14,7 @@ func _ready():
 	state_add("swim")
 	state_add("flee")
 	state_add("shoot")
+	state_add("death")
 	call_deferred("state_set", states.idle)
 #------------------------------------------------------------------------------#
 func _process(_delta: float):
@@ -23,8 +24,9 @@ func _process(_delta: float):
 #State Logistics
 @warning_ignore("unused_parameter")
 func state_logic(delta):
-	if state == states.flee:
-		p.backaway()
+	match(state):
+		states.flee: p.backaway()
+		states.death: p.velocity.y = 0
 #State Transitions
 func transitions(_delta):
 	match(state):
@@ -36,7 +38,8 @@ func transitions(_delta):
 			elif p.facing.is_colliding(): return states.shoot
 	#Shoot
 		states.shoot:
-				if !p.anim_player.is_playing(): return states.idle
+			if !p.anim_player.is_playing(): return states.idle
+			elif p.is_dead == true: return states.death
 #Enter State
 @warning_ignore("unused_parameter")
 func state_enter(state_new, state_old):
@@ -60,6 +63,8 @@ func state_exit(state_old, state_new):
 #Verbose Transitions
 #Basic Movement
 func basic_move():
+	#Death
+	if p.is_dead == true: return states.death
 	#Swim
 	if p.position.y < G.sea_level: return states.swim #When Below Sea Level
 	#Player Flee
