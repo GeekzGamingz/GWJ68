@@ -31,6 +31,8 @@ orbit_velocity_curve = SubResource("CurveTexture_x1p61")
 gravity = Vector3(0, 0, 0)
 radial_accel_min = 1.0
 radial_accel_max = 2.0
+scale_min = 0.25
+scale_max = 0.5
 scale_over_velocity_curve = SubResource("CurveTexture_6eym4")
 
 [sub_resource type="Animation" id="Animation_k5lp3"]

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de4av7f0jt5f7"
-path="res://.godot/imported/MagicPew.png-35163bbeeb70e58a5ebdc174a0e722af.ctex"
+uid="uid://cm0mjf8pnyx6e"
+path="res://.godot/imported/twees.png-8683d6c69db1e93b58285e60690a7563.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/Items/MagicPew/MagicPew.png"
-dest_files=["res://.godot/imported/MagicPew.png-35163bbeeb70e58a5ebdc174a0e722af.ctex"]
+source_file="res://assets/Textures/Items/Twees/twees.png"
+dest_files=["res://.godot/imported/twees.png-8683d6c69db1e93b58285e60690a7563.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,21 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dv7vcjg2txhhf"
-path.s3tc="res://.godot/imported/MagicPew_0.png-221ac919b3541189ff37f46d3d629e64.s3tc.ctex"
+path="res://.godot/imported/MagicPew_0.png-221ac919b3541189ff37f46d3d629e64.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://assets/Textures/Items/MagicPew/MagicPew_0.png"
-dest_files=["res://.godot/imported/MagicPew_0.png-221ac919b3541189ff37f46d3d629e64.s3tc.ctex"]
+dest_files=["res://.godot/imported/MagicPew_0.png-221ac919b3541189ff37f46d3d629e64.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

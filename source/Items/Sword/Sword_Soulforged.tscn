@@ -31,6 +31,8 @@ orbit_velocity_curve = SubResource("CurveTexture_pywkh")
 gravity = Vector3(0, 0, 0)
 radial_accel_min = 1.0
 radial_accel_max = 2.0
+scale_min = 0.25
+scale_max = 0.5
 scale_over_velocity_curve = SubResource("CurveTexture_0ev2i")
 
 [sub_resource type="Animation" id="Animation_4vh8w"]
@@ -614,7 +616,7 @@ transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, 
 bones/0/scale = Vector3(0.999998, 0.999996, 0.999998)
 
 [node name="CoreAttachment" type="BoneAttachment3D" parent="Sward_Bone/Skeleton3D" index="1"]
-transform = Transform3D(-0.00763689, 0.00584683, 0.999952, 0.0411074, -0.999132, 0.006156, 0.999123, 0.0411524, 0.00739007, -1.30186, -0.00128798, -0.351641)
+transform = Transform3D(0.00660239, 0.998841, -0.0475962, 0.999934, -0.00703022, -0.00882857, -0.00915298, -0.0475348, -0.998826, 0.154246, 0.00252812, -2.1039)
 bone_name = "gem"
 bone_idx = 1
 

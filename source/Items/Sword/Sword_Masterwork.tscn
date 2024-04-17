@@ -31,6 +31,8 @@ orbit_velocity_curve = SubResource("CurveTexture_4a2mx")
 gravity = Vector3(0, 0, 0)
 radial_accel_min = 1.0
 radial_accel_max = 2.0
+scale_min = 0.25
+scale_max = 0.5
 scale_over_velocity_curve = SubResource("CurveTexture_hroyy")
 
 [sub_resource type="Animation" id="Animation_cjlok"]
@@ -611,7 +613,6 @@ radius = 3.5
 transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, 0, 0.75, 0)
 
 [node name="Skeleton3D" parent="Sward_Bone" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/scale = Vector3(0.999998, 0.999998, 1)
 
 [node name="CoreAttachment" type="BoneAttachment3D" parent="Sward_Bone/Skeleton3D" index="1"]

@@ -3,21 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx5ce51ghlsjj"
-path.s3tc="res://.godot/imported/Ruins_Scattered_0.png-94fb984421e430499ff3d4dedb631e6e.s3tc.ctex"
+path="res://.godot/imported/Ruins_Scattered_0.png-94fb984421e430499ff3d4dedb631e6e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://assets/Textures/Items/Ruins/Ruins_Scattered_0.png"
-dest_files=["res://.godot/imported/Ruins_Scattered_0.png-94fb984421e430499ff3d4dedb631e6e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Ruins_Scattered_0.png-94fb984421e430499ff3d4dedb631e6e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

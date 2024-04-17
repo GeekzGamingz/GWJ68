@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://source/World/_World.gd" id="1_jfcig"]
 [ext_resource type="PackedScene" uid="uid://b3x6ajm4gwyl6" path="res://source/World/ProcGen/ProcGen.tscn" id="1_yp283"]
 [ext_resource type="PackedScene" uid="uid://c2dl6n7fjyny8" path="res://source/Actor/Player/Player.tscn" id="4_77dap"]
-[ext_resource type="MeshLibrary" uid="uid://b4pkr724r6ov5" path="res://assets/Textures/Items/Ruins/RuinsLibrary.tres" id="4_jpxwr"]
+[ext_resource type="MeshLibrary" uid="uid://b4pkr724r6ov5" path="res://assets/Textures/Items/MeshLibrary.tres" id="4_jpxwr"]
 [ext_resource type="PackedScene" uid="uid://ddm2fw1pp3ebs" path="res://source/User Interface/Debug/Mode_Debug.tscn" id="5_lojl0"]
 [ext_resource type="PackedScene" uid="uid://dulvcattrgdeh" path="res://source/Actor/Enemies/Rustmite/Rustmite.tscn" id="5_ras0x"]
 [ext_resource type="PackedScene" uid="uid://g2mhklln1a3j" path="res://source/Items/Soul/Soul.tscn" id="5_ywtsx"]
@@ -62,7 +62,7 @@ cell_center_x = false
 cell_center_y = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65528, 0, 0)
+"cells": PackedInt32Array(65528, 0, 0, 65534, 65534, 15)
 }
 
 [node name="Kinematics" type="Node3D" parent="."]
