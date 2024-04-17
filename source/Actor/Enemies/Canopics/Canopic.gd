@@ -3,6 +3,7 @@ extends EnemyMovement
 #------------------------------------------------------------------------------#
 #Variables
 var elapsed_time: float = 0
+var is_dead: bool = false
 #Exported Variables
 @export_flags_3d_physics var fragment_collision_layer: int = 1
 @export_flags_3d_physics var fragment_collision_mask: int = 1
@@ -11,28 +12,20 @@ var elapsed_time: float = 0
 @export var max_frag_lifetime: float = 1.0
 #Onready Variables
 @onready var mesh = $Mesh_Canopic
-@onready var anim_player = mesh.get_node("AnimationPlayers/AnimationPlayer")
 @onready var shatter_origin = $WorldDetectors/ShatterOrigin
+@onready var sight = $WorldDetectors/Sight/CollisionShape3D
+@onready var hitbox = $WorldDetectors/Hitbox/CollisionShape3D
+@onready var atkbox = $Mesh_Canopic/Mesh/Skeleton3D/BoneAttachment3D/Atkbox_Light/CollisionShape3D
+@onready var anim_player = mesh.get_node("AnimationPlayers/AnimationPlayer")
 #------------------------------------------------------------------------------#
 #Hitbox
 func _on_hitbox_area_entered(area):
 	match(area.name):
-		#Broken Sword
-		"Broken_Slash": damage(25)
-		"Broken_Chop": damage(50)
-		"Broken_Thrust": damage(75)
-		#Repaired Sword
-		"Repaired_Slash": damage(35)
-		"Repaired_Chop": damage(60)
-		"Repaired_Thrust": damage(85)
-		#Masterwork Sword
-		"Masterwork_Slash": damage(45)
-		"Masterwork_Chop": damage(70)
-		"Masterwork_Thrust": damage(95)
-		#Soulforged Sword
-		"Soulforged_Slash": damage(55)
-		"Soulforged_Chop": damage(80)
-		"Soulforged_Thrust": damage(100)
+		#Sword
+		"Slash": damage(15)
+		"Chop": damage(20)
+		"Thrust": damage(25)
+		"Soulblast": damage(35)
 #Shatter
 func shatter(): 
 	var p = get_parent()
@@ -55,10 +48,12 @@ func shatter():
 			frag.lifetime = randf_range(min_frag_lifetime, max_frag_lifetime)
 #Kill Switch
 func kill():
-	loot()
-	$CollisionShape3D.set_deferred("disabled", true) #Disable Old Collision
-	$WorldDetectors/Sight/CollisionShape3D.set_deferred("disabled", true) #Remove Sight
+	mesh.set_deferred("visible", false) #Toggle Visibility
+	hitbox.set_deferred("disabled", true) #Disable Old Collision
+	atkbox.set_deferred("disabled", true) #Disable Attack
+	sight.set_deferred("disabled", true) #Disable Sight
+	is_dead = true #Death Flag
 	shatter()
+	loot()
 	await get_tree().create_timer(3).timeout
 	queue_free()
-

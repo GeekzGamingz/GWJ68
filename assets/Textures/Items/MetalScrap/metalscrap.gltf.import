@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://buceg3f5xc0ws"
-path="res://.godot/imported/Ruins_Base.gltf-2c10aa81ff7e81e25a37e26b2554f426.scn"
+uid="uid://dbb7dq0d48eqc"
+path="res://.godot/imported/metalscrap.gltf-9964c68d952fadd08d0e68589749e0be.scn"
 
 [deps]
 
-source_file="res://assets/Textures/Items/Ruins/Ruins_Base.gltf"
-dest_files=["res://.godot/imported/Ruins_Base.gltf-2c10aa81ff7e81e25a37e26b2554f426.scn"]
+source_file="res://assets/Textures/Items/MetalScrap/metalscrap.gltf"
+dest_files=["res://.godot/imported/metalscrap.gltf-9964c68d952fadd08d0e68589749e0be.scn"]
 
 [params]
 

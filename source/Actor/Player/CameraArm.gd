@@ -5,7 +5,7 @@ extends SpringArm3D
 #Exported Variables
 @export var mouse_sensitivity = 0.05
 @export var pitch = Vector2(-90.0, 30)
-@export_enum("First", "Third") var PointOfView: String
+@export_enum("Third") var PointOfView: String
 #OnReady Variables
 @onready var camera = $Camera3D
 #------------------------------------------------------------------------------#
@@ -13,19 +13,6 @@ extends SpringArm3D
 func _ready():
 	set_as_top_level(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-#------------------------------------------------------------------------------#
-#Camera Input
-func _input(_event):
-	if Input.is_action_just_pressed("action_camera"):
-		match(PointOfView):
-			"First": #Switch to Third
-				PointOfView = "Third"
-				spring_length = 3
-				camera.v_offset = 2
-			"Third": #Switch to First
-				PointOfView = "First"
-				spring_length = 0.5
-				camera.v_offset = 1.25
 #------------------------------------------------------------------------------#
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:

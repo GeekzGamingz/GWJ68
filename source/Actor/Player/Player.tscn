@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2dl6n7fjyny8"]
+[gd_scene load_steps=16 format=3 uid="uid://c2dl6n7fjyny8"]
 
 [ext_resource type="Script" path="res://source/Actor/Player/_03PlayerCombat.gd" id="1_bnnsb"]
 [ext_resource type="Script" path="res://source/Actor/Player/PlayerFSM.gd" id="2_mwrjc"]
 [ext_resource type="Script" path="res://source/Actor/Player/PlayerMesh.gd" id="3_4gjac"]
 [ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="4_b3hed"]
 [ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="5_pmhks"]
+[ext_resource type="Texture2D" uid="uid://dqoydi7q0fybm" path="res://assets/Textures/UserInterface/Icons/Counter_Souls.png" id="6_r8j7i"]
+[ext_resource type="Script" path="res://source/User Interface/Scoreboard.gd" id="6_xxvoo"]
+[ext_resource type="FontFile" uid="uid://bxypvnjgymccp" path="res://assets/Fonts/The Centurion .ttf" id="7_88f7y"]
+[ext_resource type="Texture2D" uid="uid://b7jnk3vc3o4l" path="res://assets/Textures/UserInterface/Icons/Counter_Metal.png" id="7_re3gd"]
+[ext_resource type="Texture2D" uid="uid://dx55a055hv3dq" path="res://assets/Textures/UserInterface/Icons/Counter_Kills.png" id="8_ahgxp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w5fiy"]
 radius = 0.25
@@ -14,9 +19,20 @@ height = 1.5
 radius = 0.185325
 height = 0.771032
 
+[sub_resource type="LabelSettings" id="LabelSettings_igdir"]
+font = ExtResource("7_88f7y")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gco7h"]
+font = ExtResource("7_88f7y")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bixer"]
+font = ExtResource("7_88f7y")
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_bnnsb")
+metadata/_edit_horizontal_guides_ = [95.0, 100.0, 155.0, 160.0, 127.0]
+metadata/_edit_vertical_guides_ = [200.0, 245.0, 145.0, 200.0, 300.0, 195.0, 295.0, 345.0, 400.0, 395.0, 445.0]
 
 [node name="PlayerFSM" type="Node3D" parent="."]
 script = ExtResource("2_mwrjc")
@@ -87,55 +103,110 @@ target_position = Vector3(-0.25, 0, 0)
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
 text = "State"
 
-[node name="ProgressBars" type="CanvasLayer" parent="."]
+[node name="PlayerUI" type="CanvasLayer" parent="."]
 
-[node name="ProgressBars" parent="ProgressBars" instance=ExtResource("5_pmhks")]
+[node name="ProgressBars" parent="PlayerUI" instance=ExtResource("5_pmhks")]
 
-[node name="Health" parent="ProgressBars/ProgressBars" index="0"]
+[node name="Health" parent="PlayerUI/ProgressBars" index="0"]
 offset_left = 120.0
 offset_top = 25.0
 offset_right = 120.0
 offset_bottom = 25.0
 
-[node name="Soul" parent="ProgressBars/ProgressBars" index="1"]
+[node name="Soul" parent="PlayerUI/ProgressBars" index="1"]
+offset_left = 82.0
+offset_top = 52.0
+offset_right = 82.0
+offset_bottom = 52.0
+
+[node name="Portrait" parent="PlayerUI/ProgressBars" index="2"]
 offset_left = 120.0
 offset_top = 25.0
 offset_right = 160.0
 offset_bottom = 65.0
 
-[node name="Portrait" parent="ProgressBars/ProgressBars" index="2"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 160.0
-offset_bottom = 65.0
-
-[node name="Blank" parent="ProgressBars/ProgressBars/Portrait" index="0"]
+[node name="Blank" parent="PlayerUI/ProgressBars/Portrait" index="0"]
 visible = false
 
-[node name="Pot" parent="ProgressBars/ProgressBars/Portrait" index="1"]
+[node name="Pot" parent="PlayerUI/ProgressBars/Portrait" index="1"]
 visible = false
 
-[node name="Bug" parent="ProgressBars/ProgressBars/Portrait" index="2"]
+[node name="Bug" parent="PlayerUI/ProgressBars/Portrait" index="2"]
 visible = false
 
-[node name="Gem1_Broken" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="1"]
+[node name="Gem1_Broken" parent="PlayerUI/ProgressBars/Portrait/Bezel" index="1"]
 visible = false
 
-[node name="Gem2_Broken" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="2"]
+[node name="Gem2_Broken" parent="PlayerUI/ProgressBars/Portrait/Bezel" index="2"]
 visible = false
 
-[node name="Gem3_Broken" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="3"]
+[node name="Gem3_Broken" parent="PlayerUI/ProgressBars/Portrait/Bezel" index="3"]
 visible = false
 
-[node name="Gem1_Charged" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="4"]
+[node name="Gem1_Charged" parent="PlayerUI/ProgressBars/Portrait/Bezel" index="4"]
 visible = false
 
-[node name="Gem2_Charged" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="5"]
+[node name="Gem2_Charged" parent="PlayerUI/ProgressBars/Portrait/Bezel" index="5"]
 visible = false
 
-[node name="Gem3_Charged" parent="ProgressBars/ProgressBars/Portrait/Bezel" index="6"]
+[node name="Gem3_Charged" parent="PlayerUI/ProgressBars/Portrait/Bezel" index="6"]
 visible = false
+
+[node name="Scoreboard" type="Control" parent="PlayerUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_xxvoo")
+
+[node name="Souls" type="Sprite2D" parent="PlayerUI/Scoreboard"]
+position = Vector2(170.5, 127.5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_r8j7i")
+
+[node name="SoulCount" type="Label" parent="PlayerUI/Scoreboard"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 100.0
+offset_right = 244.0
+offset_bottom = 155.0
+text = "100"
+label_settings = SubResource("LabelSettings_igdir")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scrap" type="Sprite2D" parent="PlayerUI/Scoreboard"]
+position = Vector2(270, 127)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_re3gd")
+
+[node name="ScrapCount" type="Label" parent="PlayerUI/Scoreboard"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 100.0
+offset_right = 344.0
+offset_bottom = 155.0
+text = "100	"
+label_settings = SubResource("LabelSettings_gco7h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kills" type="Sprite2D" parent="PlayerUI/Scoreboard"]
+position = Vector2(370, 127)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_ahgxp")
+
+[node name="KillCount" type="Label" parent="PlayerUI/Scoreboard"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 100.0
+offset_right = 444.0
+offset_bottom = 155.0
+text = "100"
+label_settings = SubResource("LabelSettings_bixer")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="WorldDetectors/Hitbox" to="." method="_on_hitbox_area_entered"]
 
-[editable path="ProgressBars/ProgressBars"]
+[editable path="PlayerUI/ProgressBars"]

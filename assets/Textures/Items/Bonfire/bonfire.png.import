@@ -2,28 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgki3tra14i33"
-path.s3tc="res://.godot/imported/Ruins_Base_0.png-5a350b6a6168619a1fcf8b27c93d9a32.s3tc.ctex"
+uid="uid://bay15x4hi0wor"
+path="res://.godot/imported/bonfire.png-6ef0dd4627a5d1c50c70c008b6ddcac6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Textures/Items/Ruins/Ruins_Base_0.png"
-dest_files=["res://.godot/imported/Ruins_Base_0.png-5a350b6a6168619a1fcf8b27c93d9a32.s3tc.ctex"]
+source_file="res://assets/Textures/Items/Bonfire/bonfire.png"
+dest_files=["res://.godot/imported/bonfire.png-6ef0dd4627a5d1c50c70c008b6ddcac6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -33,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

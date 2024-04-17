@@ -26,19 +26,8 @@ func ragdoll():
 #Hitbox
 func _on_hitbox_area_entered(area):
 	match(area.name):
-		#Broken Sword
-		"Broken_Slash": damage(5)
-		"Broken_Chop": damage(10)
-		"Broken_Thrust": damage(15)
-		#Repaired Sword
-		"Repaired_Slash": damage(15)
-		"Repaired_Chop": damage(20)
-		"Repaired_Thrust": damage(35)
-		#Masterwork Sword
-		"Masterwork_Slash": damage(25)
-		"Masterwork_Chop": damage(30)
-		"Masterwork_Thrust": damage(45)
-		#Soulforged Sword
-		"Soulforged_Slash": damage(35)
-		"Soulforged_Chop": damage(40)
-		"Soulforged_Thrust": damage(55)
+		#Sword
+		"Slash": damage(5)
+		"Chop": damage(10)
+		"Thrust": damage(15)
+		"Soulblast": damage(35)
