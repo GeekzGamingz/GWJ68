@@ -1,9 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://g2mhklln1a3j"]
+[gd_scene load_steps=18 format=3 uid="uid://g2mhklln1a3j"]
 
 [ext_resource type="Script" path="res://source/Items/Soul/Soul.gd" id="1_cjc5p"]
 [ext_resource type="Shader" path="res://assets/Shaders/Highlight.gdshader" id="2_ltr68"]
 [ext_resource type="ArrayMesh" uid="uid://78g7smapkyhe" path="res://assets/Textures/Items/Soul/soul.res" id="3_lw7me"]
 [ext_resource type="ArrayMesh" uid="uid://kpdln3pgtnbl" path="res://assets/Textures/Items/Soul/soul_particle.res" id="3_n2nel"]
+[ext_resource type="Texture2D" uid="uid://dhdovrtoyp2it" path="res://assets/Textures/Items/Soul/soul_0.png" id="5_ctw1g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pwyih"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buya1"]
+next_pass = SubResource("ShaderMaterial_pwyih")
+transparency = 1
+albedo_texture = ExtResource("5_ctw1g")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_my4i5"]
 render_priority = 0
@@ -161,6 +169,18 @@ tracks/9/path = NodePath("../Mesh_Soul/Skeleton3D/Mesh_Soul:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -385,6 +405,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Mesh_Soul/Skeleton3D/CoreAttachment/GPUParticles3D:emitting")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lps85"]
 _data = {
@@ -430,6 +462,7 @@ bones/2/rotation = Quaternion(0, 0, 0, 1)
 bones/2/scale = Vector3(1, 1, 1)
 
 [node name="Mesh_Soul" type="MeshInstance3D" parent="Mesh_Soul/Skeleton3D"]
+material_override = SubResource("StandardMaterial3D_buya1")
 material_overlay = SubResource("ShaderMaterial_my4i5")
 mesh = ExtResource("3_lw7me")
 skin = SubResource("Skin_r7gix")
@@ -439,7 +472,6 @@ bone_name = "Core"
 bone_idx = 1
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Mesh_Soul/Skeleton3D/CoreAttachment"]
-emitting = false
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_1vwun")
 draw_pass_1 = ExtResource("3_n2nel")

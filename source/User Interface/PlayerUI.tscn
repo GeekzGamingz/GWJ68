@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://cymfeeyecidlw"]
+
+[ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="1_qwx70"]
+[ext_resource type="Script" path="res://source/User Interface/Scoreboard.gd" id="2_kj4yy"]
+[ext_resource type="Texture2D" uid="uid://dqoydi7q0fybm" path="res://assets/Textures/UserInterface/Icons/Counter_Souls.png" id="3_ns4qy"]
+[ext_resource type="FontFile" uid="uid://bxypvnjgymccp" path="res://assets/Fonts/The Centurion .ttf" id="4_q417k"]
+[ext_resource type="Texture2D" uid="uid://b7jnk3vc3o4l" path="res://assets/Textures/UserInterface/Icons/Counter_Metal.png" id="5_g2eaf"]
+[ext_resource type="Texture2D" uid="uid://dx55a055hv3dq" path="res://assets/Textures/UserInterface/Icons/Counter_Kills.png" id="6_baqnh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_igdir"]
+font = ExtResource("4_q417k")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gco7h"]
+font = ExtResource("4_q417k")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bixer"]
+font = ExtResource("4_q417k")
+
+[sub_resource type="Animation" id="Animation_qxj3x"]
+resource_name = "cinematic"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xy51j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-500, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kyk6m"]
+_data = {
+"RESET": SubResource("Animation_xy51j"),
+"cinematic": SubResource("Animation_qxj3x")
+}
+
+[node name="PlayerUI" type="CanvasLayer"]
+offset = Vector2(-500, 0)
+transform = Transform2D(1, 0, 0, 1, -500, 0)
+
+[node name="ProgressBars" parent="." instance=ExtResource("1_qwx70")]
+
+[node name="Health" parent="ProgressBars" index="0"]
+offset_left = 120.0
+offset_top = 25.0
+offset_right = 120.0
+offset_bottom = 25.0
+
+[node name="Soul" parent="ProgressBars" index="1"]
+offset_left = 82.0
+offset_top = 52.0
+offset_right = 82.0
+offset_bottom = 52.0
+
+[node name="Portrait" parent="ProgressBars" index="2"]
+offset_left = 120.0
+offset_top = 25.0
+offset_right = 160.0
+offset_bottom = 65.0
+
+[node name="Blank" parent="ProgressBars/Portrait" index="0"]
+visible = false
+
+[node name="Pot" parent="ProgressBars/Portrait" index="1"]
+visible = false
+
+[node name="Bug" parent="ProgressBars/Portrait" index="2"]
+visible = false
+
+[node name="Gem1_Broken" parent="ProgressBars/Portrait/Bezel" index="1"]
+visible = false
+
+[node name="Gem2_Broken" parent="ProgressBars/Portrait/Bezel" index="2"]
+visible = false
+
+[node name="Gem3_Broken" parent="ProgressBars/Portrait/Bezel" index="3"]
+visible = false
+
+[node name="Gem1_Charged" parent="ProgressBars/Portrait/Bezel" index="4"]
+visible = false
+
+[node name="Gem2_Charged" parent="ProgressBars/Portrait/Bezel" index="5"]
+visible = false
+
+[node name="Gem3_Charged" parent="ProgressBars/Portrait/Bezel" index="6"]
+visible = false
+
+[node name="Scoreboard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_kj4yy")
+
+[node name="Souls" type="Sprite2D" parent="Scoreboard"]
+position = Vector2(170.5, 127.5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_ns4qy")
+
+[node name="SoulCount" type="Label" parent="Scoreboard"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 100.0
+offset_right = 244.0
+offset_bottom = 155.0
+text = "100"
+label_settings = SubResource("LabelSettings_igdir")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scrap" type="Sprite2D" parent="Scoreboard"]
+position = Vector2(270, 127)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_g2eaf")
+
+[node name="ScrapCount" type="Label" parent="Scoreboard"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 100.0
+offset_right = 344.0
+offset_bottom = 155.0
+text = "100	"
+label_settings = SubResource("LabelSettings_gco7h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kills" type="Sprite2D" parent="Scoreboard"]
+position = Vector2(370, 127)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_baqnh")
+
+[node name="KillCount" type="Label" parent="Scoreboard"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 100.0
+offset_right = 444.0
+offset_bottom = 155.0
+text = "100"
+label_settings = SubResource("LabelSettings_bixer")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayers" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers"]
+libraries = {
+"": SubResource("AnimationLibrary_kyk6m")
+}
+
+[editable path="ProgressBars"]

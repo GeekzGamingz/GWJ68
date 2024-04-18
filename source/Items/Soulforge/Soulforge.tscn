@@ -265,7 +265,6 @@ _data = {
 
 [node name="Skeleton3D" parent="Mesh_Forge" index="0"]
 bones/7/position = Vector3(-0.0108782, 1.02158, -0.885305)
-bones/7/rotation = Quaternion(0, 0.0325362, 0, 0.999471)
 
 [node name="ForgeBody" type="StaticBody3D" parent="Mesh_Forge/Skeleton3D/Mesh_Forge" index="0"]
 
@@ -279,7 +278,7 @@ bone_name = "Anvil"
 bone_idx = 11
 
 [node name="BezelAttachment" type="BoneAttachment3D" parent="Mesh_Forge/Skeleton3D" index="2"]
-transform = Transform3D(0.997883, 0, 0.0650379, 0, 1, 0, -0.0650379, 0, 0.997883, 0.558923, 1.07739, -0.620685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.558923, 1.07739, -0.620685)
 bone_name = "SoulGems"
 bone_idx = 7
 
