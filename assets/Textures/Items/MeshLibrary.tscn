@@ -1,7 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://f6kjc4m0lfc8"]
+[gd_scene load_steps=44 format=3 uid="uid://f6kjc4m0lfc8"]
 
 [ext_resource type="ArrayMesh" uid="uid://clnnf68picgo3" path="res://assets/Textures/Items/Ruins/mesh1.res" id="1_r8xaq"]
-[ext_resource type="ArrayMesh" uid="uid://b4dwyxo2o45al" path="res://assets/Textures/Items/Ruins/mesh2.res" id="2_pk630"]
 [ext_resource type="ArrayMesh" uid="uid://bbfu55blbity0" path="res://assets/Textures/Items/Ruins/mesh8.res" id="3_i5fhv"]
 [ext_resource type="ArrayMesh" uid="uid://by0rhcdrl06qv" path="res://assets/Textures/Items/Ruins/mesh3.res" id="4_2xekv"]
 [ext_resource type="ArrayMesh" uid="uid://pxc0jliqesg7" path="res://assets/Textures/Items/Ruins/mesh6.res" id="5_k6au5"]
@@ -101,7 +100,6 @@ collision_layer = 0
 shape = SubResource("ConcavePolygonShape3D_2v8dt")
 
 [node name="Wall1" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_pk630")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall1"]
 collision_layer = 0
