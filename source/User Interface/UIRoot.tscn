@@ -1,0 +1,194 @@
+[gd_scene load_steps=9 format=3 uid="uid://cm0x0oqo5fufd"]
+
+[ext_resource type="PackedScene" uid="uid://ddm2fw1pp3ebs" path="res://source/User Interface/Debug/Mode_Debug.tscn" id="1_pr4si"]
+[ext_resource type="Texture2D" uid="uid://cq8f6ya5pqxm" path="res://assets/Textures/UserInterface/CinematicLines_Bottom.png" id="2_sivkj"]
+[ext_resource type="Texture2D" uid="uid://dp6ot4gb2li5h" path="res://assets/Textures/UserInterface/CinematicLines_Top.png" id="3_7a8f8"]
+[ext_resource type="Texture2D" uid="uid://bra8tex8vqd51" path="res://assets/Textures/UserInterface/SoulForged.png" id="3_hh0n8"]
+
+[sub_resource type="Animation" id="Animation_i33gs"]
+resource_name = "cinematic"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CinematicTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 104), Vector2(960, -105)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CinematicBottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 976), Vector2(960, 1185)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CLogo_Pivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CLogo_Pivot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(810, 208), Vector2(810, 1200)]
+}
+
+[sub_resource type="Animation" id="Animation_tip6q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CinematicTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CinematicBottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 749)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CLogo_Pivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CLogo_Pivot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(808, 208)]
+}
+
+[sub_resource type="Animation" id="Animation_p772j"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CinematicTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 104)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CinematicBottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 976)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CLogo_Pivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CLogo_Pivot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(810, 208)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83fpv"]
+_data = {
+"RESET": SubResource("Animation_tip6q"),
+"cinematic": SubResource("Animation_i33gs"),
+"idle": SubResource("Animation_p772j")
+}
+
+[node name="UIRoot" type="CanvasLayer"]
+metadata/_edit_horizontal_guides_ = [208.0, 871.0, -210.0, 1080.0]
+
+[node name="Mode_Debug" parent="." instance=ExtResource("1_pr4si")]
+
+[node name="CinematicTop" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("3_7a8f8")
+
+[node name="CLogo_Pivot" type="Marker2D" parent="."]
+position = Vector2(808, 208)
+
+[node name="CinematicLogo" type="Sprite2D" parent="CLogo_Pivot"]
+position = Vector2(152, 1)
+texture = ExtResource("3_hh0n8")
+
+[node name="CinematicBottom" type="Sprite2D" parent="."]
+position = Vector2(960, 749)
+texture = ExtResource("2_sivkj")
+
+[node name="AnimationPlayers" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers"]
+libraries = {
+"": SubResource("AnimationLibrary_83fpv")
+}
+autoplay = "idle"

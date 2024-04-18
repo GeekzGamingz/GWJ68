@@ -1,0 +1,184 @@
+[gd_scene load_steps=23 format=3 uid="uid://cntf3runbhxpo"]
+
+[ext_resource type="PackedScene" uid="uid://beibhl3uicjwl" path="res://assets/Textures/Items/Bonfire/bonfire.gltf" id="1_krfhj"]
+[ext_resource type="Texture2D" uid="uid://bdlwdumi4pevk" path="res://assets/Textures/Items/Bonfire/bonfire_0.png" id="2_k2evy"]
+[ext_resource type="Shader" path="res://assets/Shaders/Highlight.gdshader" id="3_3ewp0"]
+[ext_resource type="ArrayMesh" uid="uid://mi2dwxhk020w" path="res://assets/Textures/Items/MagicPew/fire1.res" id="3_dnsn4"]
+[ext_resource type="ArrayMesh" uid="uid://cjygweaycxpdk" path="res://assets/Textures/Items/MagicPew/ashes1.res" id="3_e0kac"]
+[ext_resource type="ArrayMesh" uid="uid://34al26jhtkc1" path="res://assets/Textures/Items/MagicPew/ashes2.res" id="4_774sj"]
+[ext_resource type="PackedScene" uid="uid://dppc5ky3bgedn" path="res://source/Items/Soul/BigSoul.tscn" id="4_r0kg8"]
+[ext_resource type="ArrayMesh" uid="uid://bm3ue1kd5qd0e" path="res://assets/Textures/Items/MagicPew/fire2.res" id="6_iqa1k"]
+[ext_resource type="ArrayMesh" uid="uid://d30qpnyf6smrs" path="res://assets/Textures/Items/MagicPew/ashes3.res" id="6_mxcgm"]
+[ext_resource type="ArrayMesh" uid="uid://doj06pl4nv7mt" path="res://assets/Textures/Items/MagicPew/fire3.res" id="7_igqn3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_irkcm"]
+render_priority = 0
+shader = ExtResource("3_3ewp0")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 0.5
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ksv1"]
+next_pass = SubResource("ShaderMaterial_irkcm")
+albedo_texture = ExtResource("2_k2evy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bn2o7"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.1
+emission_ring_radius = 0.1
+emission_ring_inner_radius = 0.5
+direction = Vector3(1, 1, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_max = 0.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ptk2h"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.1
+emission_ring_radius = 0.1
+emission_ring_inner_radius = 0.0
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_max = 0.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nhofa"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.1
+emission_ring_radius = 0.1
+emission_ring_inner_radius = 0.3
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 1, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tj8se"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.2
+emission_ring_radius = 0.2
+emission_ring_inner_radius = 0.0
+gravity = Vector3(0, 1.5, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n0c6e"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.2
+emission_ring_radius = 0.2
+emission_ring_inner_radius = 0.1
+gravity = Vector3(0, 1, 0)
+scale_min = 0.25
+scale_max = 0.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_63yok"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.2
+emission_ring_radius = 0.3
+emission_ring_inner_radius = 0.0
+gravity = Vector3(0, 1, 0)
+
+[sub_resource type="Animation" id="Animation_ia4cx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigSoul:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.82041, 1.27895, 0.722984)]
+}
+
+[sub_resource type="Animation" id="Animation_gduqs"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_3tflp"]
+resource_name = "opening"
+length = 9.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigSoul:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-2.82041, 1.27895, 0.722984), Vector3(-3.19572, 1.27895, 3.04712), Vector3(-0.923202, 1.27895, 3.44672), Vector3(1.67558, 1.27895, 1.77649), Vector3(1.67558, 1.27895, -0.00284171), Vector3(0.743127, 1.27895, -0.00284171)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ildf"]
+_data = {
+"RESET": SubResource("Animation_ia4cx"),
+"idle": SubResource("Animation_gduqs"),
+"opening": SubResource("Animation_3tflp")
+}
+
+[node name="Bonfire" instance=ExtResource("1_krfhj")]
+
+[node name="Mesh_Bonfire" parent="Mesh_Bonfire/Skeleton3D" index="0"]
+material_override = SubResource("StandardMaterial3D_5ksv1")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh_Bonfire/Skeleton3D" index="1"]
+bone_name = "Bonfire"
+bone_idx = 1
+
+[node name="Ashes1" type="GPUParticles3D" parent="Mesh_Bonfire/Skeleton3D/BoneAttachment3D" index="0"]
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_bn2o7")
+draw_pass_1 = ExtResource("3_e0kac")
+
+[node name="Ashes2" type="GPUParticles3D" parent="Mesh_Bonfire/Skeleton3D/BoneAttachment3D" index="1"]
+amount = 1
+explosiveness = 0.1
+process_material = SubResource("ParticleProcessMaterial_ptk2h")
+draw_pass_1 = ExtResource("4_774sj")
+
+[node name="Ashes3" type="GPUParticles3D" parent="Mesh_Bonfire/Skeleton3D/BoneAttachment3D" index="2"]
+amount = 10
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_nhofa")
+draw_pass_1 = ExtResource("6_mxcgm")
+
+[node name="Fire1" type="GPUParticles3D" parent="Mesh_Bonfire/Skeleton3D/BoneAttachment3D" index="3"]
+trail_lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_tj8se")
+draw_pass_1 = ExtResource("3_dnsn4")
+
+[node name="Embers1" type="GPUParticles3D" parent="Mesh_Bonfire/Skeleton3D/BoneAttachment3D" index="4"]
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_n0c6e")
+draw_pass_1 = ExtResource("6_iqa1k")
+
+[node name="Embers2" type="GPUParticles3D" parent="Mesh_Bonfire/Skeleton3D/BoneAttachment3D" index="5"]
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_63yok")
+draw_pass_1 = ExtResource("7_igqn3")
+
+[node name="Camera3D" type="Camera3D" parent="." index="1"]
+transform = Transform3D(-0.836306, -0.218422, -0.502876, -0.0288501, 0.933478, -0.357472, 0.547503, -0.284448, -0.786975, -0.43211, 0.110862, -0.778017)
+
+[node name="AnimationPlayers" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, 4.65661e-10, 0, 1, -7.45058e-09, -1.49012e-08, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="0"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_3ildf")
+}
+
+[node name="BigSoul" parent="." index="3" instance=ExtResource("4_r0kg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82041, 1.27895, 0.722984)
