@@ -29,7 +29,7 @@ func transitions(_delta):
 @warning_ignore("unused_parameter")
 func state_enter(state_new, state_old):
 	match(state_new):
-		states.idle: p.anim_player.play("idle")
+		states.idle: p.anim_player.play("jar")
 	#Exit State
 @warning_ignore("unused_parameter")
 func state_exit(state_old, state_new):
