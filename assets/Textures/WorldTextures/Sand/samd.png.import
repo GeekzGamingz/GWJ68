@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c22khcuhrj3cy"
-path.s3tc="res://.godot/imported/samd.png-ea44063225e6d7d51d52261ac1c6aba1.s3tc.ctex"
+path="res://.godot/imported/samd.png-ea44063225e6d7d51d52261ac1c6aba1.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/Textures/WorldTextures/Sand/samd.png"
-dest_files=["res://.godot/imported/samd.png-ea44063225e6d7d51d52261ac1c6aba1.s3tc.ctex"]
+dest_files=["res://.godot/imported/samd.png-ea44063225e6d7d51d52261ac1c6aba1.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
