@@ -32,15 +32,6 @@ func check_grounded():
 	for ground_detector in ground_detectors.get_children():
 		if ground_detector.is_colliding(): return true
 	return false
-#Swim Detection
-#Raise Ground Detectors
-func raise_gDetectors():
-	for ground_detector in ground_detectors.get_children():
-		ground_detector.position.y += 0.5
-#Lower Ground Detectors
-func lower_gDetectors():
-	for ground_detector in ground_detectors.get_children():
-		ground_detector.position.y -= 0.5
 #------------------------------------------------------------------------------#
 #Health
 #Heal

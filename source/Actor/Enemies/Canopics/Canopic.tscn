@@ -27,6 +27,9 @@ script = ExtResource("1_6076l")
 fragment_collision_layer = 0
 fragment_collision_mask = 15
 max_frag_lifetime = 3.0
+min_souls = 0.0
+max_souls = 1.0
+max_scrap = 1.0
 
 [node name="CanopicFSM" type="Node3D" parent="."]
 script = ExtResource("2_bl6jv")
@@ -110,6 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250164, 0)
 
 [node name="StateOutput" type="Label3D" parent="Outputs"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.28663, 0)
+visible = false
 text = "State"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

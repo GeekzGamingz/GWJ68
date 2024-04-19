@@ -11,7 +11,6 @@ func _ready():
 	state_add("walk")
 	state_add("run")
 	state_add("fall")
-	state_add("swim")
 	state_add("follow")
 	call_deferred("state_set", states.idle)
 #------------------------------------------------------------------------------#
@@ -34,24 +33,17 @@ func transitions(_delta):
 @warning_ignore("unused_parameter")
 func state_enter(state_new, state_old):
 	match(state_new):
-		states.swim:
-			p.swimming = !p.swimming
-			p.raise_gDetectors()
+		states.idle: pass
 	#Exit State
 @warning_ignore("unused_parameter")
 func state_exit(state_old, state_new):
 	match(state_old):
-		states.swim:
-			p.swimming = !p.swimming
-			p.lower_gDetectors()
 		states.follow:
 			p.velocity = Vector3.ZERO
 #------------------------------------------------------------------------------#
 #Verbose Transitions
 #Basic Movement
 func basic_move():
-	#Swim
-	if p.position.y < G.sea_level: return states.swim #When Below Sea Level
 	#Player Follow
 	if p.detected_player: return states.follow
 	#Idle
@@ -64,8 +56,5 @@ func basic_move():
 	elif p.velocity.x != 0 || p.velocity.z != 0:
 		if p.max_speed == p.walk_speed: return states.walk
 		elif p.max_speed == p.run_speed: return states.run
-#Swimming Movement
-func swim_move():
-	if p.check_grounded(): return basic_move() #Expand Logic
 #Fly Movement
 func fly_move(): pass

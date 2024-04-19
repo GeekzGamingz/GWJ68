@@ -18,7 +18,6 @@ func _ready():
 	state_add("backstep")
 	state_add("jump")
 	state_add("fall")
-	state_add("swim")
 	state_add("fly")
 	state_add("slash")
 	state_add("chop")
@@ -36,8 +35,6 @@ func state_logic(delta):
 	if p.controllable:
 		p.apply_gravity(delta)
 		p.handle_movement()
-		if p.swimming:
-			p.position.y = G.sea_level
 #State Transitions
 func transitions(_delta):
 	match(state):
@@ -49,8 +46,6 @@ func transitions(_delta):
 			return basic_move()
 		states.fall: return basic_move()
 		states.jump: return basic_move()
-		states.swim: if p.check_grounded():
-			if p.position.y >= G.sea_level: return swim_move()
 		states.slash: if !p.anim_player.is_playing():
 			if Input.get_action_strength("action_attack") > 0:
 				return states.chop
@@ -76,9 +71,6 @@ func state_enter(state_new, state_old):
 		states.strafe_l: p.max_speed = p.strafe_speed
 		states.strafe_r: p.max_speed = p.strafe_speed
 		states.backstep: p.max_speed = p.strafe_speed
-		states.swim:
-			p.swimming = !p.swimming
-			p.raise_gDetectors()
 		states.slash: p.anim_player.play("slash")
 		states.chop: p.anim_player.play("chop")
 		states.thrust: p.anim_player.play("thrust")
@@ -87,15 +79,11 @@ func state_enter(state_new, state_old):
 @warning_ignore("unused_parameter")
 func state_exit(state_old, state_new):
 	match(state_old):
-		states.swim:
-			p.swimming = !p.swimming
-			p.lower_gDetectors()
+		states.idle: pass
 #------------------------------------------------------------------------------#
 #Verbose Transitions
 #Basic Movement
 func basic_move():
-	#Swim
-	if p.position.y < G.sea_level: return states.swim #When Below Sea Level
 	#Attack
 	if Input.get_action_strength("action_attack") > 0: return states.slash
 	if Input.get_action_strength("action_magic") > 0: return states.blast
@@ -120,8 +108,5 @@ func basic_move():
 					elif Input.get_action_strength("move_right") > 0: return states.strafe_r
 					elif Input.get_action_strength("move_back") > 0: return states.backstep
 				else: return states.run
-#Swimming Movement
-func swim_move():
-	if p.check_grounded(): return basic_move() #Expand Logic
 #Fly Movement
 func fly_move(): pass

@@ -23,6 +23,9 @@ viewport_path = NodePath("ProgressBar/SubViewport")
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_g73us")
+min_souls = 0.0
+max_souls = 1.0
+max_scrap = 1.0
 
 [node name="RustmiteFSM" type="Node3D" parent="."]
 script = ExtResource("2_u6ssa")
