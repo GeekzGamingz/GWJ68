@@ -31,13 +31,13 @@ func _on_hitbox_area_entered(area):
 #Challenges
 #Beckon Entered
 func _on_beckon_area_entered(area):
-	dialogue.beckon()
+	if area.name == "Hitbox_Player": dialogue.beckon()
 #Beckon Exited
 func _on_beckon_area_exited(area):
-	dialogue.no_chat()
+	if area.name == "Hitbox_Player": dialogue.no_chat()
 #Challenge Entered
 func _on_challenge_area_entered(area):
-	dialogue.challenge()
+	if area.name == "Hitbox_Player": dialogue.challenge()
 #Challenge Exited
 func _on_challenge_area_exited(area):
-	dialogue.beckon()
+	if area.name == "Hitbox_Player": dialogue.beckon()

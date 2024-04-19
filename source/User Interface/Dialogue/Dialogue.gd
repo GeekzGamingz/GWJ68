@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var elipses = $Control/Elipses
 @onready var souls_exchange = $Control/SoulsExchange
 @onready var upgrade_exchange = $Control/UpgradeExchange
+@onready var label = $Control/Label
 #------------------------------------------------------------------------------#
 #No Chat
 func no_chat():
@@ -19,6 +20,7 @@ func beckon():
 	elipses.visible = true
 	souls_exchange.visible = false
 	upgrade_exchange.visible = false
+	label.visible = false
 #Challenging Chat
 func challenge():
 	visible = true
@@ -26,3 +28,4 @@ func challenge():
 	elipses.visible = false
 	souls_exchange.visible = true
 	upgrade_exchange.visible = false
+	label.visible = true

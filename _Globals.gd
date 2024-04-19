@@ -19,7 +19,7 @@ var sea_level: float = 1.5
 @onready var KINEMATICS = get_tree().get_root().get_node("WorldRoot/Kinematics")
 @onready var PLAYER = get_tree().get_root().get_node("WorldRoot/Kinematics/Player")
 @onready var ITEMS = get_tree().get_root().get_node("WorldRoot/Items")
-@onready var SPAWN = get_tree().get_root().get_node("WorldRoot/World_Chunk/Locations/Spawn")
+@onready var SPAWN = get_tree().get_root().get_node("WorldRoot/World_Chunk/WorldBorder/TeleportArm/TeleportPOS")
 #------------------------------------------------------------------------------#
 #Globals Functions
 func get_height(x, z):
