@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs3rj22ovjlby"]
+
+[ext_resource type="Script" path="res://source/Items/Scrap/Scrap.gd" id="1_3ah47"]
+[ext_resource type="Shader" path="res://assets/Shaders/Highlight.gdshader" id="1_j704l"]
+[ext_resource type="ArrayMesh" uid="uid://ce8ot3y8lpdj4" path="res://assets/Textures/Items/MetalScrap/Scrap.res" id="1_kl8kg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0a7uv"]
+render_priority = 0
+shader = ExtResource("1_j704l")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 3.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4iv28"]
+radius = 0.3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rnv86"]
+radius = 0.075
+height = 0.5
+
+[node name="Scrap" type="RigidBody3D" groups=["Kinematics"]]
+collision_layer = 8
+script = ExtResource("1_3ah47")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_overlay = SubResource("ShaderMaterial_0a7uv")
+mesh = ExtResource("1_kl8kg")
+
+[node name="Hitbox_Scrap" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox_Scrap"]
+shape = SubResource("SphereShape3D_4iv28")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_rnv86")
+
+[connection signal="area_entered" from="Hitbox_Scrap" to="." method="_on_hitbox_scrap_area_entered"]

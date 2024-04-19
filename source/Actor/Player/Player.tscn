@@ -92,3 +92,5 @@ text = "State"
 [node name="PlayerUI" parent="." instance=ExtResource("5_e4tul")]
 
 [connection signal="area_entered" from="WorldDetectors/Hitbox_Player" to="." method="_on_hitbox_area_entered"]
+
+[editable path="CameraArm"]

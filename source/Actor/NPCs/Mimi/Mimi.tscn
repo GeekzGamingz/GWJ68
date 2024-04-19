@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxu16hlxqlqed"]
+
+[ext_resource type="PackedScene" uid="uid://cgb5pdwsutpb" path="res://source/Actor/NPCs/Mimi/Mesh_Mimi.tscn" id="1_mp811"]
+[ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="3_fg4t1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3fkt8"]
+radius = 0.25
+height = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lt5u7"]
+margin = 0.05
+radius = 10.0
+
+[node name="Mimi" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="MimiFSM" type="Node3D" parent="."]
+
+[node name="Mesh_Mimi" parent="." instance=ExtResource("1_mp811")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_3fkt8")
+
+[node name="CameraArm" parent="." instance=ExtResource("3_fg4t1")]
+margin = 1.0
+
+[node name="WorldDetectors" type="Node3D" parent="."]
+
+[node name="Facing" type="RayCast3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+collision_mask = 2
+
+[node name="Sight" type="Area3D" parent="WorldDetectors"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Sight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_lt5u7")
+
+[node name="GroundDetectors" type="Node3D" parent="WorldDetectors"]
+
+[node name="F_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150019, 0.5)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="B_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.5)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="C_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+target_position = Vector3(0, -0.25, 0)
+
+[node name="L_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.15, 0)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="R_GroundDetector" type="RayCast3D" parent="WorldDetectors/GroundDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.15, 0)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="WallDetectors" type="Node3D" parent="WorldDetectors"]
+
+[node name="F_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.5)
+target_position = Vector3(0, 0, 0.25)
+
+[node name="B_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.5)
+target_position = Vector3(0, 0, -0.25)
+
+[node name="L_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.75, 0)
+target_position = Vector3(0.25, 0, 0)
+
+[node name="R_WallDetector" type="RayCast3D" parent="WorldDetectors/WallDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.75, 0)
+target_position = Vector3(-0.25, 0, 0)
+
+[node name="LootOrigin" type="Marker3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Outputs" type="Node3D" parent="."]
+
+[node name="StateOutput" type="Label3D" parent="Outputs"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
+text = "State"
