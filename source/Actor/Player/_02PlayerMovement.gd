@@ -7,7 +7,6 @@ var move_direction = Vector3.ZERO
 #Exported Variables
 @export_category("Movement Exports")
 @export var controllable: bool = true
-@export var swimming: bool = false
 @export var jump_velocity = 4.5
 @export var rotation_speed = 5
 #OnReady Variables

@@ -7,7 +7,6 @@ class_name EnemyMovement
 #Variables
 var player
 var detected_player: bool = false
-var swimming: bool = false
 #Export Variables
 @export var min_souls: float = 1
 @export var max_souls: float = 3

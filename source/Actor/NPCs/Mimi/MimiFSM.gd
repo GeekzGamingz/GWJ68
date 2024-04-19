@@ -46,7 +46,5 @@ func state_exit(state_old, state_new):
 #Verbose Transitions
 #Basic Movement
 func basic_move(): pass
-#Swimming Movement
-func swim_move(): pass
 #Fly Movement
 func fly_move(): pass

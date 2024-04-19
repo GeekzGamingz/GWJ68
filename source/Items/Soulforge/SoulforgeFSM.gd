@@ -42,11 +42,3 @@ func state_enter(state_new, state_old):
 func state_exit(state_old, state_new):
 	match(state_old):
 		states.idle_game0: pass
-#------------------------------------------------------------------------------#
-#Verbose Transitions
-#Basic Movement
-func basic_move(): pass
-#Swimming Movement
-func swim_move(): pass
-#Fly Movement
-func fly_move(): pass

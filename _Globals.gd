@@ -13,7 +13,6 @@ var kill_score = 0: set = set_kill_score
 var hmap_img: Image = load(ProjectSettings.get_setting("shader_globals/heightmap").value).get_image()
 var hmImage_size = hmap_img.get_width()
 var amplitude: float = ProjectSettings.get_setting("shader_globals/amplitude").value
-var sea_level: float = 1.5
 #OnReady Variables
 @onready var UI = get_tree().get_root().get_node("WorldRoot/UIRoot")
 @onready var KINEMATICS = get_tree().get_root().get_node("WorldRoot/Kinematics")

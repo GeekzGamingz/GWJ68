@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cm0x0oqo5fufd"]
+[gd_scene load_steps=10 format=3 uid="uid://cm0x0oqo5fufd"]
 
 [ext_resource type="PackedScene" uid="uid://ddm2fw1pp3ebs" path="res://source/User Interface/Debug/Mode_Debug.tscn" id="1_pr4si"]
 [ext_resource type="Texture2D" uid="uid://cq8f6ya5pqxm" path="res://assets/Textures/UserInterface/CinematicLines_Bottom.png" id="2_sivkj"]
 [ext_resource type="Texture2D" uid="uid://dp6ot4gb2li5h" path="res://assets/Textures/UserInterface/CinematicLines_Top.png" id="3_7a8f8"]
 [ext_resource type="Texture2D" uid="uid://bra8tex8vqd51" path="res://assets/Textures/UserInterface/SoulForged.png" id="3_hh0n8"]
+[ext_resource type="Texture2D" uid="uid://bvklhba7bbxyq" path="res://assets/Textures/UserInterface/ChatBubble/dutybound.png" id="5_fgfp5"]
 
 [sub_resource type="Animation" id="Animation_tip6q"]
 length = 0.001
@@ -184,6 +185,11 @@ texture = ExtResource("3_hh0n8")
 [node name="CinematicBottom" type="Sprite2D" parent="."]
 position = Vector2(960, 749)
 texture = ExtResource("2_sivkj")
+
+[node name="DutyBound" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(962, 594)
+texture = ExtResource("5_fgfp5")
 
 [node name="AnimationPlayers" type="Node2D" parent="."]
 
