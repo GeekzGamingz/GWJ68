@@ -429,7 +429,7 @@ _data = {
 radius = 0.25
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hv5en"]
-radius = 0.266551
+radius = 0.3
 
 [node name="Soul" type="RigidBody3D" groups=["Kinematics"]]
 collision_layer = 8

@@ -1,6 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://sgrfgld2y6fq"]
+[gd_scene load_steps=32 format=3 uid="uid://sgrfgld2y6fq"]
 
 [ext_resource type="PackedScene" uid="uid://du3ap3mbmmerc" path="res://assets/Textures/Items/Forge/Forge.gltf" id="1_r0nmx"]
+[ext_resource type="Script" path="res://source/Items/Soulforge/SoulforgeFSM.gd" id="2_2a60e"]
+[ext_resource type="Script" path="res://source/Items/Soulforge/Soulforge.gd" id="2_aghsy"]
 [ext_resource type="ArrayMesh" uid="uid://c6kapihs43kd6" path="res://assets/Textures/Items/MagicPew/MagicPew.res" id="2_gabw5"]
 [ext_resource type="ArrayMesh" uid="uid://dlk153rdao3uh" path="res://assets/Textures/Items/MagicPew/Sparklie.res" id="2_s4hsr"]
 
@@ -159,9 +161,30 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.294388, 0.170091, 0.0347702)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0.294392, 0.170091, 0.0347702)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 1.92188e-06, -0.339807, 0.0347701)
 
-[sub_resource type="Animation" id="Animation_p6ad4"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_jnwgu"]
+resource_name = "idle_gem0"
 length = 16.0
 loop_mode = 1
 step = 2.0
@@ -200,6 +223,297 @@ tracks/4/path = NodePath("../Mesh_Forge/Skeleton3D:SoulGems")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 4, 1, 0, -0.173863, 0, 0.98477, 8, 1, 0, -0.0153321, 0, 0.999882, 12, 1, 0, 0.174529, 0, 0.984652)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, -5, 0)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, -5, 0)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0, -5, 0)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_j0ved"]
+resource_name = "idle_gem1"
+length = 16.0
+loop_mode = 1
+step = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Forge/Skeleton3D:Gear_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, 0, 0.710892, 0, 0.703302, 4, 1, 0, 0.992667, 0, 0.120882, 6, 1, 0, 0.931554, 0, -0.363603, 8, 1, 0, -0.108083, 0, 0.994142, 10, 1, 0, 0.659496, 0, 0.751708, 12, 1, 0, 0.913103, 0, 0.407729, 14, 1, 0, 0.978853, 0, 0.204567)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Forge/Skeleton3D:Gear_2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, -0.712032, 0, 0, 0.702147, 4, 1, 0.994489, 0, 0, -0.104837, 6, 1, 0.903525, 0, 0, 0.428536, 8, 1, 0.110563, 0, 0, 0.993869, 10, 1, -0.650001, 0, 0, 0.759933, 12, 1, 0.953036, 0, 0, -0.302856, 14, 1, 0.988329, 0, 0, -0.152332)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Forge/Skeleton3D:Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Forge/Skeleton3D:SoulGems")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.010525, 1.35048, -0.885525, 8, 1, -0.010525, 1.15048, -0.885525)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh_Forge/Skeleton3D:SoulGems")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 4, 1, 0, -0.173863, 0, 0.98477, 8, 1, 0, -0.0153321, 0, 0.999882, 12, 1, 0, 0.174529, 0, 0.984652)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 1.92188e-06, -0.339807, 0.0347701)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.294, -5, 0.035)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.294, -5, 0.035)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_d0ige"]
+resource_name = "idle_gem2"
+length = 16.0
+loop_mode = 1
+step = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Forge/Skeleton3D:Gear_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, 0, 0.710892, 0, 0.703302, 4, 1, 0, 0.992667, 0, 0.120882, 6, 1, 0, 0.931554, 0, -0.363603, 8, 1, 0, -0.108083, 0, 0.994142, 10, 1, 0, 0.659496, 0, 0.751708, 12, 1, 0, 0.913103, 0, 0.407729, 14, 1, 0, 0.978853, 0, 0.204567)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Forge/Skeleton3D:Gear_2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, -0.712032, 0, 0, 0.702147, 4, 1, 0.994489, 0, 0, -0.104837, 6, 1, 0.903525, 0, 0, 0.428536, 8, 1, 0.110563, 0, 0, 0.993869, 10, 1, -0.650001, 0, 0, 0.759933, 12, 1, 0.953036, 0, 0, -0.302856, 14, 1, 0.988329, 0, 0, -0.152332)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Forge/Skeleton3D:Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Forge/Skeleton3D:SoulGems")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.010525, 1.35048, -0.885525, 8, 1, -0.010525, 1.15048, -0.885525)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh_Forge/Skeleton3D:SoulGems")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 4, 1, 0, -0.173863, 0, 0.98477, 8, 1, 0, -0.0153321, 0, 0.999882, 12, 1, 0, 0.174529, 0, 0.984652)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 1.92188e-06, -0.339807, 0.0347701)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.294388, 0.170091, 0.0347702)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.294, -5, 0.035)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_p6ad4"]
+resource_name = "idle_gem3"
+length = 16.0
+loop_mode = 1
+step = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Forge/Skeleton3D:Gear_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, 0, 0.710892, 0, 0.703302, 4, 1, 0, 0.992667, 0, 0.120882, 6, 1, 0, 0.931554, 0, -0.363603, 8, 1, 0, -0.108083, 0, 0.994142, 10, 1, 0, 0.659496, 0, 0.751708, 12, 1, 0, 0.913103, 0, 0.407729, 14, 1, 0, 0.978853, 0, 0.204567)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Forge/Skeleton3D:Gear_2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2, 1, -0.712032, 0, 0, 0.702147, 4, 1, 0.994489, 0, 0, -0.104837, 6, 1, 0.903525, 0, 0, 0.428536, 8, 1, 0.110563, 0, 0, 0.993869, 10, 1, -0.650001, 0, 0, 0.759933, 12, 1, 0.953036, 0, 0, -0.302856, 14, 1, 0.988329, 0, 0, -0.152332)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Forge/Skeleton3D:Hammer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Forge/Skeleton3D:SoulGems")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.010525, 1.35048, -0.885525, 8, 1, -0.010525, 1.15048, -0.885525)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh_Forge/Skeleton3D:SoulGems")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 4, 1, 0, -0.173863, 0, 0.98477, 8, 1, 0, -0.0153321, 0, 0.999882, 12, 1, 0, 0.174529, 0, 0.984652)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 1.92188e-06, -0.339807, 0.0347701)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Forge/Skeleton3D:Gem1")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.294388, 0.170091, 0.0347702)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Mesh_Forge/Skeleton3D:Gem2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/9/type = "position_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.294392, 0.170091, 0.0347702)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Mesh_Forge/Skeleton3D:Gem3")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_qa1i2"]
 resource_name = "strike"
@@ -257,14 +571,25 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hdu3q"]
 _data = {
 "RESET": SubResource("Animation_qmb6v"),
-"idle": SubResource("Animation_p6ad4"),
+"idle_gem0": SubResource("Animation_jnwgu"),
+"idle_gem1": SubResource("Animation_j0ved"),
+"idle_gem2": SubResource("Animation_d0ige"),
+"idle_gem3": SubResource("Animation_p6ad4"),
 "strike": SubResource("Animation_qa1i2")
 }
 
 [node name="Soulforge" instance=ExtResource("1_r0nmx")]
+script = ExtResource("2_aghsy")
+
+[node name="SoulforgeFSM" type="Node3D" parent="." index="0"]
+script = ExtResource("2_2a60e")
 
 [node name="Skeleton3D" parent="Mesh_Forge" index="0"]
 bones/7/position = Vector3(-0.0108782, 1.02158, -0.885305)
+bones/7/rotation = Quaternion(0, -0.100042, 0, 0.994983)
+bones/8/position = Vector3(1.92188e-06, -0.339807, 0.0347701)
+bones/9/position = Vector3(-0.294388, 0.170091, 0.0347702)
+bones/10/position = Vector3(0.294392, 0.170091, 0.0347702)
 
 [node name="ForgeBody" type="StaticBody3D" parent="Mesh_Forge/Skeleton3D/Mesh_Forge" index="0"]
 
@@ -278,7 +603,7 @@ bone_name = "Anvil"
 bone_idx = 11
 
 [node name="BezelAttachment" type="BoneAttachment3D" parent="Mesh_Forge/Skeleton3D" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.558923, 1.07739, -0.620685)
+transform = Transform3D(0.979983, 0, -0.19908, 0, 1, 0, 0.19908, 0, 0.979983, 0.558923, 1.07739, -0.620685)
 bone_name = "SoulGems"
 bone_idx = 7
 
@@ -301,11 +626,17 @@ speed_scale = 1.5
 process_material = SubResource("ParticleProcessMaterial_o5n68")
 draw_pass_1 = ExtResource("2_s4hsr")
 
-[node name="AnimationPlayers" type="Node3D" parent="." index="1"]
+[node name="AnimationPlayers" type="Node3D" parent="." index="2"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="0"]
 libraries = {
 "": SubResource("AnimationLibrary_hdu3q")
 }
-autoplay = "idle"
+autoplay = "idle_gem0"
 playback_default_blend_time = 0.1
+
+[node name="Outputs" type="Node3D" parent="." index="3"]
+
+[node name="StateOutput" type="Label3D" parent="Outputs" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.5, 0)
+text = "State"

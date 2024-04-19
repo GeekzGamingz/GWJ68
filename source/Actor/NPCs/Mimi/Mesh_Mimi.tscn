@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgb5pdwsutpb"]
+
+[ext_resource type="PackedScene" uid="uid://bq3yxa7jld2lh" path="res://assets/Textures/NPCs/Notamimic/notamimic.gltf" id="1_wta20"]
+
+[sub_resource type="Animation" id="Animation_yx0lr"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Mimi/Skeleton3D:Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Mimi/Skeleton3D:Eyelid_L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Mimi/Skeleton3D:Eyelid_R")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Mimi/Skeleton3D:Eye_Orb")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_hlghb"]
+resource_name = "idle_closed"
+length = 4.8
+loop_mode = 1
+step = 1.2
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Mimi/Skeleton3D:Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.2, 1, 0.00598644, 0, 0, 0.999982, 2.4, 1, 0, 0, 0, 1, 3.6, 1, -0.00872653, 0, 0, 0.999962)
+
+[sub_resource type="Animation" id="Animation_wcjg2"]
+resource_name = "idle_open"
+length = 9.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Mimi/Skeleton3D:Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.708118, 0, 0, 0.706094, 2.55, 1, 0.697084, 0, 0, 0.71699, 5.3, 1, 0.708118, 0, 0, 0.706094, 8.1, 1, 0.733171, 0, 0, 0.680044)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Mimi/Skeleton3D:Eyelid_L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 3.5, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 3.6, 1, 0, 0, 0, 1, 3.7, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 6.6, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 6.7, 1, 0, 0, 0, 1, 6.8, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 8.9, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 9, 1, 0, 0, 0, 1, 9.1, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Mimi/Skeleton3D:Eyelid_R")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 3.5, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 3.6, 1, 0, 0, 0, 1, 3.7, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 6.6, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 6.7, 1, 0, 0, 0, 1, 6.8, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 8.9, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 9, 1, 0, 0, 0, 1, 9.1, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Mimi/Skeleton3D:Eye_Orb")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.1, 1, 0.0534511, 0.00103694, 0.018383, 0.998401, 5, 1, -0.0295084, 0.000639391, -0.0239787, 0.999277, 7.6, 1, 0.0139067, 0.000435132, 0.0259378, 0.999567)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_51x0i"]
+_data = {
+"RESET": SubResource("Animation_yx0lr"),
+"idle_closed": SubResource("Animation_hlghb"),
+"idle_open": SubResource("Animation_wcjg2")
+}
+
+[node name="Mesh_Mimi" instance=ExtResource("1_wta20")]
+
+[node name="AnimationPlayers" type="Node3D" parent="." index="1"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_51x0i")
+}
+playback_default_blend_time = 1.0
