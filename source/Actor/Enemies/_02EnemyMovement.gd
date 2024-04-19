@@ -6,7 +6,7 @@ class_name EnemyMovement
 @onready var SCRAP_SCENE = preload("res://source/Items/Scrap/Scrap.tscn")
 #Variables
 var player
-var detected_player : bool = false
+var detected_player: bool = false
 var swimming: bool = false
 #Export Variables
 @export var min_souls: float = 1
@@ -28,14 +28,21 @@ func _physics_process(delta):
 	move_and_slide()
 #------------------------------------------------------------------------------#
 #Sight
+#When Sight is Entered
 func _on_sight_body_entered(body):
 	if body.name == "Player":
 		player = body
 		detected_player = true
+#When Sight is Exited
 func _on_sight_body_exited(body):
 	if body.name == "Player":
 		player = null
 		detected_player = false
+#Turn to Player
+func lookie(): 
+	if player != null:
+		var distance = ((player.global_position - global_position) * Vector3(1,0,1)).normalized()
+		look_at(player.global_position + distance, Vector3.UP)
 #Movement
 func follow(): 
 	if player != null:

@@ -16,6 +16,7 @@ height = 0.771032
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_bnnsb")
 metadata/_edit_horizontal_guides_ = [95.0, 100.0, 155.0, 160.0, 127.0]
 metadata/_edit_vertical_guides_ = [200.0, 245.0, 145.0, 200.0, 300.0, 195.0, 295.0, 345.0, 400.0, 395.0, 445.0]
@@ -38,7 +39,7 @@ margin = 1.0
 
 [node name="Hitbox_Player" type="Area3D" parent="WorldDetectors"]
 collision_layer = 2
-collision_mask = 28
+collision_mask = 60
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Hitbox_Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.604003, 0)

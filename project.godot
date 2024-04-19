@@ -100,6 +100,7 @@ ESC={
 3d_physics/layer_3="enemy"
 3d_physics/layer_4="object"
 3d_physics/layer_5="events"
+3d_physics/layer_6="npcs"
 
 [shader_globals]
 
