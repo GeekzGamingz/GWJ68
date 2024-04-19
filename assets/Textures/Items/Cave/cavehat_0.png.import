@@ -3,21 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wuwnj1t2gqs"
-path.s3tc="res://.godot/imported/cavehat_0.png-5728ac50057e2c5baf29a3dca1e6ef0f.s3tc.ctex"
+path="res://.godot/imported/cavehat_0.png-5728ac50057e2c5baf29a3dca1e6ef0f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://assets/Textures/Items/Cave/cavehat_0.png"
-dest_files=["res://.godot/imported/cavehat_0.png-5728ac50057e2c5baf29a3dca1e6ef0f.s3tc.ctex"]
+dest_files=["res://.godot/imported/cavehat_0.png-5728ac50057e2c5baf29a3dca1e6ef0f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

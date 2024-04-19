@@ -8,7 +8,7 @@ extends Area3D
 @onready var teleport_pos = $TeleportArm/TeleportPOS
 #------------------------------------------------------------------------------#
 #Physics Process
-func _physics_process(delta):
+func _physics_process(_delta):
 	if player != null:
 		var distance = ((player.global_position - global_position) * Vector3(1,0,1)).normalized()
 		teleport_arm.look_at(player.global_position + distance, Vector3.UP)
