@@ -28,7 +28,7 @@ func ragdoll():
 func _on_hitbox_area_entered(area):
 	match(area.name):
 		#Sword
-		"Slash": damage(5)
-		"Chop": damage(10)
-		"Thrust": damage(15)
-		"Soulblast": damage(35)
+		"Slash": damage(5 + G.sword_damage)
+		"Chop": damage(10 + G.sword_damage)
+		"Thrust": damage(15 + G.sword_damage)
+		"Soulblast": damage(35 + G.sword_damage)

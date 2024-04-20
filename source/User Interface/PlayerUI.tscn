@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cymfeeyecidlw"]
+[gd_scene load_steps=16 format=3 uid="uid://cymfeeyecidlw"]
 
 [ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="1_qwx70"]
 [ext_resource type="Script" path="res://source/User Interface/Scoreboard.gd" id="2_kj4yy"]
@@ -6,6 +6,9 @@
 [ext_resource type="FontFile" uid="uid://bxypvnjgymccp" path="res://assets/Fonts/The Centurion .ttf" id="4_q417k"]
 [ext_resource type="Texture2D" uid="uid://b7jnk3vc3o4l" path="res://assets/Textures/UserInterface/Icons/Counter_Metal.png" id="5_g2eaf"]
 [ext_resource type="Texture2D" uid="uid://dx55a055hv3dq" path="res://assets/Textures/UserInterface/Icons/Counter_Kills.png" id="6_baqnh"]
+[ext_resource type="Script" path="res://source/User Interface/Controls.gd" id="7_0rcac"]
+[ext_resource type="Texture2D" uid="uid://cmvi14ymypsv3" path="res://assets/Textures/UserInterface/cntrls.png" id="7_ldvev"]
+[ext_resource type="Texture2D" uid="uid://cjpyd0rebr8kc" path="res://assets/Textures/UserInterface/redX.png" id="8_nl4l8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_igdir"]
 font = ExtResource("4_q417k")
@@ -21,14 +24,38 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:offset")
+tracks/0/path = NodePath("../ProgressBars:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-500, 0)]
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Scoreboard:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Controls:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(940, 1040)]
 }
 
 [sub_resource type="Animation" id="Animation_qxj3x"]
@@ -36,7 +63,7 @@ resource_name = "cinematic"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:offset")
+tracks/0/path = NodePath("../ProgressBars:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -44,6 +71,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-500, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Scoreboard:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Controls:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(940, 1250), Vector2(940, 1040)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kyk6m"]
@@ -53,8 +104,6 @@ _data = {
 }
 
 [node name="PlayerUI" type="CanvasLayer"]
-offset = Vector2(-500, 0)
-transform = Transform2D(1, 0, 0, 1, -500, 0)
 
 [node name="ProgressBars" parent="." instance=ExtResource("1_qwx70")]
 
@@ -157,6 +206,38 @@ text = "100"
 label_settings = SubResource("LabelSettings_bixer")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("7_0rcac")
+
+[node name="Controls" type="Sprite2D" parent="Controls"]
+position = Vector2(0, -20)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_ldvev")
+
+[node name="Nope" type="Sprite2D" parent="Controls"]
+position = Vector2(88, -22)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_nl4l8")
+
+[node name="Nope2" type="Sprite2D" parent="Controls"]
+z_index = 1
+position = Vector2(-832, -963)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_nl4l8")
 
 [node name="AnimationPlayers" type="Node2D" parent="."]
 

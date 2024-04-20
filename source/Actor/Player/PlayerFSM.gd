@@ -86,7 +86,7 @@ func state_exit(state_old, state_new):
 func basic_move():
 	#Attack
 	if Input.get_action_strength("action_attack") > 0: return states.slash
-	if Input.get_action_strength("action_magic") > 0: return states.blast
+	if Input.get_action_strength("action_magic") > 0: if !p.out_of_soul: return states.blast
 	#Idle
 	if p.velocity.x == 0 && p.check_grounded(): return states.idle
 	#Verticle Movement

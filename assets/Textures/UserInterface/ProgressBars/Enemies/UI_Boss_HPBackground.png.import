@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmvi14ymypsv3"
-path="res://.godot/imported/cntrls.png-a66b3b276b0e8feca5c526fa7a1ffd23.ctex"
+uid="uid://dy4pj5hoobi73"
+path="res://.godot/imported/UI_Boss_HPBackground.png-03bd635f7fda4dfedfd2714dd7dd9a84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/UserInterface/cntrls.png"
-dest_files=["res://.godot/imported/cntrls.png-a66b3b276b0e8feca5c526fa7a1ffd23.ctex"]
+source_file="res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_Boss_HPBackground.png"
+dest_files=["res://.godot/imported/UI_Boss_HPBackground.png-03bd635f7fda4dfedfd2714dd7dd9a84.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -2,6 +2,7 @@
 extends Node
 #------------------------------------------------------------------------------#
 #Signals
+signal sword_damage_update
 signal soul_update
 signal scrap_update
 signal kill_update
@@ -14,6 +15,7 @@ signal scrap_challenge1_update
 signal scrap_challenge2_update
 signal scrap_challenge3_update
 #Variables
+var sword_damage = 0: set = set_sword_damage
 var soul_score = 0: set = set_soul_score
 var scrap_score = 0: set = set_scrap_score
 var kill_score = 0: set = set_kill_score
@@ -46,6 +48,11 @@ var amplitude: float = ProjectSettings.get_setting("shader_globals/amplitude").v
 func get_height(x, z):
 	@warning_ignore("narrowing_conversion")
 	return hmap_img.get_pixel(fposmod(x, hmImage_size), fposmod(z, hmImage_size)).r * amplitude
+#------------------------------------------------------------------------------#
+#Sword Damage
+func set_sword_damage(value: int):
+	sword_damage = sword_damage + value
+	emit_signal("sword_damage_update")
 #------------------------------------------------------------------------------#
 #Scoreboard
 #Souls

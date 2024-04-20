@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmvi14ymypsv3"
-path="res://.godot/imported/cntrls.png-a66b3b276b0e8feca5c526fa7a1ffd23.ctex"
+uid="uid://cjpyd0rebr8kc"
+path="res://.godot/imported/redX.png-a3d749cd022ade356a2b5da41817a4d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/UserInterface/cntrls.png"
-dest_files=["res://.godot/imported/cntrls.png-a66b3b276b0e8feca5c526fa7a1ffd23.ctex"]
+source_file="res://assets/Textures/UserInterface/redX.png"
+dest_files=["res://.godot/imported/redX.png-a3d749cd022ade356a2b5da41817a4d5.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

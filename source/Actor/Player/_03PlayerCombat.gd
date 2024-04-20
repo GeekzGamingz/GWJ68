@@ -4,6 +4,7 @@ extends PlayerMovement
 signal soul_heal(soul)
 signal soul_damage(soul)
 #Variables
+var out_of_soul: bool = true
 #Exported Variables
 @export var max_soul: float = 100
 #OnReady Variables
@@ -23,6 +24,8 @@ func _on_hitbox_area_entered(area):
 #Fill
 func fill(amount):
 	set_soul(soul + amount)
+	out_of_soul = false
+	$PlayerUI/Controls/Nope2.visible = false
 #Deplete
 func deplete(amount):
 	set_soul(soul - amount)
@@ -35,4 +38,6 @@ func set_soul(value):
 		if soul == 100: pass
 	if soul < soul_prev:
 		emit_signal("soul_damage", soul)
-		if soul == 0: pass
+		if soul == 0:
+			out_of_soul = true
+			$PlayerUI/Controls/Nope2.visible = true

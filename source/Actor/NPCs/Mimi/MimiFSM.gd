@@ -105,6 +105,7 @@ func soul_cinematic():
 	if G.soul_challenge2_complete:
 		G.set_soul_challenge3(true)
 		G.PLAYER.get_node("PlayerUI/ProgressBars").gem_3_charged.visible = true
+		G.PLAYER.get_node("PlayerUI/Controls").nope.visible = false
 	elif G.soul_challenge1_complete:
 		G.set_soul_challenge2(true)
 		G.PLAYER.get_node("PlayerUI/ProgressBars").gem_2_charged.visible = true
@@ -135,12 +136,15 @@ func forge_cinematic():
 	if G.scrap_challenge2_complete:
 		G.set_scrap_challenge3(true)
 		G.ITEMS.get_node("Soulforge").soulforged.visible = true
+		G.set_sword_damage(5)
 	elif G.scrap_challenge1_complete:
 		G.set_scrap_challenge2(true)
 		G.ITEMS.get_node("Soulforge").masterwork.visible = true
+		G.set_sword_damage(10)
 	elif !G.scrap_challenge1_complete:
 		G.set_scrap_challenge1(true)
 		G.ITEMS.get_node("Soulforge").repaired.visible = true
+		G.set_sword_damage(15)
 	#Play Animations
 	G.ITEMS.get_node("Soulforge").anim_player.play("strike")
 	await G.ITEMS.get_node("Soulforge").anim_player.animation_finished

@@ -35,6 +35,9 @@ shape = SubResource("CapsuleShape3D_w5fiy")
 [node name="CameraArm" parent="." instance=ExtResource("4_b3hed")]
 margin = 1.0
 
+[node name="Camera3D" parent="CameraArm" index="0"]
+current = true
+
 [node name="WorldDetectors" type="Node3D" parent="."]
 
 [node name="Hitbox_Player" type="Area3D" parent="WorldDetectors"]
