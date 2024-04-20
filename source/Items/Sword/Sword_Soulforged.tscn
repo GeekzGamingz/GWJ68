@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://cx80k3wp6rxao"]
 
-[ext_resource type="PackedScene" uid="uid://rpsdoafihqqf" path="res://assets/Textures/Items/Swards/sward_soulforged.gltf" id="1_bgiwb"]
+[ext_resource type="PackedScene" uid="uid://dlajby14wf4ts" path="res://assets/Textures/Items/Swards/sward_soulforged.gltf" id="1_bgiwb"]
 [ext_resource type="ArrayMesh" uid="uid://c6kapihs43kd6" path="res://assets/Textures/Items/MagicPew/MagicPew.res" id="2_gl45j"]
 
 [sub_resource type="Curve" id="Curve_h1lo7"]
@@ -612,12 +612,9 @@ radius = 3.5
 [node name="Sword" instance=ExtResource("1_bgiwb")]
 transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, 0, 0.75, 0)
 
-[node name="Skeleton3D" parent="Sward_Bone" index="0"]
-bones/0/scale = Vector3(0.999998, 0.999996, 0.999998)
-
 [node name="CoreAttachment" type="BoneAttachment3D" parent="Sward_Bone/Skeleton3D" index="1"]
-transform = Transform3D(0.00660239, 0.998841, -0.0475962, 0.999934, -0.00703022, -0.00882857, -0.00915298, -0.0475348, -0.998826, 0.154246, 0.00252812, -2.1039)
-bone_name = "gem"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64339e-17, -1.35474e-16, -0.286368)
+bone_name = "Gem"
 bone_idx = 1
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Sward_Bone/Skeleton3D/CoreAttachment" index="0"]

@@ -27,7 +27,9 @@ func state_logic(delta):
 func transitions(_delta):
 	match(state):
 	#Basic Movement
-		states.idle_gem0: pass
+		states.idle_gem0: if G.soul_challenge1_complete == true: return states.idle_gem1
+		states.idle_gem1: if G.soul_challenge2_complete == true: return states.idle_gem2
+		states.idle_gem2: if G.soul_challenge3_complete == true: return states.idle_gem3
 #Enter State
 @warning_ignore("unused_parameter")
 func state_enter(state_new, state_old):
@@ -41,4 +43,4 @@ func state_enter(state_new, state_old):
 @warning_ignore("unused_parameter")
 func state_exit(state_old, state_new):
 	match(state_old):
-		states.idle_game0: pass
+		states.idle_gem0: pass

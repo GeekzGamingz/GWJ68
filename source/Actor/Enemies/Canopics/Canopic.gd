@@ -48,6 +48,7 @@ func shatter():
 			frag.lifetime = randf_range(min_frag_lifetime, max_frag_lifetime)
 #Kill Switch
 func kill():
+	G.set_kill_score(1)
 	mesh.set_deferred("visible", false) #Toggle Visibility
 	hitbox.set_deferred("disabled", true) #Disable Old Collision
 	atkbox.set_deferred("disabled", true) #Disable Attack

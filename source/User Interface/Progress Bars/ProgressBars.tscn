@@ -111,24 +111,24 @@ texture = ExtResource("8_gcvwe")
 
 [node name="Gem1_Broken" type="Sprite2D" parent="Portrait/Bezel"]
 position = Vector2(135, 70)
-texture = ExtResource("9_ismua")
+texture = ExtResource("11_q3n1g")
 
 [node name="Gem2_Broken" type="Sprite2D" parent="Portrait/Bezel"]
 position = Vector2(135, 70)
-texture = ExtResource("10_dv5ny")
+texture = ExtResource("9_ismua")
 
 [node name="Gem3_Broken" type="Sprite2D" parent="Portrait/Bezel"]
 position = Vector2(135, 70)
-texture = ExtResource("11_q3n1g")
+texture = ExtResource("10_dv5ny")
 
 [node name="Gem1_Charged" type="Sprite2D" parent="Portrait/Bezel"]
 position = Vector2(135, 70)
-texture = ExtResource("15_j3ibl")
+texture = ExtResource("17_vih7r")
 
 [node name="Gem2_Charged" type="Sprite2D" parent="Portrait/Bezel"]
 position = Vector2(135, 70)
-texture = ExtResource("16_jnhri")
+texture = ExtResource("15_j3ibl")
 
 [node name="Gem3_Charged" type="Sprite2D" parent="Portrait/Bezel"]
 position = Vector2(135, 70)
-texture = ExtResource("17_vih7r")
+texture = ExtResource("16_jnhri")

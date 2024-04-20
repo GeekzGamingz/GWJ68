@@ -58,7 +58,6 @@ func backaway():
 #------------------------------------------------------------------------------#
 #Loot
 func loot():
-	G.set_kill_score(1)
 	randomize()
 	#Souls Dropped
 	var souls = randf_range(min_souls, max_souls)

@@ -21,7 +21,7 @@ func _physics_process(_delta):
 func _on_area_exited(area):
 	match(area.name):
 		"Hitbox_Player": 
-			G.PLAYER.global_position = G.SPAWN.global_position
+			G.PLAYER.global_position = G.SPAWN_BORDER.global_position
 			warning = false
 #Warning Zone Enter (Exiting World)
 func _on_warning_zone_entered(area):

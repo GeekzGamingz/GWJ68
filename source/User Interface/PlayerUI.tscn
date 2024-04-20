@@ -164,5 +164,6 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_kyk6m")
 }
+autoplay = "cinematic"
 
 [editable path="ProgressBars"]

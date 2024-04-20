@@ -2,12 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eblerw3a2hi2"
+uid="uid://bmwr6q2gx22ns"
 path.s3tc="res://.godot/imported/sward_soulforged_0.png-e87b05b7db715cb7a466667ae7077837.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 

@@ -26,7 +26,8 @@ func _on_spawn_timer_timeout():
 		G.KINEMATICS.add_child(entity_scene)
 #Entering Bodies
 func _on_area_3d_body_entered(body):
-	if body is CharacterBody3D: kinematic_present = true
+	if body is CharacterBody3D:
+		if body.is_in_group("Jar") == false: kinematic_present = true
 	spawn_timer.stop()
 #Exiting Bodies
 func _on_area_3d_body_exited(body):

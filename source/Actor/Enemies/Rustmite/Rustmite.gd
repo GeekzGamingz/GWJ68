@@ -9,6 +9,7 @@ extends EnemyMovement
 #------------------------------------------------------------------------------#
 #Kill Switch
 func kill():
+	G.set_kill_score(1)
 	ragdoll()
 	loot()
 	await get_tree().create_timer(3).timeout

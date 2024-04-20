@@ -617,7 +617,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.35188e-23, 1, 0, 0, 0
 
 [node name="CoreAttachment" type="BoneAttachment3D" parent="Sward_Bone/Skeleton3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.286365)
-bone_name = "gem"
+bone_name = "Gem"
 bone_idx = 1
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Sward_Bone/Skeleton3D/CoreAttachment" index="0"]
