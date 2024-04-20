@@ -23,6 +23,7 @@ func _ready():
 	state_add("chop")
 	state_add("thrust")
 	state_add("blast")
+	state_add("dead")
 	call_deferred("state_set", states.idle)
 #------------------------------------------------------------------------------#
 func _process(_delta: float):
@@ -75,6 +76,12 @@ func state_enter(state_new, state_old):
 		states.chop: p.anim_player.play("chop")
 		states.thrust: p.anim_player.play("thrust")
 		states.blast: p.anim_player.play("soulblast")
+		states.dead:
+			p.controllable = false
+			p.get_node("CollisionShape3D").set_deferred("disabled", true)
+			p.get_node("PlayerUI/AnimationPlayers/AnimationPlayer").play_backwards("cinematic")
+			p.get_node("PlayerUI/GameOver/Ending1").visible = true
+			p.get_node("PlayerUI/Controls").nope_2.visible = false
 	#Exit State
 @warning_ignore("unused_parameter")
 func state_exit(state_old, state_new):
@@ -84,9 +91,11 @@ func state_exit(state_old, state_new):
 #Verbose Transitions
 #Basic Movement
 func basic_move():
+	#Death
+	if p.is_dead: return states.dead
 	#Attack
 	if Input.get_action_strength("action_attack") > 0: return states.slash
-	if Input.get_action_strength("action_magic") > 0: return states.blast
+	if Input.get_action_strength("action_magic") > 0: if !p.out_of_soul: return states.blast
 	#Idle
 	if p.velocity.x == 0 && p.check_grounded(): return states.idle
 	#Verticle Movement

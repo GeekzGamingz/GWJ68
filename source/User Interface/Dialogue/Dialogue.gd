@@ -8,9 +8,15 @@ extends CanvasLayer
 @onready var elipses = $Control/Elipses
 @onready var souls_exchange = $Control/SoulsExchange
 @onready var upgrade_exchange = $Control/UpgradeExchange
-@onready var label = $Control/Label
+@onready var gibv_pls_souls = $Control/GibvPls_Souls
+@onready var gibv_pls_scrap = $Control/GibvPls_Scrap
+@onready var souls_amount = $Control/SoulsNeeded
+@onready var scrap_amount = $Control/ScrapNeeded
 #------------------------------------------------------------------------------#
-#No Chat
+func _process(_delta):
+	souls_amount.text = str(G.souls_needed_value)
+	scrap_amount.text = str(G.scrap_needed_value)
+#No Chatw
 func no_chat():
 	visible = false
 #Beckoning Chat
@@ -20,12 +26,51 @@ func beckon():
 	elipses.visible = true
 	souls_exchange.visible = false
 	upgrade_exchange.visible = false
-	label.visible = false
-#Challenging Chat
-func challenge():
+	gibv_pls_souls.visible = false
+	gibv_pls_scrap.visible = false
+	souls_amount.visible = false
+	scrap_amount.visible = false
+#Challenging Soul Chat
+func challenge_souls():
 	visible = true
 	bubble.visible = true
 	elipses.visible = false
 	souls_exchange.visible = true
 	upgrade_exchange.visible = false
-	label.visible = true
+	gibv_pls_souls.visible = false
+	gibv_pls_scrap.visible = false
+	souls_amount.visible = true
+	scrap_amount.visible = false
+#Challenging Scrap Chat
+func challenge_scrap():
+	visible = true
+	bubble.visible = true
+	elipses.visible = false
+	souls_exchange.visible = false
+	upgrade_exchange.visible = true
+	gibv_pls_souls.visible = false
+	gibv_pls_scrap.visible = false
+	souls_amount.visible = false
+	scrap_amount.visible = true
+#Gibv Souls Pls
+func gibv_souls():
+	visible = true
+	bubble.visible = true
+	elipses.visible = false
+	souls_exchange.visible = false
+	upgrade_exchange.visible = false
+	gibv_pls_souls.visible = true
+	gibv_pls_scrap.visible = false
+	souls_amount.visible = true
+	scrap_amount.visible = false
+#Gibv Scrap Pls
+func gibv_scrap():
+	visible = true
+	bubble.visible = true
+	elipses.visible = false
+	souls_exchange.visible = false
+	upgrade_exchange.visible = false
+	gibv_pls_souls.visible = false
+	gibv_pls_scrap.visible = true
+	souls_amount.visible = false
+	scrap_amount.visible = true

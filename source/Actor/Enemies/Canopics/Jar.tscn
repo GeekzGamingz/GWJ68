@@ -20,8 +20,8 @@ height = 0.952362
 [sub_resource type="ViewportTexture" id="ViewportTexture_2ch3x"]
 viewport_path = NodePath("ProgressBar/SubViewport")
 
-[node name="Jar" type="CharacterBody3D" groups=["Kinematics"]]
-collision_layer = 4
+[node name="Jar" type="CharacterBody3D" groups=["Jar", "Kinematics"]]
+collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_qwyaa")
 min_souls = 0.0

@@ -1,6 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgb5pdwsutpb"]
+[gd_scene load_steps=12 format=3 uid="uid://cgb5pdwsutpb"]
 
 [ext_resource type="PackedScene" uid="uid://bq3yxa7jld2lh" path="res://assets/Textures/NPCs/Notamimic/notamimic.gltf" id="1_wta20"]
+[ext_resource type="Texture2D" uid="uid://8ymhr83w5k2v" path="res://assets/Textures/Items/ShinyGem/shinygem_0.png" id="2_gn7mx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6agk"]
+albedo_texture = ExtResource("2_gn7mx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8e7a2"]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+texture_filter = 0
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k7ke8"]
+_surfaces = [{
+"aabb": AABB(-0.106003, -0.16951, -0.0373242, 0.212005, 0.498779, 0.073135),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray(2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0, 6, 0, 5, 0, 4, 0, 6, 0, 7, 0, 5, 0, 6, 0, 8, 0, 9, 0, 6, 0, 4, 0, 8, 0, 4, 0, 10, 0, 8, 0, 4, 0, 5, 0, 10, 0, 0, 0, 9, 0, 8, 0, 0, 0, 1, 0, 9, 0, 2, 0, 8, 0, 10, 0, 2, 0, 0, 0, 8, 0, 11, 0, 6, 0, 9, 0, 11, 0, 7, 0, 6, 0, 10, 0, 7, 0, 11, 0, 10, 0, 5, 0, 7, 0, 9, 0, 3, 0, 11, 0, 9, 0, 1, 0, 3, 0, 11, 0, 2, 0, 10, 0, 11, 0, 3, 0, 2, 0),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray(81, 59, 103, 54, 246, 255, 0, 0, 255, 127, 54, 25, 246, 255, 0, 0, 255, 127, 146, 205, 246, 255, 0, 0, 173, 196, 103, 54, 246, 255, 0, 0, 81, 59, 103, 54, 0, 0, 0, 0, 255, 127, 146, 205, 254, 31, 0, 0, 255, 127, 54, 25, 0, 0, 0, 0, 173, 196, 103, 54, 0, 0, 0, 0, 0, 0, 103, 54, 251, 127, 0, 0, 255, 127, 0, 0, 251, 127, 0, 0, 255, 127, 255, 255, 251, 127, 0, 0, 255, 255, 103, 54, 251, 127, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_evewm"]
+resource_name = "blockbench_export_mesh"
+_surfaces = [{
+"aabb": AABB(-0.106003, -0.16951, -0.0373242, 0.212005, 0.498779, 0.073135),
+"attribute_data": PackedByteArray(255, 63, 240, 74, 136, 75, 255, 91, 255, 95, 171, 3, 255, 95, 118, 80, 97, 46, 87, 101, 195, 31, 235, 25, 211, 31, 232, 115, 69, 17, 92, 101, 131, 154, 0, 0, 255, 183, 255, 15, 158, 145, 255, 15, 26, 175, 0, 0, 255, 111, 222, 100, 255, 127, 0, 0, 255, 127, 37, 104, 218, 117, 72, 24, 255, 47, 131, 154, 255, 31, 158, 145, 255, 31, 255, 183, 255, 47, 26, 175, 221, 175, 108, 139, 36, 200, 255, 127, 255, 95, 255, 127, 70, 99, 160, 142, 0, 0, 158, 145, 255, 15, 26, 175, 0, 0, 255, 183, 255, 15, 131, 154, 2, 29, 0, 0, 69, 17, 89, 101, 158, 1, 123, 100, 195, 31, 235, 25, 255, 183, 255, 47, 26, 175, 255, 31, 158, 145, 255, 47, 131, 154, 255, 31, 255, 79, 255, 111, 52, 67, 71, 136, 255, 79, 36, 216, 255, 63, 222, 212),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray(2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0, 6, 0, 5, 0, 4, 0, 6, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 18, 0, 17, 0, 16, 0, 19, 0, 18, 0, 20, 0, 22, 0, 21, 0, 20, 0, 23, 0, 22, 0, 24, 0, 25, 0, 26, 0, 24, 0, 27, 0, 25, 0, 28, 0, 29, 0, 30, 0, 28, 0, 31, 0, 29, 0, 34, 0, 33, 0, 32, 0, 34, 0, 35, 0, 33, 0, 38, 0, 37, 0, 36, 0, 38, 0, 39, 0, 37, 0),
+"material": SubResource("StandardMaterial3D_8e7a2"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray(81, 59, 103, 54, 246, 255, 197, 135, 255, 127, 54, 25, 246, 255, 197, 135, 255, 127, 146, 205, 246, 255, 197, 135, 173, 196, 103, 54, 246, 255, 196, 135, 81, 59, 103, 54, 0, 0, 239, 254, 255, 127, 146, 205, 254, 31, 239, 254, 255, 127, 54, 25, 0, 0, 239, 254, 173, 196, 103, 54, 0, 0, 239, 254, 255, 127, 54, 25, 0, 0, 165, 243, 0, 0, 103, 54, 251, 127, 165, 243, 255, 127, 0, 0, 251, 127, 165, 243, 81, 59, 103, 54, 0, 0, 165, 243, 81, 59, 103, 54, 0, 0, 122, 229, 255, 127, 255, 255, 251, 127, 122, 229, 0, 0, 103, 54, 251, 127, 122, 229, 255, 127, 146, 205, 254, 31, 122, 229, 81, 59, 103, 54, 246, 255, 94, 173, 0, 0, 103, 54, 251, 127, 94, 173, 255, 127, 0, 0, 251, 127, 94, 173, 255, 127, 54, 25, 246, 255, 94, 173, 255, 127, 146, 205, 246, 255, 85, 192, 255, 127, 255, 255, 251, 127, 85, 192, 0, 0, 103, 54, 251, 127, 85, 192, 81, 59, 103, 54, 246, 255, 85, 192, 255, 255, 103, 54, 251, 127, 153, 225, 255, 127, 54, 25, 0, 0, 153, 225, 255, 127, 0, 0, 251, 127, 153, 225, 173, 196, 103, 54, 0, 0, 153, 225, 255, 127, 255, 255, 251, 127, 52, 230, 173, 196, 103, 54, 0, 0, 52, 230, 255, 255, 103, 54, 251, 127, 52, 230, 255, 127, 146, 205, 254, 31, 52, 230, 255, 255, 103, 54, 251, 127, 94, 173, 173, 196, 103, 54, 246, 255, 94, 173, 255, 127, 0, 0, 251, 127, 94, 173, 255, 127, 54, 25, 246, 255, 94, 173, 255, 127, 255, 255, 251, 127, 114, 168, 255, 127, 146, 205, 246, 255, 114, 168, 255, 255, 103, 54, 251, 127, 114, 168, 173, 196, 103, 54, 246, 255, 114, 168, 0, 0, 254, 255, 0, 0, 254, 255, 0, 0, 254, 255, 0, 0, 254, 255, 168, 129, 5, 0, 169, 129, 5, 0, 169, 129, 5, 0, 169, 129, 5, 0, 144, 186, 60, 227, 144, 186, 60, 227, 144, 186, 60, 227, 144, 186, 60, 227, 103, 142, 174, 236, 103, 142, 174, 236, 103, 142, 173, 236, 102, 142, 174, 236, 205, 53, 181, 233, 205, 53, 181, 233, 205, 53, 182, 233, 205, 53, 182, 233, 182, 225, 116, 216, 182, 225, 116, 216, 182, 225, 116, 216, 182, 225, 116, 216, 178, 94, 153, 47, 178, 94, 152, 47, 178, 94, 152, 47, 178, 94, 153, 47, 97, 117, 38, 0, 97, 117, 37, 0, 97, 117, 37, 0, 96, 117, 38, 0, 73, 22, 205, 53, 73, 22, 205, 53, 73, 22, 205, 53, 73, 22, 205, 53, 186, 163, 58, 12, 186, 163, 58, 12, 185, 163, 59, 12, 185, 163, 59, 12)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_k7ke8")
 
 [sub_resource type="Animation" id="Animation_yx0lr"]
 length = 0.001
@@ -32,6 +77,42 @@ tracks/3/path = NodePath("../Mesh_Mimi/Skeleton3D:Eye_Orb")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SoulGem:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../SoulGem:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../SoulGem:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0579933, -0.0217332)]
+}
 
 [sub_resource type="Animation" id="Animation_hlghb"]
 resource_name = "idle_closed"
@@ -80,16 +161,91 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.1, 1, 0.0534511, 0.00103694, 0.018383, 0.998401, 5, 1, -0.0295084, 0.000639391, -0.0239787, 0.999277, 7.6, 1, 0.0139067, 0.000435132, 0.0259378, 0.999567)
 
+[sub_resource type="Animation" id="Animation_byvqp"]
+resource_name = "soulnom"
+length = 9.6
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Mimi/Skeleton3D:Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.2, 1, 0.367938, 0, 0, 0.92985, 0.4, 1, 0.00492764, 0, 0, 0.999988, 0.6, 1, 0.108089, 0, 0, 0.994141, 0.8, 1, 0, 0, 0.0172343, 0.999851, 0.9, 1, 0.00246208, -9.50356e-05, -0.0299583, 0.999548, 1, 1, 0.00492764, 0, 0, 0.999988, 1.2, 1, 0.108089, 0, 0, 0.994141, 1.4, 1, 1.10098e-09, -3.08975e-11, -0.0280525, 0.999606, 1.5, 1, 0.00246404, 1.16976e-05, -0.00928071, 0.999954, 1.6, 1, 0.0049258, -0.000134321, -0.0272583, 0.999616, 1.8, 1, 0.108089, 0, 0, 0.994141, 2, 1, 0, 0, 0, 1, 2.1, 1, 0.00246302, -6.29049e-05, -0.0255313, 0.999671, 2.2, 1, 0.0049267, 9.54147e-05, 0.019363, 0.9998, 2.4, 1, 0.0515023, 0, 0, 0.998673, 2.6, 1, 0, 0, 0, 1, 2.7, 1, 0.00246276, 7.26627e-05, 0.0294917, 0.999562, 2.8, 1, 0.004927, -8.22163e-05, -0.0166844, 0.999849, 2.9, 1, 0.0565652, -0.00151893, -0.0344239, 0.997804, 3, 1, 0.108089, 0, 0, 0.994141, 3.2, 1, 0, 0, 0, 1, 3.4, 1, 0.00492664, 9.78221e-05, 0.0198516, 0.999791, 3.6, 1, 0.108089, 0, 0, 0.994141, 3.9, 1, 0, 0, 0, 1, 4.8, 1, 0.109066, 0, 0, 0.994034, 4.9, 1, 0.696365, 0, 0, 0.717688, 5, 1, 0.717968, 0, 0, 0.696076, 5.1, 1, 0.694155, 0, 0, 0.719825, 9, 1, 0.694155, 0, 0, 0.719825)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SoulGem:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.8, 6, 7.2, 8.4, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0), Vector3(0, 4.71239, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SoulGem:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6, 9.4, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [false, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SoulGem:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6, 6.5, 6.6, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.0579933, -0.0217332), Vector3(0, 1.03605, -0.022), Vector3(0, 1.00866, -0.0219971), Vector3(0, 1.00866, -0.0219971)]
+}
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh_Mimi/Skeleton3D:Eyelid_L")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 5.1, 1, 1.8012e-09, 0.0154526, -0.425451, 0.904849, 5.2, 1, 0, 0, 0, 1, 5.3, 1, 1.8012e-09, 0.0154526, -0.425451, 0.904849, 5.4, 1, 0, 0, 0, 1, 5.5, 1, 1.8012e-09, 0.0154526, -0.425451, 0.904849)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Mimi/Skeleton3D:Eyelid_R")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 5.1, 1, 3.86152e-09, -0.0154853, 0.426351, 0.904425, 5.2, 1, 0, 0, 0, 1, 5.3, 1, 3.86152e-09, -0.0154853, 0.426351, 0.904425, 5.4, 1, 0, 0, 0, 1, 5.5, 1, 3.86152e-09, -0.0154853, 0.426351, 0.904425)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Mesh_Mimi/Skeleton3D:Eye_Orb")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 5.5, 1, 0, 0, 0, 1, 6, 1, -0.0892409, 0.012106, -0.0816108, 0.992587, 6.2, 1, 0, 0, 0, 1, 6.6, 1, 0.199034, 0, 0, 0.979993)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_51x0i"]
 _data = {
 "RESET": SubResource("Animation_yx0lr"),
 "idle_closed": SubResource("Animation_hlghb"),
-"idle_open": SubResource("Animation_wcjg2")
+"idle_open": SubResource("Animation_wcjg2"),
+"soulnom": SubResource("Animation_byvqp")
 }
 
 [node name="Mesh_Mimi" instance=ExtResource("1_wta20")]
 
-[node name="AnimationPlayers" type="Node3D" parent="." index="1"]
+[node name="SoulGem" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.0579933, -0.0217332)
+visible = false
+material_override = SubResource("StandardMaterial3D_e6agk")
+mesh = SubResource("ArrayMesh_evewm")
+
+[node name="AnimationPlayers" type="Node3D" parent="." index="2"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="0"]
 libraries = {

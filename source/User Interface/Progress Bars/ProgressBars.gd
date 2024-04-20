@@ -7,6 +7,10 @@ extends Control
 @onready var health_over = $Health/HealthOver
 @onready var soul_under = $Soul/SoulUnder
 @onready var soul_over = $Soul/SoulOver
+#UI Icons
+@onready var gem_1_charged = $Portrait/Bezel/Gem1_Charged
+@onready var gem_2_charged = $Portrait/Bezel/Gem2_Charged
+@onready var gem_3_charged = $Portrait/Bezel/Gem3_Charged
 #------------------------------------------------------------------------------#
 #Ready
 #Health Updater

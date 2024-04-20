@@ -2,6 +2,9 @@
 extends EnemyMovement
 #------------------------------------------------------------------------------#
 #Variables
+var within_beckon: bool = false
+var within_challenge: bool = false
+var within_turnIn: bool = false
 #OnReady Variables
 @onready var mesh = $Mesh_Mimi
 @onready var skeleton = $Mesh_Mimi/Mesh_Mimi/Skeleton3D
@@ -31,13 +34,19 @@ func _on_hitbox_area_entered(area):
 #Challenges
 #Beckon Entered
 func _on_beckon_area_entered(area):
-	if area.name == "Hitbox_Player": dialogue.beckon()
+	if area.name == "Hitbox_Player": within_beckon = true
 #Beckon Exited
 func _on_beckon_area_exited(area):
-	if area.name == "Hitbox_Player": dialogue.no_chat()
+	if area.name == "Hitbox_Player": within_beckon = false
 #Challenge Entered
 func _on_challenge_area_entered(area):
-	if area.name == "Hitbox_Player": dialogue.challenge()
+	if area.name == "Hitbox_Player": within_challenge = true
 #Challenge Exited
 func _on_challenge_area_exited(area):
-	if area.name == "Hitbox_Player": dialogue.beckon()
+	if area.name == "Hitbox_Player": within_challenge = false
+#Turn In Entered
+func _on_turn_in_area_entered(area):
+	if area.name == "Hitbox_Player": within_turnIn = true
+#Turn In Exited
+func _on_turn_in_area_exited(area):
+	if area.name == "Hitbox_Player": within_turnIn = false

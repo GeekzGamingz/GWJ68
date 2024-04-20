@@ -22,10 +22,10 @@ var is_dead: bool = false
 func _on_hitbox_area_entered(area):
 	match(area.name):
 		#Sword
-		"Slash": damage(100)
-		"Chop": damage(100)
-		"Thrust": damage(100)
-		"Soulblast": damage(100)
+		"Slash": damage(100 + G.sword_damage)
+		"Chop": damage(100 + G.sword_damage)
+		"Thrust": damage(100 + G.sword_damage)
+		"Soulblast": damage(100 + G.sword_damage)
 #Shatter
 func shatter(): 
 	var p = get_parent()

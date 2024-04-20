@@ -22,10 +22,10 @@ var is_dead: bool = false
 func _on_hitbox_area_entered(area):
 	match(area.name):
 		#Sword
-		"Slash": damage(15)
-		"Chop": damage(20)
-		"Thrust": damage(25)
-		"Soulblast": damage(35)
+		"Slash": damage(15 + G.sword_damage)
+		"Chop": damage(20 + G.sword_damage)
+		"Thrust": damage(25 + G.sword_damage)
+		"Soulblast": damage(35 + G.sword_damage)
 #Shatter
 func shatter(): 
 	var p = get_parent()
@@ -48,6 +48,7 @@ func shatter():
 			frag.lifetime = randf_range(min_frag_lifetime, max_frag_lifetime)
 #Kill Switch
 func kill():
+	G.set_kill_score(1)
 	mesh.set_deferred("visible", false) #Toggle Visibility
 	hitbox.set_deferred("disabled", true) #Disable Old Collision
 	atkbox.set_deferred("disabled", true) #Disable Attack

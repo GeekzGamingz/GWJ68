@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxu16hlxqlqed"]
+[gd_scene load_steps=13 format=3 uid="uid://dxu16hlxqlqed"]
 
 [ext_resource type="PackedScene" uid="uid://cgb5pdwsutpb" path="res://source/Actor/NPCs/Mimi/Mesh_Mimi.tscn" id="1_mp811"]
 [ext_resource type="Script" path="res://source/Actor/NPCs/Mimi/Mimi.gd" id="1_oq085"]
@@ -20,6 +20,9 @@ radius = 10.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jpmyw"]
 radius = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x6g2y"]
+radius = 1.5
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_s85t5"]
 viewport_path = NodePath("ProgressBar/SubViewport")
@@ -68,6 +71,13 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Challenge"]
 shape = SubResource("SphereShape3D_jpmyw")
+
+[node name="TurnIn" type="Area3D" parent="WorldDetectors"]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/TurnIn"]
+shape = SubResource("SphereShape3D_x6g2y")
 
 [node name="GroundDetectors" type="Node3D" parent="WorldDetectors"]
 
@@ -139,3 +149,5 @@ visible = false
 [connection signal="area_exited" from="WorldDetectors/Beckon" to="." method="_on_beckon_area_exited"]
 [connection signal="area_entered" from="WorldDetectors/Challenge" to="." method="_on_challenge_area_entered"]
 [connection signal="area_exited" from="WorldDetectors/Challenge" to="." method="_on_challenge_area_exited"]
+[connection signal="area_entered" from="WorldDetectors/TurnIn" to="." method="_on_turn_in_area_entered"]
+[connection signal="area_exited" from="WorldDetectors/TurnIn" to="." method="_on_turn_in_area_exited"]
