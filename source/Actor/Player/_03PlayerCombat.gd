@@ -5,10 +5,12 @@ signal soul_heal(soul)
 signal soul_damage(soul)
 #Variables
 var out_of_soul: bool = true
+var is_dead: bool = false
 #Exported Variables
 @export var max_soul: float = 100
 #OnReady Variables
 @onready var soul = 0: set = set_soul
+@onready var hitbox = $WorldDetectors/Hitbox_Player/CollisionShape3D
 #------------------------------------------------------------------------------#
 #Hitbox
 func _on_hitbox_area_entered(area):
@@ -19,6 +21,8 @@ func _on_hitbox_area_entered(area):
 		"Atkbox_Heavy": damage(15)
 		#Souls
 		"Hitbox_Soul": fill(10)
+#Kill Switch
+func kill(): is_dead = true
 #------------------------------------------------------------------------------#
 #Soul
 #Fill

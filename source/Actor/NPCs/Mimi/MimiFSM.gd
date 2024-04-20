@@ -157,3 +157,4 @@ func forge_cinematic():
 	G.PLAYER.controllable = true #Return Control
 	G.PLAYER.mesh.upgrade() #Upgrade Sword
 	cinematic_playing = false #Toggle Cinematics
+	G.PLAYER.heal(100)
