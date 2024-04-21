@@ -29,6 +29,7 @@ func _ready():
 #Kill Switch
 func kill():
 	G.set_kill_score(1)
+	G.set_boss_challenge(true)
 	ragdoll()
 	loot()
 	await get_tree().create_timer(3).timeout
@@ -43,8 +44,8 @@ func ragdoll():
 func _on_hitbox_area_entered(area):
 	match(area.name):
 		#Sword
-		"Slash": damage(1 + G.sword_damage)
-		"Chop": damage(3 + G.sword_damage)
-		"Thrust": damage(5 + G.sword_damage)
-		"Soulblast": damage(15 + G.sword_damage)
+		"Slash": damage(1 + (float(G.sword_damage) / 2))
+		"Chop": damage(3 + (float(G.sword_damage) / 2))
+		"Thrust": damage(5 + (float(G.sword_damage) / 2))
+		"Soulblast": damage(15 + (float(G.sword_damage) / 2))
 #------------------------------------------------------------------------------#

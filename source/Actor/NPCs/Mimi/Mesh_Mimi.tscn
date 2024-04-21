@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgb5pdwsutpb"]
+[gd_scene load_steps=13 format=3 uid="uid://cgb5pdwsutpb"]
 
 [ext_resource type="PackedScene" uid="uid://bq3yxa7jld2lh" path="res://assets/Textures/NPCs/Notamimic/notamimic.gltf" id="1_wta20"]
 [ext_resource type="Texture2D" uid="uid://8ymhr83w5k2v" path="res://assets/Textures/Items/ShinyGem/shinygem_0.png" id="2_gn7mx"]
@@ -113,6 +113,13 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector3(0, 0.0579933, -0.0217332)]
 }
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Mesh_Mimi/Skeleton3D:Mesh_Mimi")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.0966275, 0, 0, 0.995321)
 
 [sub_resource type="Animation" id="Animation_hlghb"]
 resource_name = "idle_closed"
@@ -229,8 +236,56 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 5.5, 1, 0, 0, 0, 1, 6, 1, -0.0892409, 0.012106, -0.0816108, 0.992587, 6.2, 1, 0, 0, 0, 1, 6.6, 1, 0.199034, 0, 0, 0.979993)
 
+[sub_resource type="Animation" id="Animation_yndh5"]
+resource_name = "OMNOMNOM"
+length = 4.8
+step = 0.05
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh_Mimi/Skeleton3D:Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.708118, 0, 0, 0.706094, 0.55, 1, 0.697084, 0, 0, 0.71699, 3.15, 1, 0.708118, 0, 0, 0.706094, 4.25, 1, 0.733171, 0, 0, 0.680044, 4.5, 1, 0.898786, 0, 0, 0.438388, 4.6, 1, -0.00816961, 0, 0, 0.999967, 4.7, 1, 0.00483305, 0, 0, 0.999988)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh_Mimi/Skeleton3D:Eyelid_L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 0.5, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 0.6, 1, 0, 0, 0, 1, 0.7, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 1.45, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 1.55, 1, 0, 0, 0, 1, 1.65, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 1.95, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518, 2.05, 1, 0, 0, 0, 1, 2.15, 1, 3.35484e-11, -0.00142386, -0.497404, 0.867518)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Mesh_Mimi/Skeleton3D:Eyelid_R")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 0.5, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 0.6, 1, 0, 0, 0, 1, 0.7, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 1.45, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 1.55, 1, 0, 0, 0, 1, 1.65, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 1.95, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345, 2.05, 1, 0, 0, 0, 1, 2.15, 1, -3.2725e-11, 0.00130888, 0.457236, 0.889345)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Mesh_Mimi/Skeleton3D:Eye_Orb")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.1, 1, 0.0534511, 0.00103694, 0.018383, 0.998401, 2.85, 1, -0.0295084, 0.000639391, -0.0239787, 0.999277, 3.75, 1, 0.0139067, 0.000435132, 0.0259378, 0.999567)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Mesh_Mimi/Skeleton3D:Mesh_Mimi")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 4.25, 1, 0, 0, 0, 1, 4.35, 1, 0.0891464, 0, 0, 0.996019, 4.45, 1, -0.461385, 0, 0, 0.8872)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Mesh_Mimi/Skeleton3D:Mesh_Mimi")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(4.25, 1, 0, 0, 0.0191191, 4.35, 1, 0, 0, 0.0263772, 4.45, 1, 0, 0, -0.687453)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_51x0i"]
 _data = {
+"OMNOMNOM": SubResource("Animation_yndh5"),
 "RESET": SubResource("Animation_yx0lr"),
 "idle_closed": SubResource("Animation_hlghb"),
 "idle_open": SubResource("Animation_wcjg2"),
@@ -238,6 +293,11 @@ _data = {
 }
 
 [node name="Mesh_Mimi" instance=ExtResource("1_wta20")]
+
+[node name="Skeleton3D" parent="Mesh_Mimi" index="0"]
+bones/0/position = Vector3(0, 0, -0.687453)
+bones/0/rotation = Quaternion(-0.0966275, 0, 0, 0.995321)
+bones/0/scale = Vector3(1, 1, 1)
 
 [node name="SoulGem" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.0579933, -0.0217332)

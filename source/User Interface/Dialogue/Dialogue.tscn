@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c23cob2ektv23"]
+[gd_scene load_steps=14 format=3 uid="uid://c23cob2ektv23"]
 
 [ext_resource type="Texture2D" uid="uid://da17rkdnblco3" path="res://assets/Textures/UserInterface/ChatBubble/bubble_ellipses.png" id="1_4b2kp"]
 [ext_resource type="Script" path="res://source/User Interface/Dialogue/Dialogue.gd" id="1_hrj82"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dp13jf3ca3gxe" path="res://assets/Textures/UserInterface/ChatBubble/bubble_soulshit.png" id="5_unepo"]
 [ext_resource type="Texture2D" uid="uid://dqti24g87h323" path="res://assets/Textures/UserInterface/ChatBubble/bubble_updoot.png" id="6_xchmr"]
 [ext_resource type="Texture2D" uid="uid://d2etwnfrdg8rs" path="res://assets/Textures/UserInterface/ChatBubble/bubble_gibvpls.png" id="8_hgapk"]
+[ext_resource type="Texture2D" uid="uid://bsa5hig8t3pil" path="res://assets/Textures/UserInterface/ChatBubble/bubble_queen.png" id="8_ip8ic"]
 [ext_resource type="FontFile" uid="uid://bxypvnjgymccp" path="res://assets/Fonts/The Centurion .ttf" id="8_wh6bw"]
 [ext_resource type="Texture2D" uid="uid://bmgpmseq7gols" path="res://assets/Textures/UserInterface/ChatBubble/bubble_scrappls.png" id="9_irb41"]
+[ext_resource type="Texture2D" uid="uid://d3vo2jo8he8cd" path="res://assets/Textures/UserInterface/ChatBubble/bubble_killpls.png" id="10_ejhjm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5mycr"]
 font = ExtResource("8_wh6bw")
@@ -55,11 +57,17 @@ texture = ExtResource("5_unepo")
 [node name="UpgradeExchange" type="Sprite2D" parent="Control"]
 texture = ExtResource("6_xchmr")
 
+[node name="BossExchange" type="Sprite2D" parent="Control"]
+texture = ExtResource("8_ip8ic")
+
 [node name="GibvPls_Souls" type="Sprite2D" parent="Control"]
 texture = ExtResource("8_hgapk")
 
 [node name="GibvPls_Scrap" type="Sprite2D" parent="Control"]
 texture = ExtResource("9_irb41")
+
+[node name="GibvPls_Kill" type="Sprite2D" parent="Control"]
+texture = ExtResource("10_ejhjm")
 
 [node name="SoulsNeeded" type="Label" parent="Control"]
 layout_mode = 0

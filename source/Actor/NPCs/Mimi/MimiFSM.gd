@@ -4,7 +4,7 @@ extends StateMachine
 #Variables
 var cinematic_playing: bool = false
 #Exported Variables
-@export_enum("Souls", "Scrap") var objective: String = "Souls"
+@export_enum("Souls", "Scrap", "Boss") var objective: String = "Souls"
 #OnReady Variables
 @onready var state_output = $"../Outputs/StateOutput"
 #------------------------------------------------------------------------------#
@@ -18,6 +18,7 @@ func _ready():
 	state_add("soulnom")
 	state_add("soul_cinematic")
 	state_add("forge_cinematic")
+	state_add("boss_cinematic")
 	call_deferred("state_set", states.idle_closed)
 #------------------------------------------------------------------------------#
 func _process(_delta: float):
@@ -60,11 +61,14 @@ func state_enter(state_new, state_old):
 		states.challenge:
 			if objective == "Souls": p.dialogue.challenge_souls()
 			elif objective == "Scrap": p.dialogue.challenge_scrap()
+			elif objective == "Boss": p.dialogue.challenge_kill()
 		states.turn_in:
 			if objective == "Souls": p.dialogue.gibv_souls()
 			elif objective == "Scrap": p.dialogue.gibv_scrap()
+			elif objective == "Boss": p.dialogue. gibv_kill()
 		states.soul_cinematic: soul_cinematic()
 		states.forge_cinematic: forge_cinematic()
+		states.boss_cinematic: boss_cinematic()
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(state_old, state_new):
@@ -84,7 +88,7 @@ func fly_move(): pass
 #------------------------------------------------------------------------------#
 #Cinematics
 func cinematic_order():
-	if G.scrap_challenge3_complete: return states.idle_opened
+	if G.boss_challenge_complete: return states.boss_cinematic
 	elif G.soul_challenge3_complete: return states.forge_cinematic
 	elif G.scrap_challenge2_complete: return states.soul_cinematic
 	elif G.soul_challenge2_complete: return states.forge_cinematic
@@ -128,10 +132,6 @@ func forge_cinematic():
 	cinematic_playing = true #Toggle Cinematics
 	G.CAMERAS.forge.current = true
 	G.PLAYER.controllable = false
-	#Objective Update
-	G.set_scrap_score(-G.scrap_needed_value)
-	G.set_scrap_needed(5)
-	objective = "Souls"
 	#Stage Progression
 	if G.scrap_challenge2_complete:
 		G.set_scrap_challenge3(true)
@@ -145,6 +145,11 @@ func forge_cinematic():
 		G.set_scrap_challenge1(true)
 		G.ITEMS.get_node("Soulforge").repaired.visible = true
 		G.set_sword_damage(15)
+	#Objective Update
+	G.set_scrap_score(-G.scrap_needed_value)
+	G.set_scrap_needed(5)
+	if !G.scrap_challenge3_complete: objective = "Souls"
+	else: objective = "Boss"
 	#Play Animations
 	G.ITEMS.get_node("Soulforge").anim_player.play("strike")
 	await G.ITEMS.get_node("Soulforge").anim_player.animation_finished
@@ -158,3 +163,17 @@ func forge_cinematic():
 	G.PLAYER.mesh.upgrade() #Upgrade Sword
 	cinematic_playing = false #Toggle Cinematics
 	G.PLAYER.heal(100)
+#Forge Cinematic
+func boss_cinematic():
+	cinematic_playing = true #Toggle Cinematics
+	G.PLAYER.controllable = false #Stop Control
+	G.CAMERAS.mimi.current = true #Switch to Mimi Cam
+	var distance = ((G.CAMERAS.mimi.global_position - p.global_position) * Vector3(1,0,1)).normalized()
+	p.look_at(G.CAMERAS.mimi.global_position + distance, Vector3.UP)
+	p.anim_player.play("OMNOMNOM")
+	await p.anim_player.animation_finished
+	G.PLAYER.get_node("CollisionShape3D").set_deferred("disabled", true)
+	G.PLAYER.get_node("PlayerUI/AnimationPlayers/AnimationPlayer").play_backwards("cinematic")
+	G.PLAYER.get_node("PlayerUI/GameOver/Ending2").visible = true
+	G.PLAYER.get_node("PlayerUI/Controls").nope_2.visible = false
+	

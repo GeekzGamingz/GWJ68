@@ -21,7 +21,15 @@ func _physics_process(_delta):
 func _on_area_exited(area):
 	match(area.name):
 		"Hitbox_Player": 
-			G.PLAYER.global_position = G.SPAWN_BORDER.global_position
+			if !G.boss_challenge_complete:
+				G.PLAYER.global_position = G.SPAWN_BORDER.global_position
+			else:
+				G.PLAYER.controllable = false #Stop Control
+				#G.CAMERAS.mimi.current = true 
+				G.PLAYER.get_node("CollisionShape3D").set_deferred("disabled", true)
+				G.PLAYER.get_node("PlayerUI/AnimationPlayers/AnimationPlayer").play_backwards("cinematic")
+				G.PLAYER.get_node("PlayerUI/GameOver/Ending3").visible = true
+				G.PLAYER.get_node("PlayerUI/Controls").nope_2.visible = false
 			warning = false
 #Warning Zone Enter (Exiting World)
 func _on_warning_zone_entered(area):

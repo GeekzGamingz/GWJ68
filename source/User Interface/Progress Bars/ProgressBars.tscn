@@ -93,18 +93,22 @@ offset_right = 168.0
 offset_bottom = 78.0
 
 [node name="Blank" type="Sprite2D" parent="Portrait"]
+visible = false
 position = Vector2(133.5, 52.5)
 texture = ExtResource("5_ap5rw")
 
 [node name="Pot" type="Sprite2D" parent="Portrait"]
+visible = false
 position = Vector2(133.5, 52.5)
 texture = ExtResource("5_jreqt")
 
 [node name="Bug" type="Sprite2D" parent="Portrait"]
+visible = false
 position = Vector2(133.5, 52.5)
 texture = ExtResource("6_lux32")
 
 [node name="BossBug" type="Sprite2D" parent="Portrait"]
+visible = false
 position = Vector2(180, 57)
 texture = ExtResource("11_p20cf")
 

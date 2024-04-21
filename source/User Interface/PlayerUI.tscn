@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cymfeeyecidlw"]
+[gd_scene load_steps=19 format=3 uid="uid://cymfeeyecidlw"]
 
 [ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="1_qwx70"]
 [ext_resource type="Script" path="res://source/User Interface/Scoreboard.gd" id="2_kj4yy"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cmvi14ymypsv3" path="res://assets/Textures/UserInterface/cntrls.png" id="7_ldvev"]
 [ext_resource type="Texture2D" uid="uid://cjpyd0rebr8kc" path="res://assets/Textures/UserInterface/redX.png" id="8_nl4l8"]
 [ext_resource type="Texture2D" uid="uid://di46v7a51rkmf" path="res://assets/Textures/UserInterface/gameover.png" id="10_gkx06"]
+[ext_resource type="Texture2D" uid="uid://dym1yr140ysk4" path="res://assets/Textures/UserInterface/gameover2.png" id="11_xxg60"]
+[ext_resource type="Texture2D" uid="uid://buhor5rx3ca3o" path="res://assets/Textures/UserInterface/gameover3.png" id="12_ob06y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_igdir"]
 font = ExtResource("4_q417k")
@@ -109,18 +111,6 @@ _data = {
 [node name="ProgressBars" parent="." instance=ExtResource("1_qwx70")]
 metadata/_edit_vertical_guides_ = [25.0]
 
-[node name="Blank" parent="ProgressBars/Portrait" index="0"]
-visible = false
-
-[node name="Pot" parent="ProgressBars/Portrait" index="1"]
-visible = false
-
-[node name="Bug" parent="ProgressBars/Portrait" index="2"]
-visible = false
-
-[node name="BossBug" parent="ProgressBars/Portrait" index="3"]
-visible = false
-
 [node name="Gem1_Broken" parent="ProgressBars/Portrait/Bezel" index="1"]
 visible = false
 
@@ -201,9 +191,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = 940.0
+offset_top = 1040.0
+offset_right = 980.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -247,5 +238,13 @@ grow_vertical = 2
 [node name="Ending1" type="Sprite2D" parent="GameOver"]
 visible = false
 texture = ExtResource("10_gkx06")
+
+[node name="Ending2" type="Sprite2D" parent="GameOver"]
+visible = false
+texture = ExtResource("11_xxg60")
+
+[node name="Ending3" type="Sprite2D" parent="GameOver"]
+visible = false
+texture = ExtResource("12_ob06y")
 
 [editable path="ProgressBars"]

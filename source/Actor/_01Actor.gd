@@ -45,8 +45,7 @@ func set_health(value):
 	var health_prev = health
 	health = clamp(value, 0, max_health)
 	if health > health_prev:
-		if health == 100:
-			$ProgressBar.visible = false
+		if health == 100: pass
 		emit_signal("health_heal", health)
 	if health < health_prev:
 		emit_signal("health_damage", health)

@@ -152,14 +152,8 @@ texture_progress = ExtResource("8_ef4g6")
 [node name="Soul" parent="ProgressBar/SubViewport/ProgressBars" index="1"]
 visible = false
 
-[node name="Blank" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="0"]
-visible = false
-
-[node name="Pot" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="1"]
-visible = false
-
-[node name="Bug" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="2"]
-visible = false
+[node name="BossBug" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="3"]
+visible = true
 
 [node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="4"]
 visible = false

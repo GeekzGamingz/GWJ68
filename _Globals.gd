@@ -14,6 +14,7 @@ signal scrap_needed
 signal scrap_challenge1_update
 signal scrap_challenge2_update
 signal scrap_challenge3_update
+signal boss_challenge_update
 #Variables
 var sword_damage = 0: set = set_sword_damage
 var soul_score = 0: set = set_soul_score
@@ -27,6 +28,7 @@ var scrap_needed_value = 5: set = set_scrap_needed
 var scrap_challenge1_complete: bool = false: set = set_scrap_challenge1
 var scrap_challenge2_complete: bool = false: set = set_scrap_challenge2
 var scrap_challenge3_complete: bool = false: set = set_scrap_challenge3
+var boss_challenge_complete: bool = false: set = set_boss_challenge
 #World Variables
 var hmap_img: Image = load(ProjectSettings.get_setting("shader_globals/heightmap").value).get_image()
 var hmImage_size = hmap_img.get_width()
@@ -95,3 +97,7 @@ func set_scrap_challenge2(flag: bool):
 func set_scrap_challenge3(flag: bool):
 	scrap_challenge3_complete = flag
 	emit_signal("scrap_challenge3_update")
+#Boss
+func set_boss_challenge(flag: bool):
+	boss_challenge_complete = flag
+	emit_signal("boss_challenge_update")
