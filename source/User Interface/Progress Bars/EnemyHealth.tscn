@@ -19,7 +19,13 @@ visible = false
 [node name="Blank" parent="SubViewport/ProgressBars/Portrait" index="0"]
 visible = false
 
+[node name="Pot" parent="SubViewport/ProgressBars/Portrait" index="1"]
+visible = false
+
 [node name="Bug" parent="SubViewport/ProgressBars/Portrait" index="2"]
+visible = false
+
+[node name="Bezel" parent="SubViewport/ProgressBars/Portrait" index="3"]
 visible = false
 
 [editable path="SubViewport/ProgressBars"]

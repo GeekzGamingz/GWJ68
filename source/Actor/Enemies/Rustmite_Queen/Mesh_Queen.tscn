@@ -1,93 +1,70 @@
-[gd_scene load_steps=36 format=3 uid="uid://bq70625noiblr"]
+[gd_scene load_steps=32 format=3 uid="uid://bq70625noiblr"]
 
 [ext_resource type="PackedScene" uid="uid://1fvdkp6bgw60" path="res://assets/Textures/Enemies/Rustmite_Queen/rust_buggie_queen_whole.gltf" id="1_qfqnn"]
 [ext_resource type="ArrayMesh" uid="uid://k6ji34itsab2" path="res://assets/Textures/Items/Goop/goop.res" id="2_0j45p"]
+[ext_resource type="Script" path="res://source/Actor/Enemies/Rustmite_Queen/Grapple.gd" id="3_qumym"]
 
-[sub_resource type="Curve" id="Curve_8w0mp"]
-_data = [Vector2(0, 0.516483), 0.0, 0.0, 0, 0, Vector2(0.141414, 0.703297), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_7v2q3"]
-curve = SubResource("Curve_8w0mp")
-
-[sub_resource type="Curve" id="Curve_o56xf"]
-max_value = 3.0
-_data = [Vector2(0.368687, 1.54945), 0.0, 0.0, 0, 0, Vector2(1, 0.593407), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_bm0ol"]
-curve = SubResource("Curve_o56xf")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rv2xr"]
-inherit_velocity_ratio = 1.0
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_55p2l"]
 direction = Vector3(1, 1, 0)
 spread = 5.0
-initial_velocity_min = 2.0
-initial_velocity_max = 5.0
+initial_velocity_min = 5.0
+initial_velocity_max = 7.0
 linear_accel_min = 0.75
 linear_accel_max = 1.0
 radial_accel_max = 1.0
-scale_min = 0.5
-scale_curve = SubResource("CurveTexture_7v2q3")
-scale_over_velocity_curve = SubResource("CurveTexture_bm0ol")
-collision_mode = 1
-collision_friction = 0.1
-collision_bounce = 0.1
 collision_use_scale = true
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_qvake"]
-radius = 0.1
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uanop"]
+height = 2.13708
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_43sa5"]
-radius = 0.1
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oo0yy"]
-radius = 0.0304444
-height = 0.304444
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qd7mi"]
+radius = 0.0926802
+height = 0.926802
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4umyn"]
-radius = 0.018536
-height = 0.18536
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vomia"]
+radius = 0.153205
+height = 1.53205
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vycic"]
-radius = 0.0306409
-height = 0.306409
+[sub_resource type="SphereShape3D" id="SphereShape3D_rfu4n"]
+radius = 0.288577
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dgkiv"]
-radius = 0.0445541
-height = 0.445541
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cf22k"]
+radius = 0.265063
+height = 1.17537
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vun0y"]
-radius = 0.055303
-height = 0.55303
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h7bqr"]
+radius = 0.276515
+height = 1.38656
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lkuej"]
-radius = 0.055303
-height = 0.55303
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vdvpi"]
+radius = 0.237993
+height = 1.24864
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcvpd"]
-radius = 0.0475986
-height = 0.475986
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_baqhb"]
+radius = 0.281857
+height = 1.84781
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvt4k"]
-radius = 0.0563714
-height = 0.563714
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1mxh7"]
+radius = 0.237993
+height = 1.09861
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_22tb8"]
-radius = 0.0475986
-height = 0.475986
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jx5xj"]
+radius = 0.281857
+height = 1.41459
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_06oc3"]
-radius = 0.0563714
-height = 0.563714
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xfu78"]
+radius = 0.279071
+height = 1.37386
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x3cij"]
-radius = 0.0558141
-height = 0.558141
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pn0to"]
+radius = 0.276934
+height = 1.64607
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3x78"]
-radius = 0.0553868
-height = 0.553868
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_adspe"]
+radius = 1.1231
+height = 4.84474
 
 [sub_resource type="Animation" id="Animation_pc5x0"]
 length = 0.001
@@ -111,7 +88,7 @@ tracks/2/enabled = true
 tracks/2/path = NodePath("../ActorMesh/Skeleton3D:Torso")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -3.06913e-18, 0.303778, -0.0201322)
+tracks/2/keys = PackedFloat32Array(0, 1, -1.53456e-17, 1.51889, -0.100661)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
@@ -125,7 +102,7 @@ tracks/4/enabled = true
 tracks/4/path = NodePath("../ActorMesh/Skeleton3D:Skull")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 7.4694e-18, -0.050653, -0.178305)
+tracks/4/keys = PackedFloat32Array(0, 1, 3.7347e-17, -0.253265, -0.891526)
 tracks/5/type = "rotation_3d"
 tracks/5/imported = false
 tracks/5/enabled = true
@@ -139,7 +116,7 @@ tracks/6/enabled = true
 tracks/6/path = NodePath("../ActorMesh/Skeleton3D:Mandible_L")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, -0.0813, -0.1123, -0.27325)
+tracks/6/keys = PackedFloat32Array(0, 1, -0.4065, -0.5615, -1.36625)
 tracks/7/type = "rotation_3d"
 tracks/7/imported = false
 tracks/7/enabled = true
@@ -153,7 +130,7 @@ tracks/8/enabled = true
 tracks/8/path = NodePath("../ActorMesh/Skeleton3D:Mandible_R")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0.0813, -0.1123, -0.27325)
+tracks/8/keys = PackedFloat32Array(0, 1, 0.4065, -0.5615, -1.36625)
 tracks/9/type = "rotation_3d"
 tracks/9/imported = false
 tracks/9/enabled = true
@@ -167,7 +144,7 @@ tracks/10/enabled = true
 tracks/10/path = NodePath("../ActorMesh/Skeleton3D:Eye_UL")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/keys = PackedFloat32Array(0, 1, -0.0385817, 0.0176683, -0.246995)
+tracks/10/keys = PackedFloat32Array(0, 1, -0.192909, 0.0883413, -1.23498)
 tracks/11/type = "rotation_3d"
 tracks/11/imported = false
 tracks/11/enabled = true
@@ -181,7 +158,7 @@ tracks/12/enabled = true
 tracks/12/path = NodePath("../ActorMesh/Skeleton3D:Eye_UR")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/keys = PackedFloat32Array(0, 1, 0.0385817, 0.0176683, -0.246995)
+tracks/12/keys = PackedFloat32Array(0, 1, 0.192909, 0.0883413, -1.23498)
 tracks/13/type = "rotation_3d"
 tracks/13/imported = false
 tracks/13/enabled = true
@@ -195,7 +172,7 @@ tracks/14/enabled = true
 tracks/14/path = NodePath("../ActorMesh/Skeleton3D:Eye_LL")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/keys = PackedFloat32Array(0, 1, -0.0601593, -0.042549, -0.290434)
+tracks/14/keys = PackedFloat32Array(0, 1, -0.300797, -0.212745, -1.45217)
 tracks/15/type = "rotation_3d"
 tracks/15/imported = false
 tracks/15/enabled = true
@@ -209,7 +186,7 @@ tracks/16/enabled = true
 tracks/16/path = NodePath("../ActorMesh/Skeleton3D:Eye_LR")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
-tracks/16/keys = PackedFloat32Array(0, 1, 0.0601593, -0.042549, -0.290434)
+tracks/16/keys = PackedFloat32Array(0, 1, 0.300797, -0.212745, -1.45217)
 tracks/17/type = "rotation_3d"
 tracks/17/imported = false
 tracks/17/enabled = true
@@ -223,7 +200,7 @@ tracks/18/enabled = true
 tracks/18/path = NodePath("../ActorMesh/Skeleton3D:Booty")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
-tracks/18/keys = PackedFloat32Array(0, 1, 1.19692e-18, 0.00162196, 0.215132)
+tracks/18/keys = PackedFloat32Array(0, 1, 5.98459e-18, 0.00810978, 1.07566)
 tracks/19/type = "rotation_3d"
 tracks/19/imported = false
 tracks/19/enabled = true
@@ -237,7 +214,7 @@ tracks/20/enabled = true
 tracks/20/path = NodePath("../ActorMesh/Skeleton3D:BootyShooter")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/keys = PackedFloat32Array(0, 1, 0, 0.437501, 0.0842611)
+tracks/20/keys = PackedFloat32Array(0, 1, 0, 2.1875, 0.421306)
 tracks/21/type = "rotation_3d"
 tracks/21/imported = false
 tracks/21/enabled = true
@@ -251,7 +228,7 @@ tracks/22/enabled = true
 tracks/22/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
-tracks/22/keys = PackedFloat32Array(0, 1, -0.07875, 0.3875, -0.105492)
+tracks/22/keys = PackedFloat32Array(0, 1, -0.39375, 1.9375, -0.527458)
 tracks/23/type = "rotation_3d"
 tracks/23/imported = false
 tracks/23/enabled = true
@@ -265,7 +242,7 @@ tracks/24/enabled = true
 tracks/24/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
-tracks/24/keys = PackedFloat32Array(0, 1, -0.400134, -0.381753, 1.249e-16)
+tracks/24/keys = PackedFloat32Array(0, 1, -2.00067, -1.90876, 5.55112e-16)
 tracks/25/type = "rotation_3d"
 tracks/25/imported = false
 tracks/25/enabled = true
@@ -279,7 +256,7 @@ tracks/26/enabled = true
 tracks/26/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
-tracks/26/keys = PackedFloat32Array(0, 1, 0.07875, 0.3875, -0.105492)
+tracks/26/keys = PackedFloat32Array(0, 1, 0.39375, 1.9375, -0.527458)
 tracks/27/type = "rotation_3d"
 tracks/27/imported = false
 tracks/27/enabled = true
@@ -293,7 +270,7 @@ tracks/28/enabled = true
 tracks/28/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
-tracks/28/keys = PackedFloat32Array(0, 1, 0.406384, -0.383315, 0)
+tracks/28/keys = PackedFloat32Array(0, 1, 2.00067, -1.90876, 5.55112e-16)
 tracks/29/type = "rotation_3d"
 tracks/29/imported = false
 tracks/29/enabled = true
@@ -307,7 +284,7 @@ tracks/30/enabled = true
 tracks/30/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RL")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
-tracks/30/keys = PackedFloat32Array(0, 1, -0.07875, 0.3875, 0.125)
+tracks/30/keys = PackedFloat32Array(0, 1, -0.39375, 1.9375, 0.625)
 tracks/31/type = "rotation_3d"
 tracks/31/imported = false
 tracks/31/enabled = true
@@ -321,7 +298,7 @@ tracks/32/enabled = true
 tracks/32/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RL")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
-tracks/32/keys = PackedFloat32Array(0, 1, -0.284992, -0.383315, 0.288741)
+tracks/32/keys = PackedFloat32Array(0, 1, -1.42496, -1.91658, 1.4437)
 tracks/33/type = "rotation_3d"
 tracks/33/imported = false
 tracks/33/enabled = true
@@ -335,7 +312,7 @@ tracks/34/enabled = true
 tracks/34/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RR")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
-tracks/34/keys = PackedFloat32Array(0, 1, 0.07875, 0.38125, 0.125)
+tracks/34/keys = PackedFloat32Array(0, 1, 0.39375, 1.90625, 0.625)
 tracks/35/type = "rotation_3d"
 tracks/35/imported = false
 tracks/35/enabled = true
@@ -349,7 +326,7 @@ tracks/36/enabled = true
 tracks/36/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
-tracks/36/keys = PackedFloat32Array(0, 1, 0.284992, -0.377065, 0.288741)
+tracks/36/keys = PackedFloat32Array(0, 1, 1.42496, -1.88533, 1.4437)
 tracks/37/type = "rotation_3d"
 tracks/37/imported = false
 tracks/37/enabled = true
@@ -369,6 +346,90 @@ tracks/38/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/39/type = "position_3d"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR_Shoulder")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = PackedFloat32Array(0, 1, 0.39375, 1.23438, -0.605583)
+tracks/40/type = "rotation_3d"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR_Shoulder")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/41/type = "position_3d"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR_Claw")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = PackedFloat32Array(0, 1, 2.1875, 0, -0.9375)
+tracks/42/type = "rotation_3d"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR_Claw")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/43/type = "position_3d"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR_claw")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = PackedFloat32Array(0, 1, 1.03972, 0.0234477, -2.61969)
+tracks/44/type = "rotation_3d"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR_claw")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/45/type = "position_3d"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL_Shoulder")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = PackedFloat32Array(0, 1, -0.39375, 1.23438, -0.605583)
+tracks/46/type = "rotation_3d"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL_Shoulder")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/47/type = "position_3d"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL_Claw")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = PackedFloat32Array(0, 1, -2.1875, 0, -0.9375)
+tracks/48/type = "rotation_3d"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL_Claw")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/49/type = "position_3d"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL_claw")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = PackedFloat32Array(0, 1, -1.03972, 0.0234477, -2.61969)
+tracks/50/type = "rotation_3d"
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL_claw")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_b7osl"]
 resource_name = "idle"
@@ -389,265 +450,139 @@ tracks/1/path = NodePath("../ActorMesh/Skeleton3D:ActorMesh")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/2/type = "position_3d"
+tracks/2/type = "rotation_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("../ActorMesh/Skeleton3D:Torso")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -3.06913e-18, 0.303778, -0.0201322)
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../ActorMesh/Skeleton3D:Torso")
+tracks/3/path = NodePath("../ActorMesh/Skeleton3D:Skull")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/4/type = "position_3d"
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.2, 1, 0, -0.125229, 0, 0.992128, 3, 1, 0, 0.337991, 0, 0.941149, 3.6, 1, 0, 0.337991, 0, 0.941149)
+tracks/4/type = "rotation_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../ActorMesh/Skeleton3D:Skull")
+tracks/4/path = NodePath("../ActorMesh/Skeleton3D:Mandible_L")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 7.4694e-18, -0.050653, -0.178305)
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.6, 1, 0, -0.112301, 0, 0.993674, 1.05, 1, 0, 0, 0, 1, 1.35, 1, 0, -0.112301, 0, 0.993674, 1.5, 1, 0, 0, 0, 1, 3.3, 1, 0, -0.112301, 0, 0.993674, 3.45, 1, 0, 0, 0, 1, 3.6, 1, 0, -0.112301, 0, 0.993674, 3.9, 1, 0, 0, 0, 1)
 tracks/5/type = "rotation_3d"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../ActorMesh/Skeleton3D:Skull")
+tracks/5/path = NodePath("../ActorMesh/Skeleton3D:Mandible_R")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.2, 1, 0, -0.125229, 0, 0.992128, 3, 1, 0, 0.337991, 0, 0.941149, 3.6, 1, 0, 0.337991, 0, 0.941149)
-tracks/6/type = "position_3d"
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.6, 1, 0, 0.125143, 0, 0.992139, 1.05, 1, 0, 0, 0, 1, 1.35, 1, 0, 0.125143, 0, 0.992139, 1.5, 1, 0, 0, 0, 1, 3.3, 1, 0, 0.125143, 0, 0.992139, 3.45, 1, 0, 0, 0, 1, 3.6, 1, 0, 0.125143, 0, 0.992139, 3.9, 1, 0, 0, 0, 1)
+tracks/6/type = "rotation_3d"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../ActorMesh/Skeleton3D:Mandible_L")
+tracks/6/path = NodePath("../ActorMesh/Skeleton3D:Eye_UL")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, -0.0813, -0.1123, -0.27325)
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 tracks/7/type = "rotation_3d"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../ActorMesh/Skeleton3D:Mandible_L")
+tracks/7/path = NodePath("../ActorMesh/Skeleton3D:Eye_UR")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.6, 1, 0, -0.112301, 0, 0.993674, 1.05, 1, 0, 0, 0, 1, 1.35, 1, 0, -0.112301, 0, 0.993674, 1.5, 1, 0, 0, 0, 1, 3.3, 1, 0, -0.112301, 0, 0.993674, 3.45, 1, 0, 0, 0, 1, 3.6, 1, 0, -0.112301, 0, 0.993674, 3.9, 1, 0, 0, 0, 1)
-tracks/8/type = "position_3d"
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/8/type = "rotation_3d"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../ActorMesh/Skeleton3D:Mandible_R")
+tracks/8/path = NodePath("../ActorMesh/Skeleton3D:Eye_LL")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0.0813, -0.1123, -0.27325)
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 tracks/9/type = "rotation_3d"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../ActorMesh/Skeleton3D:Mandible_R")
+tracks/9/path = NodePath("../ActorMesh/Skeleton3D:Eye_LR")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.6, 1, 0, 0.125143, 0, 0.992139, 1.05, 1, 0, 0, 0, 1, 1.35, 1, 0, 0.125143, 0, 0.992139, 1.5, 1, 0, 0, 0, 1, 3.3, 1, 0, 0.125143, 0, 0.992139, 3.45, 1, 0, 0, 0, 1, 3.6, 1, 0, 0.125143, 0, 0.992139, 3.9, 1, 0, 0, 0, 1)
-tracks/10/type = "position_3d"
+tracks/9/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/10/type = "rotation_3d"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../ActorMesh/Skeleton3D:Eye_UL")
+tracks/10/path = NodePath("../ActorMesh/Skeleton3D:Booty")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/keys = PackedFloat32Array(0, 1, -0.0385817, 0.0176683, -0.246995)
+tracks/10/keys = PackedFloat32Array(0.45, 1, -0.131426, 0, 0, 0.991326, 1.2, 1, 0.131245, 0, 0, 0.99135, 1.8, 1, 0.0437104, 0.0638092, -0.00279752, 0.997001, 2.4, 1, -0.131426, 0, 0, 0.991326, 4.2, 1, 0.130822, -0.0795311, 0.0105291, 0.988155)
 tracks/11/type = "rotation_3d"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../ActorMesh/Skeleton3D:Eye_UL")
+tracks/11/path = NodePath("../ActorMesh/Skeleton3D:BootyShooter")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/12/type = "position_3d"
+tracks/12/type = "rotation_3d"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../ActorMesh/Skeleton3D:Eye_UR")
+tracks/12/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/keys = PackedFloat32Array(0, 1, 0.0385817, 0.0176683, -0.246995)
+tracks/12/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.8, 1, 0, 0, -0.069565, 0.997577)
 tracks/13/type = "rotation_3d"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../ActorMesh/Skeleton3D:Eye_UR")
+tracks/13/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/14/type = "position_3d"
+tracks/14/type = "rotation_3d"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../ActorMesh/Skeleton3D:Eye_LL")
+tracks/14/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/keys = PackedFloat32Array(0, 1, -0.0601593, -0.042549, -0.290434)
+tracks/14/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.8, 1, 0, 0, 0.058714, 0.998275)
 tracks/15/type = "rotation_3d"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("../ActorMesh/Skeleton3D:Eye_LL")
+tracks/15/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/16/type = "position_3d"
+tracks/16/type = "rotation_3d"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../ActorMesh/Skeleton3D:Eye_LR")
+tracks/16/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RL")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
-tracks/16/keys = PackedFloat32Array(0, 1, 0.0601593, -0.042549, -0.290434)
+tracks/16/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.8, 1, -0.00409848, 0.0562474, -0.0725568, 0.995769)
 tracks/17/type = "rotation_3d"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../ActorMesh/Skeleton3D:Eye_LR")
+tracks/17/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RL")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/18/type = "position_3d"
+tracks/18/type = "rotation_3d"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../ActorMesh/Skeleton3D:Booty")
+tracks/18/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RR")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
-tracks/18/keys = PackedFloat32Array(0, 1, 1.19692e-18, 0.00162196, 0.215132)
+tracks/18/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.8, 1, -0.00672063, -0.0612471, 0.108868, 0.992145)
 tracks/19/type = "rotation_3d"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("../ActorMesh/Skeleton3D:Booty")
+tracks/19/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
-tracks/19/keys = PackedFloat32Array(0.45, 1, -0.131426, 0, 0, 0.991326, 1.2, 1, 0.131245, 0, 0, 0.99135, 1.8, 1, 0.0437104, 0.0638092, -0.00279752, 0.997001, 2.4, 1, -0.131426, 0, 0, 0.991326, 4.2, 1, 0.130822, -0.0795311, 0.0105291, 0.988155)
-tracks/20/type = "position_3d"
+tracks/19/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("../ActorMesh/Skeleton3D:BootyShooter")
+tracks/20/path = NodePath("../Atkbox_Medium/CollisionShape3D:disabled")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/keys = PackedFloat32Array(0, 1, 0, 0.437501, 0.0842611)
-tracks/21/type = "rotation_3d"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("../ActorMesh/Skeleton3D:BootyShooter")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/22/type = "position_3d"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = PackedFloat32Array(0, 1, -0.07875, 0.3875, -0.105492)
-tracks/23/type = "rotation_3d"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.8, 1, 0, 0, -0.069565, 0.997577)
-tracks/24/type = "position_3d"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = PackedFloat32Array(0, 1, -0.400134, -0.381753, 1.249e-16)
-tracks/25/type = "rotation_3d"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/26/type = "position_3d"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = PackedFloat32Array(0, 1, 0.07875, 0.3875, -0.105492)
-tracks/27/type = "rotation_3d"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.8, 1, 0, 0, 0.058714, 0.998275)
-tracks/28/type = "position_3d"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = PackedFloat32Array(0, 1, 0.406384, -0.383315, 0)
-tracks/29/type = "rotation_3d"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/30/type = "position_3d"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RL")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = PackedFloat32Array(0, 1, -0.07875, 0.3875, 0.125)
-tracks/31/type = "rotation_3d"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RL")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.8, 1, -0.00409848, 0.0562474, -0.0725568, 0.995769)
-tracks/32/type = "position_3d"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RL")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = PackedFloat32Array(0, 1, -0.284992, -0.383315, 0.288741)
-tracks/33/type = "rotation_3d"
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RL")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/34/type = "position_3d"
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RR")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/keys = PackedFloat32Array(0, 1, 0.07875, 0.38125, 0.125)
-tracks/35/type = "rotation_3d"
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RR")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.8, 1, -0.00672063, -0.0612471, 0.108868, 0.992145)
-tracks/36/type = "position_3d"
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/keys = PackedFloat32Array(0, 1, 0.284992, -0.377065, 0.288741)
-tracks/37/type = "rotation_3d"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("../Atkbox_Medium/CollisionShape3D:disabled")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
+tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -672,277 +607,151 @@ tracks/1/path = NodePath("../ActorMesh/Skeleton3D:ActorMesh")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/2/type = "position_3d"
+tracks/2/type = "rotation_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("../ActorMesh/Skeleton3D:Torso")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -3.06913e-18, 0.303778, -0.0201322)
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, -0.142119, 0, 0, 0.98985)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../ActorMesh/Skeleton3D:Torso")
+tracks/3/path = NodePath("../ActorMesh/Skeleton3D:Skull")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, -0.142119, 0, 0, 0.98985)
-tracks/4/type = "position_3d"
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0.327812, 0, 0, 0.944743, 2, 1, 0.279108, 0, 0, 0.96026)
+tracks/4/type = "rotation_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../ActorMesh/Skeleton3D:Skull")
+tracks/4/path = NodePath("../ActorMesh/Skeleton3D:Mandible_L")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 7.4694e-18, -0.050653, -0.178305)
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.2, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.25, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.3, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.35, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.4, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.45, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.5, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.55, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.6, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.65, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.7, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.75, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.8, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.85, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.9, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.95, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.05, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.1, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.15, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.2, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.25, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.3, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.35, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.4, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.45, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.5, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.55, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.6, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.65, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.9, 1, -0.00114003, 0.154085, -0.0405057, 0.987226, 2.15, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217)
 tracks/5/type = "rotation_3d"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../ActorMesh/Skeleton3D:Skull")
+tracks/5/path = NodePath("../ActorMesh/Skeleton3D:Mandible_R")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0.327812, 0, 0, 0.944743, 2, 1, 0.279108, 0, 0, 0.96026)
-tracks/6/type = "position_3d"
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.2, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.25, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.3, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.35, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.4, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.45, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.5, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.55, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.6, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.65, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.7, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.75, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.8, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.85, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.9, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.95, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.05, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.1, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.15, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.2, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.25, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.3, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.35, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.4, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.45, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.5, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.55, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.6, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.65, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.9, 1, -0.00591246, -0.154632, 0.0709252, 0.985405, 2.15, 1, -0.000981164, 0.0411, 0.0130961, 0.999069)
+tracks/6/type = "rotation_3d"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../ActorMesh/Skeleton3D:Mandible_L")
+tracks/6/path = NodePath("../ActorMesh/Skeleton3D:Eye_UL")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, -0.0813, -0.1123, -0.27325)
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 tracks/7/type = "rotation_3d"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../ActorMesh/Skeleton3D:Mandible_L")
+tracks/7/path = NodePath("../ActorMesh/Skeleton3D:Eye_UR")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.2, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.25, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.3, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.35, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.4, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.45, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.5, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.55, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.6, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.65, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.7, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.75, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.8, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.85, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 0.9, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 0.95, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.05, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.1, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.15, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.2, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.25, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.3, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.35, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.4, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.45, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.5, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.55, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.6, 1, -1.05901e-09, -0.143844, -0.0219768, 0.989356, 1.65, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217, 1.9, 1, -0.00114003, 0.154085, -0.0405057, 0.987226, 2.15, 1, -0.0017779, 0.0390377, -0.00626414, 0.999217)
-tracks/8/type = "position_3d"
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/8/type = "rotation_3d"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../ActorMesh/Skeleton3D:Mandible_R")
+tracks/8/path = NodePath("../ActorMesh/Skeleton3D:Eye_LL")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0.0813, -0.1123, -0.27325)
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 tracks/9/type = "rotation_3d"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../ActorMesh/Skeleton3D:Mandible_R")
+tracks/9/path = NodePath("../ActorMesh/Skeleton3D:Eye_LR")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.2, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.25, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.3, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.35, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.4, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.45, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.5, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.55, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.6, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.65, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.7, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.75, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.8, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.85, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 0.9, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 0.95, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.05, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.1, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.15, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.2, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.25, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.3, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.35, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.4, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.45, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.5, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.55, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.6, 1, 1.12937e-08, 0.142436, 0.0217616, 0.989565, 1.65, 1, -0.000981164, 0.0411, 0.0130961, 0.999069, 1.9, 1, -0.00591246, -0.154632, 0.0709252, 0.985405, 2.15, 1, -0.000981164, 0.0411, 0.0130961, 0.999069)
-tracks/10/type = "position_3d"
+tracks/9/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/10/type = "rotation_3d"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../ActorMesh/Skeleton3D:Eye_UL")
+tracks/10/path = NodePath("../ActorMesh/Skeleton3D:Booty")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/keys = PackedFloat32Array(0, 1, -0.0385817, 0.0176683, -0.246995)
+tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 0.2, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 0.3, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 0.4, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 0.5, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 0.6, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 0.7, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 0.8, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 0.9, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 1, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 1.1, 1, 0, 0, 0, 1, 1.2, 1, 0.0647152, 0, 0, 0.997904, 1.3, 1, 0.148086, 0, 0, 0.988975, 1.5, 1, 0.406737, 0, 0, 0.913545, 1.6, 1, 0.503623, 0, 0, 0.863923, 1.7, 1, -0.0312014, 0, 0, 0.999513, 1.8, 1, 0.00650133, 0, 0, 0.999979, 1.9, 1, -0.00559371, 0, 0, 0.999984)
 tracks/11/type = "rotation_3d"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../ActorMesh/Skeleton3D:Eye_UL")
+tracks/11/path = NodePath("../ActorMesh/Skeleton3D:BootyShooter")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/12/type = "position_3d"
+tracks/12/type = "rotation_3d"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../ActorMesh/Skeleton3D:Eye_UR")
+tracks/12/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/keys = PackedFloat32Array(0, 1, 0.0385817, 0.0176683, -0.246995)
+tracks/12/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0.00955273, -0.136098, -0.0693629, 0.988218, 1.2, 1, 0.0260049, -0.134925, -0.0716193, 0.987922, 2, 1, 0.0278349, -0.160241, -0.0709282, 0.984133)
 tracks/13/type = "rotation_3d"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../ActorMesh/Skeleton3D:Eye_UR")
+tracks/13/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/14/type = "position_3d"
+tracks/14/type = "rotation_3d"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../ActorMesh/Skeleton3D:Eye_LL")
+tracks/14/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/keys = PackedFloat32Array(0, 1, -0.0601593, -0.042549, -0.290434)
+tracks/14/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0.0109276, 0.150061, 0.0718022, 0.986005, 1.2, 1, 0.0520788, 0.146933, 0.0780039, 0.98469, 2.2, 1, 0.0502245, 0.123667, 0.0792105, 0.987881)
 tracks/15/type = "rotation_3d"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("../ActorMesh/Skeleton3D:Eye_LL")
+tracks/15/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/16/type = "position_3d"
+tracks/16/type = "rotation_3d"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../ActorMesh/Skeleton3D:Eye_LR")
+tracks/16/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RL")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
-tracks/16/keys = PackedFloat32Array(0, 1, 0.0601593, -0.042549, -0.290434)
+tracks/16/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.5, 1, -0.0100296, -0.0408709, 0.0231806, 0.998845, 2.1, 1, -0.00955199, -0.0203711, 0.0233815, 0.999473)
 tracks/17/type = "rotation_3d"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../ActorMesh/Skeleton3D:Eye_LR")
+tracks/17/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RL")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/18/type = "position_3d"
+tracks/18/type = "rotation_3d"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../ActorMesh/Skeleton3D:Booty")
+tracks/18/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RR")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
-tracks/18/keys = PackedFloat32Array(0, 1, 1.19692e-18, 0.00162196, 0.215132)
+tracks/18/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.5, 1, -0.0454787, 0.0323018, -0.00147134, 0.998442, 2.2, 1, -0.0454999, 0.0538661, -0.000488404, 0.997511)
 tracks/19/type = "rotation_3d"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("../ActorMesh/Skeleton3D:Booty")
+tracks/19/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
-tracks/19/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 0.2, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 0.3, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 0.4, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 0.5, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 0.6, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 0.7, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 0.8, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 0.9, 1, -0.0112277, -0.120741, -0.0368901, 0.991935, 1, 1, -0.0113175, 0.0110663, 0.00338107, 0.999869, 1.1, 1, 0, 0, 0, 1, 1.2, 1, 0.0647152, 0, 0, 0.997904, 1.3, 1, 0.148086, 0, 0, 0.988975, 1.5, 1, 0.406737, 0, 0, 0.913545, 1.6, 1, 0.503623, 0, 0, 0.863923, 1.7, 1, -0.0312014, 0, 0, 0.999513, 1.8, 1, 0.00650133, 0, 0, 0.999979, 1.9, 1, -0.00559371, 0, 0, 0.999984)
-tracks/20/type = "position_3d"
+tracks/19/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("../ActorMesh/Skeleton3D:BootyShooter")
+tracks/20/path = NodePath("../ActorMesh/Skeleton3D/BootyAttachment/GPUParticles3D:emitting")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/keys = PackedFloat32Array(0, 1, 0, 0.437501, 0.0842611)
-tracks/21/type = "rotation_3d"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("../ActorMesh/Skeleton3D:BootyShooter")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/22/type = "position_3d"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = PackedFloat32Array(0, 1, -0.07875, 0.3875, -0.105492)
-tracks/23/type = "rotation_3d"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0.00955273, -0.136098, -0.0693629, 0.988218, 1.2, 1, 0.0260049, -0.134925, -0.0716193, 0.987922, 2, 1, 0.0278349, -0.160241, -0.0709282, 0.984133)
-tracks/24/type = "position_3d"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = PackedFloat32Array(0, 1, -0.400134, -0.381753, 1.249e-16)
-tracks/25/type = "rotation_3d"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FL")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/26/type = "position_3d"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = PackedFloat32Array(0, 1, 0.07875, 0.3875, -0.105492)
-tracks/27/type = "rotation_3d"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FR")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0.0109276, 0.150061, 0.0718022, 0.986005, 1.2, 1, 0.0520788, 0.146933, 0.0780039, 0.98469, 2.2, 1, 0.0502245, 0.123667, 0.0792105, 0.987881)
-tracks/28/type = "position_3d"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = PackedFloat32Array(0, 1, 0.406384, -0.383315, 0)
-tracks/29/type = "rotation_3d"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("../ActorMesh/Skeleton3D:Toesie_FR")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/30/type = "position_3d"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RL")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = PackedFloat32Array(0, 1, -0.07875, 0.3875, 0.125)
-tracks/31/type = "rotation_3d"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RL")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.5, 1, -0.0100296, -0.0408709, 0.0231806, 0.998845, 2.1, 1, -0.00955199, -0.0203711, 0.0233815, 0.999473)
-tracks/32/type = "position_3d"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RL")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = PackedFloat32Array(0, 1, -0.284992, -0.383315, 0.288741)
-tracks/33/type = "rotation_3d"
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RL")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/34/type = "position_3d"
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RR")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/keys = PackedFloat32Array(0, 1, 0.07875, 0.38125, 0.125)
-tracks/35/type = "rotation_3d"
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/path = NodePath("../ActorMesh/Skeleton3D:Leggie_RR")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.5, 1, -0.0454787, 0.0323018, -0.00147134, 0.998442, 2.2, 1, -0.0454999, 0.0538661, -0.000488404, 0.997511)
-tracks/36/type = "position_3d"
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/keys = PackedFloat32Array(0, 1, 0.284992, -0.377065, 0.288741)
-tracks/37/type = "rotation_3d"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("../ActorMesh/Skeleton3D:Toesie_RR")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("../ActorMesh/Skeleton3D/BootyAttachment/GPUParticles3D:emitting")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
+tracks/20/keys = {
 "times": PackedFloat32Array(1.675),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("../Atkbox_Medium/CollisionShape3D:disabled")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Atkbox_Medium/CollisionShape3D:disabled")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
 "times": PackedFloat32Array(1.75, 2.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1268,10 +1077,29 @@ tracks/2/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_i3kx7"]
-resource_name = "attack"
-length = 3.6
+[sub_resource type="Animation" id="Animation_k2poy"]
+resource_name = "idle"
+length = 4.8
 loop_mode = 1
+step = 1.2
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL_Shoulder")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.4, 1, 0, -0.0897461, 0, 0.995965)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL_Claw")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.4, 1, 0, -0.0898678, 0, 0.995954)
+
+[sub_resource type="Animation" id="Animation_i3kx7"]
+resource_name = "slam"
+length = 3.6
 step = 0.05
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
@@ -1300,31 +1128,11 @@ tracks/2/keys = {
 "values": [true, false, true]
 }
 
-[sub_resource type="Animation" id="Animation_k2poy"]
-resource_name = "idle"
-length = 4.8
-loop_mode = 1
-step = 1.2
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL_Shoulder")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.4, 1, 0, -0.0897461, 0, 0.995965)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../ActorMesh/Skeleton3D:Leggie_FL_Claw")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.4, 1, 0, -0.0898678, 0, 0.995954)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_f4ck4"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e0mki"]
 _data = {
 "RESET": SubResource("Animation_vgnc3"),
-"attack": SubResource("Animation_i3kx7"),
-"idle": SubResource("Animation_k2poy")
+"idle": SubResource("Animation_k2poy"),
+"slam": SubResource("Animation_i3kx7")
 }
 
 [sub_resource type="Animation" id="Animation_phbi1"]
@@ -1346,7 +1154,7 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../ActorMesh/Skeleton3D/Claw_RAttachment/Area3D/CollisionShape3D:disabled")
+tracks/2/path = NodePath("../ActorMesh/Skeleton3D/Claw_RAttachment/Atkbox_Light/CollisionShape3D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1377,7 +1185,7 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.454923, 0.890531, 2, 1, 0, 0, 0
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../ActorMesh/Skeleton3D/Claw_RAttachment/Area3D/CollisionShape3D:disabled")
+tracks/2/path = NodePath("../ActorMesh/Skeleton3D/Claw_RAttachment/Atkbox_Light/CollisionShape3D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1407,37 +1215,37 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.4, 1, 0, 0.0884771, 0, 0.996078)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dgqyu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5td14"]
 _data = {
 "RESET": SubResource("Animation_phbi1"),
 "grab": SubResource("Animation_820w3"),
 "idle": SubResource("Animation_xloun")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r68eg"]
-radius = 0.375
-height = 1.5
-
 [node name="Mesh_Queen" instance=ExtResource("1_qfqnn")]
 
 [node name="Skeleton3D" parent="ActorMesh" index="0"]
-bones/1/position = Vector3(-3.06913e-18, 0.303778, -0.0201322)
-bones/2/position = Vector3(7.4694e-18, -0.050653, -0.178305)
-bones/5/position = Vector3(-0.0385817, 0.0176683, -0.246995)
-bones/6/position = Vector3(0.0385817, 0.0176683, -0.246995)
-bones/7/position = Vector3(-0.0601593, -0.042549, -0.290434)
-bones/8/position = Vector3(0.0601593, -0.042549, -0.290434)
-bones/9/position = Vector3(1.19692e-18, 0.00162196, 0.215132)
-bones/10/position = Vector3(0, 0.437501, 0.0842611)
-bones/11/position = Vector3(0.07875, 0.3875, -0.105492)
-bones/12/position = Vector3(0.406384, -0.383315, 0)
-bones/13/position = Vector3(-0.07875, 0.3875, -0.105492)
-bones/14/position = Vector3(-0.400134, -0.381753, 1.249e-16)
-bones/22/position = Vector3(-0.284992, -0.383315, 0.288741)
-bones/24/position = Vector3(0.284992, -0.377065, 0.288741)
+bones/1/position = Vector3(-1.53456e-17, 1.51889, -0.100661)
+bones/2/position = Vector3(3.7347e-17, -0.253265, -0.891526)
+bones/5/position = Vector3(-0.192909, 0.0883413, -1.23498)
+bones/6/position = Vector3(0.192909, 0.0883413, -1.23498)
+bones/7/position = Vector3(-0.300797, -0.212745, -1.45217)
+bones/8/position = Vector3(0.300797, -0.212745, -1.45217)
+bones/9/position = Vector3(5.98459e-18, 0.00810978, 1.07566)
+bones/10/position = Vector3(0, 2.1875, 0.421306)
+bones/11/position = Vector3(0.39375, 1.9375, -0.527458)
+bones/12/position = Vector3(2.00067, -1.90876, 5.55112e-16)
+bones/13/position = Vector3(-0.39375, 1.9375, -0.527458)
+bones/14/position = Vector3(-2.00067, -1.90876, 5.55112e-16)
+bones/15/position = Vector3(0.39375, 1.23438, -0.605583)
+bones/17/position = Vector3(1.03972, 0.0234477, -2.61969)
+bones/18/position = Vector3(-0.39375, 1.23438, -0.605583)
+bones/20/position = Vector3(-1.03972, 0.0234477, -2.61969)
+bones/22/position = Vector3(-1.42496, -1.91658, 1.4437)
+bones/24/position = Vector3(1.42496, -1.88533, 1.4437)
 
 [node name="BootyAttachment" type="BoneAttachment3D" parent="ActorMesh/Skeleton3D" index="1"]
-transform = Transform3D(0.999967, -0.000104946, -0.00811051, 0.00200918, 0.971959, 0.23514, 0.00785841, -0.235148, 0.971928, -0.000624402, 0.739507, 0.174123)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36101e-18, 3.7145, 1.39631)
 bone_name = "BootyShooter"
 bone_idx = 10
 
@@ -1445,14 +1253,15 @@ bone_idx = 10
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 5.32907e-15, -1, 1.19209e-07, -4.37114e-08, 0, 0.0215201, 0.0065721)
 emitting = false
 amount = 1000
-lifetime = 0.75
+lifetime = 1.5
 one_shot = true
 randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_rv2xr")
+visibility_aabb = AABB(-0.400003, -1.15615, -1.59145, 0.800007, 2.31229, 3.18289)
+process_material = SubResource("ParticleProcessMaterial_55p2l")
 draw_pass_1 = ExtResource("2_0j45p")
 
 [node name="Claw_LAttachment" type="BoneAttachment3D" parent="ActorMesh/Skeleton3D" index="2"]
-transform = Transform3D(0.997461, 0, -0.0712109, 0, 1, 0, 0.0712109, 0, 0.997461, -0.679298, 0.240625, -0.861385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.62097, 1.25783, -4.16277)
 bone_name = "Toesie_FL_claw"
 bone_idx = 20
 
@@ -1461,56 +1270,44 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Claw_LAttachment/Atkbox_Heavy" index="0"]
-shape = SubResource("SphereShape3D_qvake")
+transform = Transform3D(0.878152, 0.475922, -0.0484591, -0.0798205, 0.0458925, -0.995752, -0.471676, 0.87829, 0.0782889, 0.000197887, -0.151214, 0.76054)
+shape = SubResource("CapsuleShape3D_uanop")
 disabled = true
 
 [node name="Claw_RAttachment" type="BoneAttachment3D" parent="ActorMesh/Skeleton3D" index="3"]
-transform = Transform3D(0.992078, 0, 0.125624, 0, 1, 0, -0.125624, 0, 0.992078, 0.644251, 0.240625, -0.881412)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62097, 1.25783, -4.16277)
 bone_name = "Toesie_FR_claw"
 bone_idx = 17
 
-[node name="Area3D" type="Area3D" parent="ActorMesh/Skeleton3D/Claw_RAttachment" index="0"]
+[node name="Atkbox_Light" type="Area3D" parent="ActorMesh/Skeleton3D/Claw_RAttachment" index="0"]
 collision_layer = 4
 collision_mask = 2
+script = ExtResource("3_qumym")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Claw_RAttachment/Area3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Claw_RAttachment/Atkbox_Light" index="0"]
 shape = SubResource("SphereShape3D_43sa5")
 disabled = true
 
-[node name="Physical Bone ActorMesh" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="4"]
-transform = Transform3D(1, 1.52115e-16, 1.00811e-17, 0, 0.0661277, -0.997811, -1.52449e-16, 0.997811, 0.0661277, 0.00010042, 0.141418, -0.00996568)
-visible = false
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53457e-18, -4.65661e-09, 0.152222)
-body_offset = Transform3D(1, 1.52115e-16, 1.00811e-17, 0, 0.0661277, -0.997811, -1.52449e-16, 0.997811, 0.0661277, 0, 0.151889, -0.0100661)
-bone_name = "ActorMesh"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone ActorMesh" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_oo0yy")
-disabled = true
-
-[node name="Physical Bone Torso" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="5"]
-transform = Transform3D(1, 1.14475e-17, -4.02966e-17, 0, 0.961938, 0.273268, 4.18911e-17, -0.273268, 0.961938, 0.00010042, 0.267981, -0.109184)
-visible = false
+[node name="Physical Bone Torso" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="4"]
+transform = Transform3D(1, 1.14475e-17, -4.02966e-17, 0, 0.961938, 0.273268, 4.18911e-17, -0.273268, 0.961938, 3.3279e-18, 1.39226, -0.546424)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7347e-18, -3.72529e-08, 0.0926802)
-body_offset = Transform3D(1, 1.14475e-17, -4.02966e-17, 0, 0.961938, 0.273268, 4.18911e-17, -0.273268, 0.961938, 0, -0.0253265, -0.0891526)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8198e-23, 3.7998e-07, 0.463401)
+body_offset = Transform3D(1, 1.14475e-17, -4.02966e-17, 0, 0.961938, 0.273268, 4.18911e-17, -0.273268, 0.961938, 1.86735e-17, -0.126633, -0.445763)
 bone_name = "Torso"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
 joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Torso" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_4umyn")
+transform = Transform3D(1, 0, 0, -8.27181e-25, 0, 1, -3.30872e-24, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_qd7mi")
 disabled = true
 
-[node name="Physical Bone Skull" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="6"]
-transform = Transform3D(0.98227, -0.0765952, 0.194409, 0, 0.930417, 0.366503, -0.208957, -0.359993, 0.913911, -0.0297156, 0.186504, -0.338229)
-visible = false
+[node name="Physical Bone Skull" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="5"]
+transform = Transform3D(0.958475, -0.104518, 0.265332, 0, 0.930417, 0.366503, -0.285175, -0.351285, 0.891782, -0.20325, 0.984875, -1.67531)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63115e-05, 4.15556e-05, 0.153099)
-body_offset = Transform3D(0.962533, -0.104991, 0.266497, 0, 0.930417, 0.366503, -0.286438, -0.352758, 0.895549, -0.0408504, -0.05615, -0.137077)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5332e-07, 5.06639e-07, 0.766023)
+body_offset = Transform3D(0.958475, -0.104518, 0.265332, 0, 0.930417, 0.366503, -0.285175, -0.351285, 0.891782, -0.20325, -0.28075, -0.683125)
 bone_name = "Skull"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1518,15 +1315,14 @@ joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Skull" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_vycic")
+shape = SubResource("CapsuleShape3D_vomia")
 disabled = true
 
-[node name="Physical Bone Booty" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="7"]
-transform = Transform3D(-1.00386, 0.0105801, 0.00222641, -0.00262945, -0.0388594, -1.00451, -0.0104703, -1.0043, 0.0386977, -0.000395491, 0.518528, 0.186493)
-visible = false
+[node name="Physical Bone Booty" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="6"]
+transform = Transform3D(-1, -2.23517e-08, 9.87202e-08, -2.32831e-10, 0.189121, -0.981953, 0, -0.981941, -0.18912, -1.04308e-07, 2.62075, 1.18565)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50727e-07, 6.83591e-06, 0.222595)
-body_offset = Transform3D(-1.00392, 1.08229e-05, 4.26342e-07, -1.26427e-07, 0.189982, -0.987098, -7.53347e-06, -0.986993, -0.190199, -3.46685e-07, 0.219722, 0.0423441)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65168e-09, -2.63751e-06, 1.11385)
+body_offset = Transform3D(-1, -2.23517e-08, 9.87202e-08, -2.32831e-10, 0.189121, -0.981953, 0, -0.981941, -0.18912, -1.04308e-07, 1.09375, 0.210649)
 bone_name = "Booty"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1534,15 +1330,14 @@ joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Booty" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_dgkiv")
+shape = SubResource("SphereShape3D_rfu4n")
 disabled = true
 
-[node name="Physical Bone Leggie_FR" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="8"]
-transform = Transform3D(-3.13545e-16, 0.675992, -0.744682, -7.79004e-18, 0.744682, 0.675992, 1, 2.15472e-16, -2.25847e-16, 0.284765, 0.18984, -0.105392)
-visible = false
+[node name="Physical Bone Leggie_FR" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="7"]
+transform = Transform3D(-2.77463e-16, 0.690292, -0.72353, 0, 0.72353, 0.690292, 1, 1.9153e-16, -2.00753e-16, 1.39409, 0.983118, -0.527458)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.24476e-17, 0.000198007, 0.276693)
-body_offset = Transform3D(-3.13642e-16, 0.69428, -0.727662, 3.35835e-22, 0.727662, 0.69428, 1, 2.15472e-16, -2.25847e-16, 0.201201, -0.192246, 0)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77558e-16, -2.6226e-06, 1.38258)
+body_offset = Transform3D(-2.77463e-16, 0.690292, -0.72353, 0, 0.72353, 0.690292, 1, 1.9153e-16, -2.00753e-16, 1.00034, -0.954382, 0)
 bone_name = "Leggie_FR"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1550,15 +1345,14 @@ joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_FR" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_vun0y")
+shape = SubResource("CapsuleShape3D_cf22k")
 disabled = true
 
-[node name="Physical Bone Leggie_FL" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="9"]
-transform = Transform3D(-3.14423e-16, -0.67249, 0.747804, 9.25922e-18, 0.747804, 0.67249, -1, 2.15472e-16, -2.25847e-16, -0.28543, 0.191128, -0.105392)
-visible = false
+[node name="Physical Bone Leggie_FL" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="8"]
+transform = Transform3D(-2.77463e-16, -0.690292, 0.72353, 0, 0.72353, 0.690292, -1, 1.9153e-16, -2.00753e-16, -1.39409, 0.983118, -0.527458)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24511e-17, -3.9503e-05, 0.276482)
-body_offset = Transform3D(-3.1456e-16, -0.69421, 0.727685, 3.09366e-22, 0.727685, 0.69421, -1, 2.15472e-16, -2.25847e-16, -0.201219, -0.191908, 0)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.77558e-16, -2.6226e-06, 1.38258)
+body_offset = Transform3D(-2.77463e-16, -0.690292, 0.72353, 0, 0.72353, 0.690292, -1, 1.9153e-16, -2.00753e-16, -1.00034, -0.954382, 0)
 bone_name = "Leggie_FL"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1566,31 +1360,29 @@ joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_FL" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_lkuej")
+shape = SubResource("CapsuleShape3D_h7bqr")
 disabled = true
 
-[node name="Physical Bone Leggie_FR_Shoulder" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="10"]
-transform = Transform3D(0.451469, 6.05284e-05, -0.896708, 1.30832e-05, 1.00027, 6.94394e-06, 0.897388, -1.46883e-05, 0.451365, 0.292686, 0.236432, -0.228598)
-visible = false
+[node name="Physical Bone Leggie_FR_Shoulder" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="9"]
+transform = Transform3D(0.393919, 0, -0.919145, 0, 1, 2.98023e-08, 0.919145, 0, 0.393919, 1.4875, 1.23438, -1.07433)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83021e-05, -2.8842e-05, 0.238444)
-body_offset = Transform3D(0.395616, 6.13148e-05, -0.922687, 1.30832e-05, 1.00027, 6.94394e-06, 0.923372, -1.09507e-05, 0.395555, 0.220028, 2.71946e-05, -0.0942729)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68221e-07, -3.54637e-08, 1.18996)
+body_offset = Transform3D(0.393919, 0, -0.919145, 0, 1, 2.98023e-08, 0.919145, 0, 0.393919, 1.09375, 0, -0.46875)
 bone_name = "Leggie_FR_Shoulder"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
 joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_FR_Shoulder" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_lcvpd")
+transform = Transform3D(1, 0, 0, 0, 3.55271e-15, 1, 0, -1, 0, 0.197236, 0, -0.460217)
+shape = SubResource("CapsuleShape3D_vdvpi")
 disabled = true
 
-[node name="Physical Bone Leggie_FR_Claw" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="11"]
-transform = Transform3D(0.970791, -0.00209985, -0.252312, 2.99849e-05, 1.00027, -0.00833943, 0.252318, 0.0080224, 0.970593, 0.575228, 0.238666, -0.607801)
-visible = false
+[node name="Physical Bone Leggie_FR_Claw" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="10"]
+transform = Transform3D(0.929472, -0.00305511, -0.368882, -1.21072e-07, 0.999969, -0.00831927, 0.368895, 0.00772953, 0.929439, 3.10111, 1.2461, -2.85293)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000261046, 8.32595e-05, 0.281155)
-body_offset = Transform3D(0.93233, -0.00307179, -0.369916, 2.99849e-05, 1.00027, -0.00833943, 0.369946, 0.00770275, 0.932134, 0.104247, 0.0022614, -0.261978)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63588e-06, 2.05263e-06, 1.40929)
+body_offset = Transform3D(0.929472, -0.00305511, -0.368882, -1.21072e-07, 0.999969, -0.00831927, 0.368895, 0.00772953, 0.929439, 0.519858, 0.0117222, -1.30985)
 bone_name = "Leggie_FR_Claw"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1598,31 +1390,29 @@ joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_FR_Claw" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_uvt4k")
+shape = SubResource("CapsuleShape3D_baqhb")
 disabled = true
 
-[node name="Physical Bone Leggie_FL_Shoulder" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="12"]
-transform = Transform3D(0.426854, -6.71423e-05, 0.908447, -3.79309e-05, 1.00066, -3.72082e-05, -0.909127, 2.42522e-05, 0.427149, -0.29472, 0.23641, -0.222757)
-visible = false
+[node name="Physical Bone Leggie_FL_Shoulder" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="11"]
+transform = Transform3D(0.393921, 4.39584e-07, 0.919149, -1.84961e-06, 1.00001, -4.29153e-06, -0.919159, -1.11945e-06, 0.393927, -1.48752, 1.23439, -1.07433)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00013043, 3.64426e-06, 0.237908)
-body_offset = Transform3D(0.395393, -6.62701e-05, 0.922576, -3.79309e-05, 1.00066, -3.72082e-05, -0.923245, 2.65428e-05, 0.395711, -0.219436, 5.20051e-06, -0.0942631)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3411e-05, -4.54904e-06, 1.18998)
+body_offset = Transform3D(0.393921, 4.39584e-07, 0.919149, -1.84961e-06, 1.00001, -4.29153e-06, -0.919159, -1.11945e-06, 0.393927, -1.09377, 9.65595e-06, -0.468752)
 bone_name = "Leggie_FL_Shoulder"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
 joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_FL_Shoulder" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_22tb8")
+transform = Transform3D(0.980402, 0.197007, 1.89394e-08, -2.06917e-08, 6.83573e-09, 1, 0.197007, -0.980402, 1.07786e-08, -0.0142555, -1.19209e-07, -0.62838)
+shape = SubResource("CapsuleShape3D_1mxh7")
 disabled = true
 
-[node name="Physical Bone Leggie_FL_Claw" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="13"]
-transform = Transform3D(0.95546, 0.00259163, 0.305142, -0.000347457, 1.00089, -0.00840464, -0.305151, 0.00797075, 0.955639, -0.595604, 0.238823, -0.592512)
-visible = false
+[node name="Physical Bone Leggie_FL_Claw" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="12"]
+transform = Transform3D(0.92948, 0.00307104, 0.368887, -3.8445e-06, 0.999974, -0.00829494, -0.368896, 0.00772689, 0.929434, -3.10111, 1.2461, -2.85293)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000216372, -5.13205e-05, 0.281648)
-body_offset = Transform3D(0.932252, 0.00313282, 0.370041, -0.000347457, 1.00089, -0.00840464, -0.370038, 0.00777398, 0.932431, -0.104423, 0.00241859, -0.262537)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.69224e-06, -2.97027e-05, 1.40929)
+body_offset = Transform3D(0.92948, 0.00307104, 0.368887, -3.8445e-06, 0.999974, -0.00829494, -0.368896, 0.00772689, 0.929434, -0.519864, 0.0117197, -1.30985)
 bone_name = "Leggie_FL_Claw"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1630,15 +1420,14 @@ joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_FL_Claw" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_06oc3")
+shape = SubResource("CapsuleShape3D_jx5xj")
 disabled = true
 
-[node name="Physical Bone Leggie_RL" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="14"]
-transform = Transform3D(-0.731505, -0.450298, 0.521451, 0.0209986, 0.74573, 0.673416, -0.688865, 0.501046, -0.533279, -0.22418, 0.189119, 0.274049)
-visible = false
+[node name="Physical Bone Leggie_RL" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="13"]
+transform = Transform3D(-0.711712, -0.482437, 0.510608, 0, 0.726874, 0.686771, -0.702471, 0.488783, -0.517325, -1.10623, 0.979212, 1.34685)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89389e-05, -8.12486e-05, 0.279128)
-body_offset = Transform3D(-0.715213, -0.484796, 0.513043, -1.76106e-05, 0.730502, 0.690223, -0.706078, 0.49119, -0.519775, -0.143188, -0.192601, 0.145179)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17233e-07, -2.68221e-07, 1.39535)
+body_offset = Transform3D(-0.711712, -0.482437, 0.510608, 0, 0.726874, 0.686771, -0.702471, 0.488783, -0.517325, -0.712479, -0.958288, 0.721851)
 bone_name = "Leggie_RL"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1646,15 +1435,14 @@ joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_RL" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_x3cij")
+shape = SubResource("CapsuleShape3D_xfu78")
 disabled = true
 
-[node name="Physical Bone Leggie_RR" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="15"]
-transform = Transform3D(-0.732627, 0.433321, -0.534228, -0.0314515, 0.758666, 0.658476, 0.687134, 0.496602, -0.539262, 0.226792, 0.188429, 0.274511)
-visible = false
+[node name="Physical Bone Leggie_RR" type="PhysicalBone3D" parent="ActorMesh/Skeleton3D" index="14"]
+transform = Transform3D(-0.711712, 0.478232, -0.514548, 0, 0.732483, 0.680786, 0.702471, 0.484523, -0.521317, 1.10623, 0.963587, 1.34685)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11184e-05, -3.59938e-05, 0.276967)
-body_offset = Transform3D(-0.715264, 0.480598, -0.517037, -1.50239e-05, 0.736169, 0.684256, 0.705891, 0.486864, -0.523696, 0.143183, -0.18949, 0.1451)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-07, -1.49012e-07, 1.38467)
+body_offset = Transform3D(-0.711712, 0.478232, -0.514548, 0, 0.732483, 0.680786, 0.702471, 0.484523, -0.521317, 0.712479, -0.942663, 0.721851)
 bone_name = "Leggie_RR"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -1662,10 +1450,19 @@ joint_constraints/impulse_clamp = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActorMesh/Skeleton3D/Physical Bone Leggie_RR" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_i3x78")
+shape = SubResource("CapsuleShape3D_pn0to")
 disabled = true
 
-[node name="AnimationPlayers" type="Node3D" parent="." index="1"]
+[node name="Atkbox_Medium" type="Area3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.748)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Atkbox_Medium" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -3.29711)
+shape = SubResource("CapsuleShape3D_adspe")
+
+[node name="AnimationPlayers" type="Node3D" parent="." index="2"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="0"]
 libraries = {
@@ -1676,23 +1473,17 @@ playback_default_blend_time = 0.1
 
 [node name="LeftArmPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_f4ck4")
+"": SubResource("AnimationLibrary_e0mki")
 }
 autoplay = "idle"
 playback_default_blend_time = 0.5
 
 [node name="RightArmPlayer" type="AnimationPlayer" parent="AnimationPlayers" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_dgqyu")
+"": SubResource("AnimationLibrary_5td14")
 }
 autoplay = "idle"
 playback_default_blend_time = 0.5
 
-[node name="Atkbox_Medium" type="Area3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.748)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Atkbox_Medium" index="0"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)
-shape = SubResource("CapsuleShape3D_r68eg")
+[connection signal="body_entered" from="ActorMesh/Skeleton3D/Claw_RAttachment/Atkbox_Light" to="ActorMesh/Skeleton3D/Claw_RAttachment/Atkbox_Light" method="_on_body_entered"]
+[connection signal="body_exited" from="ActorMesh/Skeleton3D/Claw_RAttachment/Atkbox_Light" to="ActorMesh/Skeleton3D/Claw_RAttachment/Atkbox_Light" method="_on_body_exited"]

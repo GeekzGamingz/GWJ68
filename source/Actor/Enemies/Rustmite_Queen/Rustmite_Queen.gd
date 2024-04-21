@@ -1,14 +1,31 @@
 #Inherits EnemyMovement Code
 extends EnemyMovement
 #------------------------------------------------------------------------------#
+#Constants
+const UI_BOSS_HP_BACKGROUND = preload("res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_Boss_HPBackground.png")
+const UI_BOSS_HP_OUTLINE = preload("res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_Boss_HPOutline.png")
+const UI_BOSS_HP_PROGRESS = preload("res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_Boss_HP_Progress.png")
+
 #Variables
+var is_grappling: bool = false
 #OnReady Variables
 @onready var mesh = $Mesh_Queen
 @onready var skeleton = $Mesh_Queen/ActorMesh/Skeleton3D
 @onready var anim_player = mesh.get_node("AnimationPlayers/AnimationPlayer")
 @onready var armL_player = mesh.get_node("AnimationPlayers/LeftArmPlayer")
 @onready var armR_player = mesh.get_node("AnimationPlayers/RightArmPlayer")
+@onready var clawR = mesh.get_node("ActorMesh/Skeleton3D/Claw_RAttachment")
+#Health Textures
+@onready var health_under = $ProgressBar/SubViewport/ProgressBars/Health/HealthUnder
+@onready var health_over = $ProgressBar/SubViewport/ProgressBars/Health/HealthOver
 #------------------------------------------------------------------------------#
+func _ready():
+	health_under.texture_under = UI_BOSS_HP_BACKGROUND
+	health_under.texture_over = UI_BOSS_HP_OUTLINE
+	health_under.texture_progress = UI_BOSS_HP_PROGRESS
+	health_over.texture_over = UI_BOSS_HP_OUTLINE
+	health_over.texture_progress = UI_BOSS_HP_PROGRESS
+	
 #Kill Switch
 func kill():
 	G.set_kill_score(1)
@@ -18,19 +35,16 @@ func kill():
 	queue_free()
 #Shatter
 func ragdoll():
-	skeleton.get_node("").set_deferred("disabled", false)
-	skeleton.get_node("").set_deferred("disabled", false)
-	skeleton.get_node("").set_deferred("disabled", false)
-	skeleton.get_node("").set_deferred("disabled", false)
-	skeleton.get_node("").set_deferred("disabled", false)
-	skeleton.get_node("").set_deferred("disabled", false)
-	skeleton.get_node("").set_deferred("disabled", false)
-	skeleton.physical_bones_start_simulation()
+	skeleton.physical_bones_start_simulation(['Skull'])
+	skeleton.physical_bones_start_simulation(['Booty'])
+	skeleton.physical_bones_start_simulation(['Leggie_FR_Claw'])
+	skeleton.physical_bones_start_simulation(['Leggie_FL_Claw'])
 #Hitbox
 func _on_hitbox_area_entered(area):
 	match(area.name):
 		#Sword
-		"Slash": damage(5 + G.sword_damage)
-		"Chop": damage(10 + G.sword_damage)
-		"Thrust": damage(15 + G.sword_damage)
-		"Soulblast": damage(35 + G.sword_damage)
+		"Slash": damage(1 + G.sword_damage)
+		"Chop": damage(3 + G.sword_damage)
+		"Thrust": damage(5 + G.sword_damage)
+		"Soulblast": damage(15 + G.sword_damage)
+#------------------------------------------------------------------------------#

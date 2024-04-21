@@ -107,24 +107,7 @@ _data = {
 [node name="PlayerUI" type="CanvasLayer"]
 
 [node name="ProgressBars" parent="." instance=ExtResource("1_qwx70")]
-
-[node name="Health" parent="ProgressBars" index="0"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 120.0
-offset_bottom = 25.0
-
-[node name="Soul" parent="ProgressBars" index="1"]
-offset_left = 82.0
-offset_top = 52.0
-offset_right = 82.0
-offset_bottom = 52.0
-
-[node name="Portrait" parent="ProgressBars" index="2"]
-offset_left = 120.0
-offset_top = 25.0
-offset_right = 160.0
-offset_bottom = 65.0
+metadata/_edit_vertical_guides_ = [25.0]
 
 [node name="Blank" parent="ProgressBars/Portrait" index="0"]
 visible = false
@@ -133,6 +116,9 @@ visible = false
 visible = false
 
 [node name="Bug" parent="ProgressBars/Portrait" index="2"]
+visible = false
+
+[node name="BossBug" parent="ProgressBars/Portrait" index="3"]
 visible = false
 
 [node name="Gem1_Broken" parent="ProgressBars/Portrait/Bezel" index="1"]
@@ -161,48 +147,48 @@ offset_bottom = 40.0
 script = ExtResource("2_kj4yy")
 
 [node name="Souls" type="Sprite2D" parent="Scoreboard"]
-position = Vector2(170.5, 127.5)
+position = Vector2(180.5, 137.875)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_ns4qy")
 
 [node name="SoulCount" type="Label" parent="Scoreboard"]
 layout_mode = 0
-offset_left = 201.0
-offset_top = 100.0
-offset_right = 244.0
-offset_bottom = 155.0
+offset_left = 211.0
+offset_top = 110.375
+offset_right = 254.0
+offset_bottom = 165.375
 text = "100"
 label_settings = SubResource("LabelSettings_igdir")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Scrap" type="Sprite2D" parent="Scoreboard"]
-position = Vector2(270, 127)
+position = Vector2(280, 137.375)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_g2eaf")
 
 [node name="ScrapCount" type="Label" parent="Scoreboard"]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 100.0
-offset_right = 344.0
-offset_bottom = 155.0
+offset_left = 310.0
+offset_top = 110.375
+offset_right = 354.0
+offset_bottom = 165.375
 text = "100	"
 label_settings = SubResource("LabelSettings_gco7h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Kills" type="Sprite2D" parent="Scoreboard"]
-position = Vector2(370, 127)
+position = Vector2(380, 137.375)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("6_baqnh")
 
 [node name="KillCount" type="Label" parent="Scoreboard"]
 layout_mode = 0
-offset_left = 401.0
-offset_top = 100.0
-offset_right = 444.0
-offset_bottom = 155.0
+offset_left = 411.0
+offset_top = 110.375
+offset_right = 454.0
+offset_bottom = 165.375
 text = "100"
 label_settings = SubResource("LabelSettings_bixer")
 horizontal_alignment = 1
@@ -236,7 +222,7 @@ texture = ExtResource("8_nl4l8")
 
 [node name="Nope2" type="Sprite2D" parent="Controls"]
 z_index = 1
-position = Vector2(-832, -963)
+position = Vector2(-824, -957)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_nl4l8")
 

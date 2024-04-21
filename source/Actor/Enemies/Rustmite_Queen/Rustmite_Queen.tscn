@@ -1,25 +1,34 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgb6kbrkx3o2m"]
+[gd_scene load_steps=14 format=3 uid="uid://bgb6kbrkx3o2m"]
 
 [ext_resource type="PackedScene" uid="uid://bq70625noiblr" path="res://source/Actor/Enemies/Rustmite_Queen/Mesh_Queen.tscn" id="1_14l1e"]
 [ext_resource type="Script" path="res://source/Actor/Enemies/Rustmite_Queen/Rustmite_Queen.gd" id="1_rfdpn"]
 [ext_resource type="Script" path="res://source/Actor/Enemies/Rustmite_Queen/Rustmite_QueenFSM.gd" id="2_0o4ea"]
 [ext_resource type="PackedScene" uid="uid://mpkt245hqfmb" path="res://source/User Interface/Camera_Arm.tscn" id="4_4vj4n"]
 [ext_resource type="PackedScene" uid="uid://bffwmjigb57rl" path="res://source/User Interface/Progress Bars/ProgressBars.tscn" id="5_ishgv"]
+[ext_resource type="Texture2D" uid="uid://dy4pj5hoobi73" path="res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_Boss_HPBackground.png" id="6_7snvu"]
+[ext_resource type="Texture2D" uid="uid://c8ww88l1a5yl" path="res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_Boss_HPOutline.png" id="7_p5ivv"]
+[ext_resource type="Texture2D" uid="uid://ksqcgs4vfebr" path="res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_Boss_HP_Progress.png" id="8_ef4g6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3fkt8"]
-radius = 0.25
-height = 0.718229
+radius = 1.0
+height = 3.84472
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lt5u7"]
 margin = 0.05
 radius = 10.0
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_quapd"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_84l5n"]
+radius = 1.1356
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6pxnn"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5hkj8"]
+radius = 0.903645
+height = 3.18912
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qmhpr"]
 viewport_path = NodePath("ProgressBar/SubViewport")
 
 [node name="Rustmite_Queen" type="CharacterBody3D" groups=["Kinematics"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.172389, 0.637837)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_rfdpn")
@@ -30,7 +39,7 @@ script = ExtResource("2_0o4ea")
 [node name="Mesh_Queen" parent="." instance=ExtResource("1_14l1e")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, -0.661)
 shape = SubResource("CapsuleShape3D_3fkt8")
 
 [node name="CameraArm" parent="." instance=ExtResource("4_4vj4n")]
@@ -40,7 +49,7 @@ margin = 1.0
 
 [node name="Facing" type="RayCast3D" parent="WorldDetectors"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
-target_position = Vector3(0, -2.5, 0)
+target_position = Vector3(0, -7.5, 0)
 collision_mask = 2
 
 [node name="Sight" type="Area3D" parent="WorldDetectors"]
@@ -51,13 +60,23 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_lt5u7")
 
-[node name="Hitbox" type="Area3D" parent="WorldDetectors"]
+[node name="Hitbox_Skull" type="Area3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30755, -2.03401)
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Hitbox"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
-shape = SubResource("CapsuleShape3D_quapd")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Hitbox_Skull"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_84l5n")
+
+[node name="Hitbox_Booty" type="Area3D" parent="WorldDetectors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3746, 1.93711)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldDetectors/Hitbox_Booty"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.18415)
+shape = SubResource("CapsuleShape3D_5hkj8")
 
 [node name="GroundDetectors" type="Node3D" parent="WorldDetectors"]
 
@@ -104,20 +123,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745588, 0.432133)
 [node name="Outputs" type="Node3D" parent="."]
 
 [node name="StateOutput" type="Label3D" parent="Outputs"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.83962, 0)
-visible = false
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3, -3)
 text = "State"
 
 [node name="ProgressBar" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(-0.5, 0, -8.74228e-08, 0, 0.5, 0, 4.37114e-08, 0, -1, 0, 2.5, -2.5)
+offset = Vector2(0, 2.76225)
 billboard = 1
-texture = SubResource("ViewportTexture_6pxnn")
+texture = SubResource("ViewportTexture_qmhpr")
 
 [node name="SubViewport" type="SubViewport" parent="ProgressBar"]
 transparent_bg = true
 
 [node name="ProgressBars" parent="ProgressBar/SubViewport" instance=ExtResource("5_ishgv")]
-visible = false
+metadata/_edit_vertical_guides_ = [25.0]
+
+[node name="HealthUnder" parent="ProgressBar/SubViewport/ProgressBars/Health" index="0"]
+fill_mode = 1
+texture_under = ExtResource("6_7snvu")
+texture_over = ExtResource("7_p5ivv")
+texture_progress = ExtResource("8_ef4g6")
+
+[node name="HealthOver" parent="ProgressBar/SubViewport/ProgressBars/Health" index="1"]
+fill_mode = 1
+texture_over = ExtResource("7_p5ivv")
+texture_progress = ExtResource("8_ef4g6")
 
 [node name="Soul" parent="ProgressBar/SubViewport/ProgressBars" index="1"]
 visible = false
@@ -128,14 +158,15 @@ visible = false
 [node name="Pot" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="1"]
 visible = false
 
-[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="3"]
+[node name="Bug" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="2"]
 visible = false
 
-[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait/Bezel" index="0"]
+[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="4"]
 visible = false
 
 [connection signal="body_entered" from="WorldDetectors/Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="WorldDetectors/Sight" to="." method="_on_sight_body_exited"]
-[connection signal="area_entered" from="WorldDetectors/Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="WorldDetectors/Hitbox_Skull" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="WorldDetectors/Hitbox_Booty" to="." method="_on_hitbox_area_entered"]
 
 [editable path="ProgressBar/SubViewport/ProgressBars"]

@@ -131,7 +131,7 @@ visible = false
 [node name="Pot" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="1"]
 visible = false
 
-[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="3"]
+[node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait" index="4"]
 visible = false
 
 [node name="Bezel" parent="ProgressBar/SubViewport/ProgressBars/Portrait/Bezel" index="0"]

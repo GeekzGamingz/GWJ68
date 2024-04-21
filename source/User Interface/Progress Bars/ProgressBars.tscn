@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bffwmjigb57rl"]
+[gd_scene load_steps=19 format=3 uid="uid://bffwmjigb57rl"]
 
 [ext_resource type="Script" path="res://source/User Interface/Progress Bars/ProgressBars.gd" id="1_58sly"]
 [ext_resource type="Texture2D" uid="uid://cry8t8nptki5n" path="res://assets/Textures/UserInterface/UI_HPBackground.png" id="1_w54vc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cjsfeh1onvkq7" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_bezel.png" id="8_gcvwe"]
 [ext_resource type="Texture2D" uid="uid://cs8p5tfs1hygd" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_01_Broken.png" id="9_ismua"]
 [ext_resource type="Texture2D" uid="uid://dd6qfio7axe32" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_02_Broken.png" id="10_dv5ny"]
+[ext_resource type="Texture2D" uid="uid://bwq3j3uhqdnty" path="res://assets/Textures/UserInterface/ProgressBars/Enemies/UI_BossBezel.png" id="11_p20cf"]
 [ext_resource type="Texture2D" uid="uid://ciw1658mrsyp" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_03_Broken.png" id="11_q3n1g"]
 [ext_resource type="Texture2D" uid="uid://d38vdciudujnv" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_01_Charged.png" id="15_j3ibl"]
 [ext_resource type="Texture2D" uid="uid://42g4quclmtrj" path="res://assets/Textures/UserInterface/ProgressBars/Player/UI_SoulGem_02_Charged.png" id="16_jnhri"]
@@ -23,7 +24,7 @@ layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
 script = ExtResource("1_58sly")
-metadata/_edit_vertical_guides_ = [25.0]
+metadata/_edit_vertical_guides_ = [25.0, 1895.0]
 metadata/_edit_horizontal_guides_ = [25.0]
 
 [node name="Health" type="Control" parent="."]
@@ -102,6 +103,10 @@ texture = ExtResource("5_jreqt")
 [node name="Bug" type="Sprite2D" parent="Portrait"]
 position = Vector2(133.5, 52.5)
 texture = ExtResource("6_lux32")
+
+[node name="BossBug" type="Sprite2D" parent="Portrait"]
+position = Vector2(180, 57)
+texture = ExtResource("11_p20cf")
 
 [node name="Bezel" type="Node2D" parent="Portrait"]
 

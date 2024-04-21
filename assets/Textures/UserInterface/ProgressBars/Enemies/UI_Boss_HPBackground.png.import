@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/UI_Boss_HPBackground.png-03bd635f7fda4dfedfd2
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
