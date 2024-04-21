@@ -6,10 +6,11 @@ const CANOPIC = preload("res://source/Actor/Enemies/Canopics/Canopic.tscn")
 const RUSTMITE = preload("res://source/Actor/Enemies/Rustmite/Rustmite.tscn")
 const SOUL = preload("res://source/Items/Soul/Soul.tscn")
 const SCRAP = preload("res://source/Items/Scrap/Scrap.tscn")
+const MITEQUEEN = preload("res://source/Actor/Enemies/Rustmite_Queen/Rustmite_Queen.tscn")
 #Variables
 var kinematic_present: bool = false
 #Exported Variables
-@export_enum("Canopic", "Rustmite", "Soul", "Scrap") var entity: String
+@export_enum("Canopic", "Rustmite", "Soul", "Scrap", "MiteQueen") var entity: String
 #OnReady Variables
 @onready var spawn_timer = $SpawnTimer
 #------------------------------------------------------------------------------#
@@ -22,6 +23,7 @@ func _on_spawn_timer_timeout():
 			"Rustmite": entity_scene = RUSTMITE.instantiate()
 			"Soul": entity_scene = SOUL.instantiate()
 			"Scrap": entity_scene = SCRAP.instantiate()
+			"MiteQueen": entity_scene = MITEQUEEN.instantiate()
 		entity_scene.global_transform = global_transform
 		G.KINEMATICS.add_child(entity_scene)
 #Entering Bodies
